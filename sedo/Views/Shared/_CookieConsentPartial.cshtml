@@ -1,0 +1,89 @@
+﻿@using Microsoft.AspNetCore.Http.Features
+
+@{
+    var consentFeature = Context.Features.Get<ITrackingConsentFeature>();
+    var showBanner = !consentFeature?.CanTrack ?? false;
+    var cookieString = consentFeature?.CreateConsentCookie();
+}
+
+@if (showBanner)
+{
+    @*<div id="cookieConsent" class="alert alert-info alert-dismissible fade show" role="alert">
+        Use this space to summarize your privacy and cookie use policy. <a asp-area="" asp-controller="Home" asp-action="Privacy">Learn More</a>.
+        <button type="button" class="accept-policy close" data-dismiss="alert" aria-label="Close" data-cookie-string="@cookieString">
+            <span aria-hidden="true">Accept</span>
+        </button>
+    </div>*@
+
+    <script id="cookie-info-wrapper" type="text/template">
+        <div class="cookie-notice cookie-notice--disabled">
+            <div class="cookie-notice__content">
+                <div class="cookie-notice__scrollable-content">
+                    <strong class="cookie-notice__title">
+                        We use cookies
+                    </strong>
+                    <p class="cookie-notice__text">
+                        In order to provide you with an optimal website experience, we use performance and cooperation cookies. This enables us to make our websites more user-friendly and to display personalized offers. By clicking &quot;Select all&quot;, you declare your consent that Sedo GmbH may use such technologies. You may revoke your consent at any time with effect for the future. You can adjust your settings by clicking on &quot;Confirm selection&quot;.
+                        <br>
+                        <a class="cookie-notice__link" href="/us/about-us/policies-gmbh/use-of-cookies/">
+                            For further information, please refer to the cookie policy.
+                        </a>
+                    </p>
+                    <form id="cookie-notice-form" class="cookie-notice__form">
+                        <div class="custom-checkbox cookie-notice__checkbox">
+                            <input id="gdpr-checkbox-essentials" name="essentials" class="cookie-notice__checkbox-input cookie-notice__checkbox-input--checked cookie-notice__checkbox-input--diabled" type="checkbox" checked disabled>
+                            <label class="cookie-notice__checkbox-label" for="gdpr-checkbox-essentials">Strictly necessary cookies</label>
+                            <p class="cookie-notice__more-info">
+                                <span>Details</span>
+                                <svg class="cookie-notice__more-info-open"><use xlink:href="#s-font-icon-arrow-down"></use></svg>
+                                <svg class="cookie-notice__more-info-close"><use xlink:href="#s-font-icon-arrow-up"></use></svg>
+                            </p>
+                            <p class="cookie-notice__more-info-text">These cookies are absolutely necessary for websites and their functions to work properly. Without these cookies, services such as the use of an account or a transaction cannot be provided.</p>
+                        </div>
+                        <div class="custom-checkbox cookie-notice__checkbox">
+                            <input id="gdpr-checkbox-statistics" name="performance" class="cookie-notice__checkbox-input" type="checkbox" checked>
+                            <label class="cookie-notice__checkbox-label" for="gdpr-checkbox-statistics">Performance cookies</label>
+                            <p class="cookie-notice__more-info">
+                                <span>Details</span>
+                                <svg class="cookie-notice__more-info-open"><use xlink:href="#s-font-icon-arrow-down"></use></svg>
+                                <svg class="cookie-notice__more-info-close"><use xlink:href="#s-font-icon-arrow-up"></use></svg>
+                            </p>
+                            <div class="cookie-notice__more-info-text">
+                                <strong>Functionality cookies:</strong>
+                                <p>These cookies provide greater website convenience and performance and allow various functions to be provided. For example, language settings can be stored in functionality cookies.</p>
+                                <strong>Statistics cookies:</strong>
+                                <p>These cookies collect information about how a website is used, e.g. what sites a user accesses most frequently and whether any error messages are received from a site. These cookies do not store information which allows a user to be identified. The information collected is aggregated and anonymous. These cookies are only used to improve a website’s performance and user experience.</p>
+                            </div>
+                        </div>
+                        <div class="custom-checkbox cookie-notice__checkbox">
+                            <input id="gdpr-checkbox-personalization" name="personalization" class="cookie-notice__checkbox-input" type="checkbox">
+                            <label class="cookie-notice__checkbox-label" for="gdpr-checkbox-personalization">Cooperation cookies</label>
+                            <p class="cookie-notice__more-info open">
+                                <span>Details</span>
+                                <svg class="cookie-notice__more-info-open"><use xlink:href="#s-font-icon-arrow-down"></use></svg>
+                                <svg class="cookie-notice__more-info-close"><use xlink:href="#s-font-icon-arrow-up"></use></svg>
+                            </p>
+                            <p class="cookie-notice__more-info-text">These cookies are used in the context of cooperation with selected partners in order to display personalised content matching your interests or to evaluate, track and invoice joint campaigns.</p>
+                        </div>
+                    </form>
+                </div>
+                <div class="cookie-notice__button-container">
+                    <button class="cookie-notice__button cookie-notice__button--save-settings" data-cookie-string="@cookieString">
+                        Confirm selection
+                    </button>
+                    <button class="cookie-notice__button cookie-notice__button--accept-all">
+                        Select all
+                    </button>
+                </div>
+            </div>
+        </div>
+    </script>
+    <script>
+        (function () {
+            var button = document.querySelector("#cookieConsent button[data-cookie-string]");
+            button.addEventListener("click", function (event) {
+                document.cookie = button.dataset.cookieString;
+            }, false);
+        })();
+    </script>
+}

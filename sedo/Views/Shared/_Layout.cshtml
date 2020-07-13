@@ -1,0 +1,491 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - sedo</title>
+
+    <environment include="Development">
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+    </environment>
+    <environment exclude="Development">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+              asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
+              asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute"
+              crossorigin="anonymous"
+              integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"/>
+    </environment>
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+    <div id="wrapper">
+
+
+
+        <partial name="_CookieConsentPartial" />
+
+        <section id="header-main-wrapper">
+            <header id="header-main">
+                <div id="header-items">
+                    <a id="responsive-navi-button">
+                        <span class="burger-icon"></span>
+                    </a>
+
+                    <div id="logo">
+                        <a href="/us/">&nbsp;</a>
+                    </div>
+
+                    <a id="seachbar-responsive-toggle">
+                        <svg class="s-nav-flyout-menue-icon-search-database"><use xlink:href="/images/icons/nav-icons.svg#s-nav-flyout-menue-icon-search-database"></use></svg>
+                        <svg class="s-font-icon-delete"><use xlink:href="#s-font-icon-delete"></use></svg>
+                    </a>
+
+                    <div id="searchbar" class="searchbar--header">
+                        <form>
+                            <div class="std-input full no-border" id="search-input-wrapper">
+                                <label for="search-input">Your Keyword</label>
+                                <input type="search" id="search-input" name="Sedo Search">
+                            </div>
+                            <div id="tld-select" class="std-input full no-border"><div class="tld-dialog-selector"><span class="tld-dialog-selector-text">TLD</span><span class="tld-dialog-selector-toggle"></span></div></div>
+                            <div class="std-input full no-border search-submit-wrapper">
+                                <button type="submit" id="search-submit">
+                                    <svg class="s-nav-flyout-menue-icon-search-database"><use xlink:href="/images/icons/nav-icons.svg#s-nav-flyout-menue-icon-search-database"></use></svg>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div id="loginbox-wrapper">
+                        <div id="login-status-logged-off" class="">
+                            <a class="button">
+                                <div class="icon">
+                                    <svg class="s-font-person"><use xlink:href="#s-font-person">
+                                                                   <symbol id="s-font-person" viewBox="0 0 512 512">
+                                                                       <path d="m448 448c0 0 0-26-2-40-2-11-17-25-81-49-63-23-60-12-60-55 0-27 15-11 24-64 3-21 6-7 13-40 4-17-2-19-1-27 0-8 1-16 3-33 1-21-18-76-88-76-70 0-89 55-87 76 1 17 2 25 3 33 0 8-6 10-2 27 7 33 10 19 14 40 9 53 23 37 23 64 0 43 4 32-60 55-64 24-79 38-81 49-2 14-2 40-2 40z"></path>
+                                                                   </symbol>
+                                         </use></svg>
+                                </div>
+                                <span class="button-text">
+                                    Login
+                                </span>
+                            </a>
+                            <div class="overlay loginbox-overlay" style="display: none;">
+                                <form action="/auth/login?locale=en_US" method="post" class="loginbox-form">
+                                    <input type="hidden" name="linkurl" value="%2Fmember%2Findex.php3%3Flanguage%3Dus">
+                                    <input type="hidden" name="language" value="us">
+                                    <input type="hidden" name="auto" value="true">
+                                    <input type="hidden" name="service" value="https://sedo.com/login.php3?linkurl=%2Fmember%2Findex.php3%3Flanguage%3Dus">
+
+                                    <input type="text" name="user" placeholder="Username">
+                                    <input type="password" name="pass" placeholder="Password">
+                                    <a class="password-forgot" href="/member/forgotpassword.php3?language=us">Login data?</a>
+                                    <input type="submit" value="Login" name="login" class="loginbox-submit">
+                                </form>
+                            </div>
+                        </div>
+
+                        <div id="login-status-logged" class="status-logged hidden">
+                            <div class="icon">
+                                <svg class="s-font-person"><use xlink:href="#s-font-person"></use></svg>
+                            </div>
+
+                            <div class="info">
+                                <span class="label">My Sedo</span>
+
+                                <span class="input"></span>
+                            </div>
+
+                            <nav class="my-sedo">
+                                <ul><li><a href="/member/index.php3?language=us">My Sedo</a></li><li><a href="/member/domainsignup/index.php?language=us">Add Domains</a></li><li><a href="/member/dnmanagement.php4?language=us">My Domains</a></li><li><a href="/member/parking_tools/overview.php?language=us">Parking Reports</a></li><li><a href="/member/controlpanel/?language=us">Buyer Control Panel</a></li><li><a href="/member/domainforsalewatch.php4?language=us">Keyword Watchlist</a></li><li><a href="/member/transfer/index.php?language=us">Transfer Center</a></li><li><a href="/member/billing/invoicelist.php?language=us">Billing</a></li><li><a href="/member/partner/index.php?language=us">Partner Program</a></li><li><a href="/member/editaccount.php3?language=us">My Account</a></li><li><a href="/logout.php?language=us">Logout</a></li></ul>
+                            </nav>
+                        </div>
+                    </div>
+
+                    <div id="watchlist">
+                        <div id="watchlist-status-logged-off" class="">
+                            <a href="/member/register.php" class="button">
+                                <div class="icon">
+                                    <svg class="s-font-person-add"><use xlink:href="#s-font-person-add">
+                                                                       <symbol id="s-font-person-add" viewBox="0 0 512 512">
+                                                                           <path d="m429 328l0-51 51 0 0-42-51 0 0-51-42 0 0 51-51 0 0 42 51 0 0 51z m-13 120c0 0 0-26-2-40-2-11-17-25-81-49-63-23-60-12-60-55 0-27 15-11 24-64 3-21 6-7 13-40 4-17-2-19-1-27 0-8 1-16 3-33 1-21-18-76-88-76-70 0-89 55-87 76 1 17 2 25 3 33 0 8-6 10-2 27 7 33 10 19 14 40 9 53 23 37 23 64 0 43 4 32-60 55-64 24-79 38-81 49-2 14-2 40-2 40z"></path>
+                                                                       </symbol></use></svg>
+                                </div>
+                                <span class="button-text">
+                                    Register
+                                </span>
+                            </a>
+                        </div>
+
+                        <div id="watchlist-status-logged" class="status-logged hidden">
+                            <div class="icon">
+                                <svg class="s-nav-heart"><use xlink:href="/images/icons/nav-icons.svg#s-nav-heart"></use></svg>
+                            </div>
+
+                            <div class="info">
+                                <span class="label">Your</span>
+
+                                <span class="input">Watchlist</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="nav-main-wrapper">
+                    <nav id="nav-main">
+                        <div id="responsive-login" class="logged-off">
+                            <div class="logged-off">
+                                <a href="#" id="responsive-logged-off-toggle">
+                                    <div class="icon">
+                                        <svg class="s-font-person"><use xlink:href="#s-font-person"></use></svg>
+                                    </div>
+                                    Login
+                                </a>
+                                <a href="/member/register.php">
+                                    Register
+                                </a>
+                            </div>
+                            <div class="logged-in">
+                                <a href="#">
+                                    <div class="icon">
+                                        <svg class="s-font-person"><use xlink:href="#s-font-person"></use></svg>
+                                    </div>
+                                    Hello <span class="username"></span>
+                                </a>
+
+                                <nav class="my-sedo-mobile u-hidden">
+                                    <ul><li><a href="/member/index.php3?language=us">My Sedo</a></li><li><a href="/member/domainsignup/index.php?language=us">Add Domains</a></li><li><a href="/member/dnmanagement.php4?language=us">My Domains</a></li><li><a href="/member/parking_tools/overview.php?language=us">Parking Reports</a></li><li><a href="/member/controlpanel/?language=us">Buyer Control Panel</a></li><li><a href="/member/domainforsalewatch.php4?language=us">Keyword Watchlist</a></li><li><a href="/member/transfer/index.php?language=us">Transfer Center</a></li><li><a href="/member/billing/invoicelist.php?language=us">Billing</a></li><li><a href="/member/partner/index.php?language=us">Partner Program</a></li><li><a href="/member/editaccount.php3?language=us">My Account</a></li><li><a href="/logout.php?language=us">Logout</a></li></ul>
+                                </nav>
+                            </div>
+
+                        </div>
+                        <div id="responsive-login-wrapper">
+                            <form action="/auth/login?locale=en_US" method="post" class="loginbox-form">
+                                <input type="hidden" name="linkurl" value="%2Fmember%2Findex.php3%3Flanguage%3Dus">
+                                <input type="hidden" name="language" value="us">
+                                <input type="hidden" name="auto" value="true">
+                                <input type="hidden" name="service" value="https://sedo.com/login.php3?linkurl=%2Fmember%2Findex.php3%3Flanguage%3Dus">
+
+                                <input type="text" name="user" placeholder="Username">
+                                <input type="password" name="pass" placeholder="Password">
+                                <a class="password-forgot" href="/member/forgotpassword.php3?language=us">Login data?</a>
+                                <input type="submit" value="Login" name="login" class="loginbox-submit">
+                            </form>
+                        </div>
+
+                        <ul class="mainnav">
+                            <li class="mainnav-item">
+                                <a href="/us/what-we-offer/">What we offer</a><div class="subnav-wrapper">
+                                    <ul class="subnav">
+                                        <li class="subnav-item first"><a href="/us/what-we-offer/what-sedo-offers/"><span class="icon"><svg class="s-nav-checklist extend"><use xlink:href="/images/icons/nav-icons.svg#s-nav-checklist"></use></svg></span><span class="label">What Sedo offers</span><span class="desc">All things domaining in one place</span></a></li>
+                                        <li class="subnav-item"><a href="/us/what-we-offer/registry-overview/"><span class="icon"><svg class="s-nav-registry"><use xlink:href="/images/icons/nav-icons.svg#s-nav-registry"></use></svg></span><span class="label">Registry Services</span><span class="desc">Launch your new TLD with Sedo</span></a></li>
+                                        <li class="subnav-item"><a href="/us/what-we-offer/registrar-services/"><span class="icon"><svg class="s-nav-registrar-services extended"><use xlink:href="/images/icons/nav-icons.svg#s-nav-registrar-services"></use></svg></span><span class="label">Registrar Services</span><span class="desc">SedoMLS, Registrar Parking, and Expiring Domains</span></a></li>
+                                        <li class="subnav-item last"><a href="/us/what-we-offer/price-list/"><span class="icon"><svg class="s-nav-pricetag"><use xlink:href="/images/icons/nav-icons.svg#s-nav-pricetag"></use></svg></span><span class="label">Price List</span><span class="desc">All products, all prices</span></a></li>
+                                        <li class="header-infobox">
+                                            <span class="type">Know-How</span>
+                                            <span class="headline">Why get a better domain name?</span>
+                                            <span class="text">See what other companies and individuals gained by getting the perfect domain name!<a href="/us/about-us/case-studies/">Read more</a></span>
+                                        </li>
+                                        <li class="tld-infobox">
+                                            <span class="tld"><a href="/search/?cc=com&amp;cHash=30dfa93a15eedf052f7a624b34583d5b&amp;language=us">.com</a></span>
+                                            <span class="tld-info">Featured TLD of the month</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="mainnav-item">
+                                <a href="/us/buy-domains/">Buy Domains</a><div class="subnav-wrapper">
+                                    <ul class="subnav">
+                                        <li class="subnav-item first"><a href="/us/buy-domains/how-it-works/"><span class="icon"><svg class="s-nav-shopping-bag"><use xlink:href="/images/icons/nav-icons.svg#s-nav-shopping-bag"></use></svg></span><span class="label">How it works</span><span class="desc">Buying domains explained</span></a></li>
+                                        <li class="subnav-item"><a href="/search/?language=us"><span class="icon"><svg class="s-nav-flyout-menue-icon-search-database extend"><use xlink:href="/images/icons/nav-icons.svg#s-nav-flyout-menue-icon-search-database"></use></svg></span><span class="label">Domain Search</span><span class="desc">Find the domain you really want</span></a></li>
+                                        <li class="subnav-item"><a href="/us/buy-domains/domain-acquisition/"><span class="icon"><svg class="s-nav-broker"><use xlink:href="/images/icons/nav-icons.svg#s-nav-broker"></use></svg></span><span class="label">Domain Acquisition</span><span class="desc">Our Brokers acquire the perfect domain for you</span></a></li>
+                                        <li class="subnav-item"><a href="/us/buy-domains/auction-calendar/"><span class="icon"><svg class="s-nav-flyout-menue-icon-auction-calendar extend"><use xlink:href="/images/icons/nav-icons.svg#s-nav-flyout-menue-icon-auction-calendar"></use></svg></span><span class="label">Auction Calendar</span><span class="desc">All current and upcoming auctions in one place</span></a></li>
+                                        <li class="subnav-item last"><a href="/us/buy-domains/market-trends/"><span class="icon"><svg class="s-nav-trend extend"><use xlink:href="/images/icons/nav-icons.svg#s-nav-trend"></use></svg></span><span class="label">Market Trends</span><span class="desc">Facts, numbers, and trends</span></a></li>
+                                        <li class="header-infobox">
+                                            <span class="type">Know-How</span>
+                                            <span class="headline">Why get a better domain name?</span>
+                                            <span class="text">See what other companies and individuals gained by getting the perfect domain name!<a href="/us/about-us/case-studies/">Read more</a></span>
+                                        </li>
+                                        <li class="tld-infobox">
+                                            <span class="tld"><a href="/search/?cc=com&amp;cHash=30dfa93a15eedf052f7a624b34583d5b&amp;language=us">.com</a></span>
+                                            <span class="tld-info">Featured TLD of the month</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="mainnav-item">
+                                <a href="/us/sell-domains/">Sell Domains</a><div class="subnav-wrapper">
+                                    <ul class="subnav">
+                                        <li class="subnav-item first"><a href="/us/sell-domains/how-it-works/"><span class="icon"><svg class="s-nav-sale extend"><use xlink:href="/images/icons/nav-icons.svg#s-nav-sale"></use></svg></span><span class="label">How it works</span><span class="desc">Selling domains explained</span></a></li>
+                                        <li class="subnav-item"><a href="/us/sell-domains/domain-trade/"><span class="icon"><svg class="s-nav-hand-shake extend"><use xlink:href="/images/icons/nav-icons.svg#s-nav-hand-shake"></use></svg></span><span class="label">Domain Trade</span><span class="desc">Fixed-price or negotiation</span></a></li>
+                                        <li class="subnav-item"><a href="/us/sell-domains/domain-auction/"><span class="icon"><svg class="s-nav-auction"><use xlink:href="/images/icons/nav-icons.svg#s-nav-auction"></use></svg></span><span class="label">Domain Auction</span><span class="desc">Sell domains to the highest bidder</span></a></li>
+                                        <li class="subnav-item last"><a href="/us/sell-domains/promotion-options/"><span class="icon"><svg class="s-nav-promotion extend"><use xlink:href="/images/icons/nav-icons.svg#s-nav-promotion"></use></svg></span><span class="label">Promotion Options</span><span class="desc">SedoMLS &amp; Showcases: Sell faster</span></a></li>
+                                        <li class="header-infobox">
+                                            <span class="type">Know-How</span>
+                                            <span class="headline">Why get a better domain name?</span>
+                                            <span class="text">See what other companies and individuals gained by getting the perfect domain name!<a href="/us/about-us/case-studies/">Read more</a></span>
+                                        </li>
+                                        <li class="tld-infobox">
+                                            <span class="tld"><a href="/search/?cc=com&amp;cHash=30dfa93a15eedf052f7a624b34583d5b&amp;language=us">.com</a></span>
+                                            <span class="tld-info">Featured TLD of the month</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="mainnav-item">
+                                <a href="/us/park-domains/">Park Domains</a><div class="subnav-wrapper">
+                                    <ul class="subnav">
+                                        <li class="subnav-item last"><a href="/us/park-domains/parking-domains/"><span class="icon"><svg class="s-nav-parking-sign"><use xlink:href="/images/icons/nav-icons.svg#s-nav-parking-sign"></use></svg></span><span class="label">Parking Domains</span><span class="desc">Earn money with each click</span></a></li>
+                                        <li class="header-infobox">
+                                            <span class="type">Know-How</span>
+                                            <span class="headline">Why get a better domain name?</span>
+                                            <span class="text">See what other companies and individuals gained by getting the perfect domain name!<a href="/us/about-us/case-studies/">Read more</a></span>
+                                        </li>
+                                        <li class="tld-infobox">
+                                            <span class="tld"><a href="/search/?cc=com&amp;cHash=30dfa93a15eedf052f7a624b34583d5b&amp;language=us">.com</a></span>
+                                            <span class="tld-info">Featured TLD of the month</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="mainnav-item">
+                                <a href="/us/services/">Our Services</a><div class="subnav-wrapper">
+                                    <ul class="subnav">
+                                        <li class="subnav-item first"><a href="/us/services/service-overview/"><span class="icon"><svg class="s-nav-service extend"><use xlink:href="/images/icons/nav-icons.svg#s-nav-service"></use></svg></span><span class="label">Service Overview</span><span class="desc">All our services at a glance</span></a></li>
+                                        <li class="subnav-item"><a href="/us/services/domain-appraisal/"><span class="icon"><svg class="s-nav-evaluation"><use xlink:href="/images/icons/nav-icons.svg#s-nav-evaluation"></use></svg></span><span class="label">Domain Appraisals</span><span class="desc">Find out your domain's real value</span></a></li>
+                                        <li class="subnav-item"><a href="/us/services/broker-service/"><span class="icon"><svg class="s-nav-broker"><use xlink:href="/images/icons/nav-icons.svg#s-nav-broker"></use></svg></span><span class="label">Broker Service</span><span class="desc">Let our brokers seal the deal for you</span></a></li>
+                                        <li class="subnav-item"><a href="/us/services/domain-transfer-service/"><span class="icon"><svg class="s-nav-transfer"><use xlink:href="/images/icons/nav-icons.svg#s-nav-transfer"></use></svg></span><span class="label">Domain Transfer</span><span class="desc">Transfer domains safe and sound</span></a></li>
+                                        <li class="subnav-item last"><a href="/us/services/sedos-partner-program/"><span class="icon"><svg class="s-nav-connections"><use xlink:href="/images/icons/nav-icons.svg#s-nav-connections"></use></svg></span><span class="label">Partner Program</span><span class="desc">Join our affiliate network</span></a></li>
+                                        <li class="header-infobox">
+                                            <span class="type">Know-How</span>
+                                            <span class="headline">Why get a better domain name?</span>
+                                            <span class="text">See what other companies and individuals gained by getting the perfect domain name!<a href="/us/about-us/case-studies/">Read more</a></span>
+                                        </li>
+                                        <li class="tld-infobox">
+                                            <span class="tld"><a href="/search/?cc=com&amp;cHash=30dfa93a15eedf052f7a624b34583d5b&amp;language=us">.com</a></span>
+                                            <span class="tld-info">Featured TLD of the month</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                        <ul class="secondnav">
+                            <li class="secondnav-item">
+                                <a href="/us/know-how-support/">Know-How &amp; Support</a><div class="subnav-wrapper">
+                                    <ul class="subnav">
+                                        <li class="subnav-item first"><a href="/us/know-how-support/customer-support/"><span class="icon"><svg class="s-nav-support"><use xlink:href="/images/icons/nav-icons.svg#s-nav-support"></use></svg></span><span class="label">Customer Support</span><span class="desc">FAQ &amp; contact support</span></a></li>
+                                        <li class="subnav-item last"><a href="/us/know-how-support/domain-law/"><span class="icon"><svg class="s-nav-law extend"><use xlink:href="/images/icons/nav-icons.svg#s-nav-law"></use></svg></span><span class="label">Domain Law</span><span class="desc">Legal Resources</span></a></li>
+                                        <li class="header-infobox">
+                                            <span class="type">Know-How</span>
+                                            <span class="headline">Why get a better domain name?</span>
+                                            <span class="text">See what other companies and individuals gained by getting the perfect domain name!<a href="/us/about-us/case-studies/">Read more</a></span>
+                                        </li>
+                                        <li class="tld-infobox">
+                                            <span class="tld"><a href="/search/?cc=com&amp;cHash=30dfa93a15eedf052f7a624b34583d5b&amp;language=us">.com</a></span>
+                                            <span class="tld-info">Featured TLD of the month</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="secondnav-item">
+                                <a href="/us/about-us/">About Sedo</a><div class="subnav-wrapper">
+                                    <ul class="subnav">
+                                        <li class="subnav-item first"><a href="/us/about-us/sedo-the-company/"><span class="icon"><svg class="s-nav-company"><use xlink:href="/images/icons/nav-icons.svg#s-nav-company"></use></svg></span><span class="label">Sedo the company</span><span class="desc">Who we are, what we stand for</span></a></li>
+                                        <li class="subnav-item"><a href="/us/about-us/news-press/"><span class="icon"><svg class="s-nav-newspaper"><use xlink:href="/images/icons/nav-icons.svg#s-nav-newspaper"></use></svg></span><span class="label">News &amp; Press</span><span class="desc">Read our News and Press Releases</span></a></li>
+                                        <li class="subnav-item"><a href="/us/about-us/events/"><span class="icon"><svg class="s-nav-calender"><use xlink:href="/images/icons/nav-icons.svg#s-nav-calender"></use></svg></span><span class="label">Events</span><span class="desc">Meet us at a conference near you</span></a></li>
+                                        <li class="subnav-item"><a href="/us/about-us/case-studies/"><span class="icon"><svg class="s-nav-case-studie"><use xlink:href="/images/icons/nav-icons.svg#s-nav-case-studie"></use></svg></span><span class="label">Case Studies</span><span class="desc">Our customers with their domain success stories</span></a></li>
+                                        <li class="subnav-item last"><a href="/us/about-us/careers/"><span class="icon"><svg class="s-nav-careers"><use xlink:href="/images/icons/nav-icons.svg#s-nav-careers"></use></svg></span><span class="label">Careers</span><span class="desc">Apply now</span></a></li>
+                                        <li class="header-infobox">
+                                            <span class="type">Know-How</span>
+                                            <span class="headline">Why get a better domain name?</span>
+                                            <span class="text">See what other companies and individuals gained by getting the perfect domain name!<a href="/us/about-us/case-studies/">Read more</a></span>
+                                        </li>
+                                        <li class="tld-infobox">
+                                            <span class="tld"><a href="/search/?cc=com&amp;cHash=30dfa93a15eedf052f7a624b34583d5b&amp;language=us">.com</a></span>
+                                            <span class="tld-info">Featured TLD of the month</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </header>
+        </section>
+
+
+        <main role="main" id="content-main-wrapper" class="content-wrapper-full">
+            <div class="t3-content-fullwidth">
+                @RenderBody()
+            </div>
+        </main>
+
+
+        <footer id="footer-main-wrapper">
+            <div id="footer-top-wrapper">
+                <div id="footer-top">
+                    <div id="footer-top-main">
+                        <nav id="footer-nav">
+                            <ul class="main-links"><li><a href="/us/what-we-offer/">What we offer</a><ul class="sub-links"><li><a href="/us/what-we-offer/what-sedo-offers/">What Sedo offers</a></li><li><a href="/us/what-we-offer/registry-overview/">Registry Services</a></li><li><a href="/us/what-we-offer/registrar-services/">Registrar Services</a></li><li><a href="/us/what-we-offer/price-list/">Price List</a></li></ul></li><li><a href="/us/buy-domains/">Buy Domains</a><ul class="sub-links"><li><a href="/us/buy-domains/how-it-works/">How it works</a></li><li><a href="/search/?language=us">Domain Search</a></li><li><a href="/us/buy-domains/domain-acquisition/">Domain Acquisition</a></li><li><a href="/us/buy-domains/auction-calendar/">Auction Calendar</a></li><li><a href="/us/buy-domains/market-trends/">Market Trends</a></li><li><a href="/us/buy-domains/exclusive-broker-domains/">Exclusive Broker Domains</a></li><li><a href="/us/buy-domains/expiring-domains/">Expiring Domains</a></li></ul></li><li><a href="/us/sell-domains/">Sell Domains</a><ul class="sub-links"><li><a href="/us/sell-domains/how-it-works/">How it works</a></li><li><a href="/us/sell-domains/domain-trade/">Domain Trade</a></li><li><a href="/us/sell-domains/domain-auction/">Domain Auction</a></li><li><a href="/us/sell-domains/promotion-options/">Promotion Options</a></li></ul></li><li><a href="/us/park-domains/">Park Domains</a><ul class="sub-links"><li><a href="/us/park-domains/parking-domains/">Parking Domains</a></li></ul></li><li><a href="/us/services/">Our Services</a><ul class="sub-links"><li><a href="/us/services/service-overview/">Service Overview</a></li><li><a href="/us/services/domain-appraisal/">Domain Appraisals</a></li><li><a href="/us/services/broker-service/">Broker Service</a></li><li><a href="/us/services/domain-transfer-service/">Domain Transfer</a></li><li><a href="/us/services/sedos-partner-program/">Partner Program</a></li><li><a href="/us/services/launch-calendar/">Launch calendar</a></li></ul></li><li class="is-visible-mobile"><a href="/us/know-how-support/">Know-How &amp; Support</a><ul class="sub-links"><li><a href="/us/know-how-support/customer-support/">Customer Support</a></li><li><a href="/us/know-how-support/domain-law/">Domain Law</a></li></ul></li><li><a href="/us/about-us/">About Sedo</a><ul class="sub-links"><li><a href="/us/about-us/sedo-the-company/">Sedo the company</a></li><li><a href="/us/about-us/news-press/">News &amp; Press</a></li><li><a href="/us/about-us/events/">Events</a></li><li><a href="/us/about-us/case-studies/">Case Studies</a></li><li><a href="/us/about-us/careers/">Careers</a></li></ul></li></ul>
+                        </nav>
+                        <nav id="footer-nav-help">
+                            <header>Know-How &amp; Support</header><ul><li>FAQ &amp; contact support<br><a href="/us/know-how-support/">Customer Support</a></li><li>Legal Resources<br><a href="/us/know-how-support/domain-law/">Domain Law</a></li></ul>
+                        </nav>
+                    </div>
+
+                    <div id="footer-top-meta">
+
+                        <div id="footer-newsletter-signup">
+
+                            <!-- NEWSLETTERSINGNUP -->
+                            <div id="footer-newsletter-signup-wrapper" class="">
+                                <h3><a class="newsletter-link" href="#">Subscribe to newsletter</a></h3>
+
+                                <div class="signup-form">
+                                    <ul></ul>
+                                    <form id="form-newsletter-registration">
+                                        <div class="checkbox-wrapper required" id="footer-newsletter-signup-checkbox-wrapper">
+                                            <input class="customcheckbox" type="checkbox" id="footer-newsletter-signup-checkbox" name="newsletter-signup" value="">
+                                            <label for="footer-newsletter-signup-checkbox">Yes, I would like to receive regular e-mail updates on Sedo product news, discounts, promotions and domain news. I can unsubscribe at any time using the unsubscribe link in the respective newsletter.</label>
+                                        </div>
+
+                                        <div class="std-input full required" id="footer-newsletter-email-wrapper">
+                                            <label for="footer-newsletter-email">Email</label>
+                                            <div class="input-group">
+                                                <input type="email" id="footer-newsletter-email" placeholder="Your email address">
+                                                <a class="btn-cta blue" id="footer-newsletter-register">Subscribe</a>
+                                            </div>
+
+                                            <span class="validator" data-tooltip="Bitte geben Sie eine E-Mail Adresse an.">
+                                                <svg class="s-font-check">
+                                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-font-check"></use>
+                                                </svg>
+                                                <svg class="s-font-icon-help">
+                                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-font-icon-help"></use>
+                                                </svg>
+                                            </span>
+                                        </div>
+                                    </form>
+
+                                    <div id="signup-success" class="u-hidden">
+                                        <p></p>
+                                    </div>
+                                </div>
+
+                                <ul class="signup-trust-icons partner-logos">
+                                    <li><a class="logo-paypal" href="https://www.paypal.com/us/selfhelp/home" target="_blank"></a></li>
+                                    <li><a class="logo-unitedInternet" href="https://www.united-internet.de/en.html" target="_blank"></a></li>
+                                    <li><a class="logo-ipmc" href="http://www.ipmanagerinc.com/" target="_blank"></a></li>
+
+                                    <li class="logo-bbb">
+                                        <bbbseal class="bbbseal bbb_1_50_96"><a href="https://www.bbb.org/us/ma/cambridge/profile/internet-service/sedo-0021-97970#sealclick" class="" target="_blank" rel="nofollow"><img src="https://seal-boston.bbb.org/seals/blue-seal-96-50-bbb-97970.png" style="border: 0;" alt="Sedo Business Review"></a></bbbseal>
+                                        <script type="text/javascript">
+                                            (function () {
+                                                var bbb = document.createElement("script");
+                                                bbb.type = "text/javascript";
+                                                bbb.async = true;
+                                                bbb.src = "https://seal-boston.bbb.org/v3/seals/blue-seal-96-50-bbb-97970.js";
+                                                var s = document.getElementsByTagName("script")[0];
+                                                s.parentNode.insertBefore(bbb, s);
+                                            })();
+                                        </script>
+                                    </li>
+
+                                    <li><a class="logo-ica" href="https://www.internetcommerce.org/" target="_blank"></a></li>
+                                </ul>
+
+                            </div>
+
+                        </div>
+
+                        <div id="footer-logos">
+                            <!-- LOGOS -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="footer-bottom-wrapper">
+                <div id="footer-bottom" class="u-clearfix">
+                    <div class="logo">
+                        <a href="/us/">&nbsp;</a>
+                    </div>
+
+                    <div id="copy">
+                        <p>© 1999 - 2020 Sedo.com, LLC</p>
+                    </div>
+
+                    <nav id="footer-nav-meta">
+                        <ul><li><a href="/us/about-us/imprint/" data-link-action="">Company Info</a></li><li><a href="/us/about-us/policies/protecting-your-privacy/" data-link-action="">Protecting your Privacy</a></li><li><a data-link-action="openCookieLayer">Cookie Settings</a></li><li><a href="/us/about-us/policies/" data-link-action="">Policies</a></li></ul>
+                    </nav>
+
+                    <div id="footer-social">
+                        <ul>
+                            <li><span>Find us on</span></li>
+                            <li>
+                                <a href="https://twitter.com/sedo" target="_blank" class="twitter">
+                                    <svg class="s-font">
+                                        <use xlink:href="#s-font-twitter"></use>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.facebook.com/sedo" target="_blank" class="facebook">
+                                    <svg class="s-font">
+                                        <use xlink:href="#s-font-facebook"></use>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.instagram.com/sedodomains/" target="_blank" class="instagram">
+                                    <svg class="s-font">
+                                        <use xlink:href="#s-font-instagram"></use>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.youtube.com/user/SedoLLC" target="_blank" class="youtube">
+                                    <svg class="s-font">
+                                        <use xlink:href="#s-font-youtube-play"></use>
+                                    </svg>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div id="footer-controls">
+                <nav id="langswitch">
+                    <ul><li class="act"><span class="flag-icon flag-icon-us"></span>English (US)</li><li><a href="/uk/"><span class="flag-icon flag-icon-gb"></span>English (UK)</a></li><li><a href="/de/"><span class="flag-icon flag-icon-de"></span>Deutsch</a></li><li><a href="/es/"><span class="flag-icon flag-icon-es"></span>Español</a></li><li><a href="/fr/"><span class="flag-icon flag-icon-fr"></span>Français</a></li><li><a href="/cn/"><span class="flag-icon flag-icon-cn"></span>中文（简体)</a></li><li><a href="/br/"><span class="flag-icon flag-icon-br"></span>Português</a></li><li><a href="/it/"><span class="flag-icon flag-icon-it"></span>Italiano</a></li><li><a href="/nl/"><span class="flag-icon flag-icon-nl"></span>Nederlands</a></li><li><a href="/kr/세도-서비스/"><span class="flag-icon flag-icon-kr"></span>한국어 - Korean</a></li><li><a href="/pl/co-oferujemy/"><span class="flag-icon flag-icon-pl"></span>Polski</a></li><li><a href="/ru/chto-predlagaet-sedo/"><span class="flag-icon flag-icon-ru"></span>Pусский</a></li></ul>
+                </nav>
+                <div id="back-to-top">
+                    <!-- BACK-TO-TOP -->
+                </div>
+            </div>
+        </footer>
+
+
+    </div>
+
+    <environment include="Development">
+        <script src="~/lib/jquery/dist/jquery.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"
+                asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
+                asp-fallback-test="window.jQuery"
+                crossorigin="anonymous"
+                integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=">
+        </script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"
+                asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"
+                asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal"
+                crossorigin="anonymous"
+                integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o">
+        </script>
+    </environment>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
