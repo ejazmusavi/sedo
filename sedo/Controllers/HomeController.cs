@@ -15,6 +15,27 @@ namespace sedo.Controllers
             return View();
         }
 
+        [Route("{culture}/what-we-offer/what-sedo-offers/")]
+        public IActionResult Offer()
+        {
+            return View();
+        }
+        [Route("{culture}/what-we-offer/registry-overview/")]
+        public IActionResult Registry()
+        {
+            return View();
+        }
+        [Route("{culture}/what-we-offer/registrar-services/")]
+        public IActionResult Registrar()
+        {
+            return View();
+        }
+        [Route("{culture}/what-we-offer/price-list/")]
+        public IActionResult PriceList()
+        {
+            return View();
+        }
+
         public IActionResult Privacy()
         {
             return View();
