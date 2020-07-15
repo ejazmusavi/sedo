@@ -10,6 +10,7 @@ namespace sedo.Controllers
 {
     public class HomeController : Controller
     {
+        [Route("{culture}")]
         public IActionResult Index()
         {
             return View();
@@ -20,6 +21,7 @@ namespace sedo.Controllers
         {
             return View();
         }
+
         [Route("{culture}/what-we-offer/registry-overview/")]
         public IActionResult Registry()
         {
@@ -35,6 +37,186 @@ namespace sedo.Controllers
         {
             return View();
         }
+
+        [Route("{culture}/buy-domains/how-it-works/")]
+        public IActionResult Working()
+        {
+            return View();
+        }
+        [Route("{culture}/buy-domains/domain-search/")]
+        public IActionResult Search()
+        {
+            return View();
+        }
+        [Route("{culture}/buy-domains/domain-acquisition/")]
+        public IActionResult acquisition()
+        {
+            return View();
+        }
+        [Route("{culture}/buy-domains/auction-calendar/")]
+        public IActionResult AuctionCalendar()
+        {
+            return View();
+        }
+      [Route("{culture}/buy-domains/market-trends/")]
+        public IActionResult MarketTrends()
+        {
+            return View();
+        }
+        [Route("{culture}/sell-domains/how-it-works/")]
+        public IActionResult WorkingDomain ()
+        {
+            return View();
+        }
+        [Route("{culture}/sell-domains/domain-trade/")]
+        public IActionResult Trade()
+        {
+            return View();
+        }
+        [Route("{culture}/sell-domains/domain-Auction/")]
+        public IActionResult DomainAuction()
+        {
+            return View();
+        }
+        [Route("{culture}/sell-domains/promotion-options/")]
+        public IActionResult Promotion()
+        {
+            return View();
+        }
+        [Route("{culture}/park-domains/parking-domains/")]
+        public IActionResult DomainParking()
+        {
+            return View();
+        }
+        [Route("{culture}/services/service-overview/")]
+        public IActionResult Services()
+        {
+            return View();
+        }
+        [Route("{culture}/services/domain-appraisal/")]
+        public IActionResult Appraisals()
+        {
+            return View();
+        }
+        [Route("{culture}/services/broker-service/")]
+        public IActionResult BrokerService()
+        {
+            return View();
+        }
+        [Route("{culture}/services/domain-transfer-service/")]
+        public IActionResult Transferring()
+        {
+            return View();
+        }
+        [Route("{culture}/services/sedos-partner-program/")]
+        public IActionResult PartnerProgram()
+        {
+            return View();
+        }
+       
+        
+        [Route("{culture}/know-how-support/customer-support/")]
+        public IActionResult Support()
+        {
+            return View();
+        }
+        [Route("{culture}/know-how-support/domain-law/")]
+        public IActionResult Law()
+        {
+            return View();
+        }
+        [Route("{culture}/about-us/case-studies/")]
+        public IActionResult Read()
+        {
+            return View();
+        }
+        [Route("{culture}/search/")]
+        public IActionResult Com()
+        {
+            return View();
+        }
+        [Route("{culture}/about-us/sedo-the-company/")]
+        public IActionResult SedoCompany()
+        {
+            return View();
+        }
+        [Route("{culture}/about-us/news-press/")]
+        public IActionResult News()
+        {
+            return View();
+        }
+        [Route("{culture}/about-us/events/")]
+        public IActionResult Events()
+        {
+            return View();
+        }
+        [Route("{culture}/about-sedo/case-studies/")]
+        public IActionResult CaseStudies()
+        {
+            return View();
+        }
+        [Route("{culture}/about-us/careers/")]
+        public IActionResult Careers()
+        {
+            return View();
+        }
+        [Route("{culture}/auth/")]
+        public IActionResult Login()
+        {
+            return View();
+        }
+        [Route("{culture}/member/register.php/")]
+        public IActionResult Register()
+        {
+            return View();
+        }
+        [Route("{culture}/about-us/imprint/")]
+        public IActionResult CompanyInfo()
+        {
+            return View();
+        }
+        [Route("{culture}/about-us/policies/protecting-your-privacy/")]
+        public IActionResult ProtectingPrivacy()
+        {
+            return View();
+        }
+        [Route("{culture}/about-us/")]
+        public IActionResult CookieSettings()
+        {
+            return View();
+        }
+        [Route("{culture}/about-us/policies/")]
+        public IActionResult Policies()
+        {
+            return View();
+        }
+        [Route("{culture}/brokerage/acquisition/")]
+        public IActionResult OurServices()
+        {
+            return View();
+        }
+        //[Route("{culture}/sedo/")]
+        //public IActionResult Twitter()
+        //{
+        //    return View();
+        //}
+        //[Route("{culture}/about-us/")]
+        //public IActionResult Facebook()
+        //{
+        //    return View();
+        //}
+        //[Route("{culture}/sedodomains/")]
+        //public IActionResult Insta()
+        //{
+        //    return View();
+        //}
+        //[Route("{culture}/user/SedoLLC/")]
+        //public IActionResult Youtube()
+        //{
+        //    return View();
+        //}
+
+
 
         public IActionResult Privacy()
         {

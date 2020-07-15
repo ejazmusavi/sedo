@@ -1,0 +1,856 @@
+﻿<main role="main" id="content-main-wrapper" class="content-wrapper-full transit-wrapper" data-dynamic="true">
+    <!-- typo3PageId: 105 -->
+    <div id="col3">
+        <div class="precontent">
+            <h1>My Domains</h1>
+            <p>Update sales settings, negotiate offers and add domains to your account</p>
+        </div>
+        <div class="keyvisual">
+        </div>
+        <div class="clear"></div>
+        <script type="text/javascript">
+		var upllink 			= "&language=us";
+		var pllink 				= "?language=us";
+		var language 			= "us";
+		var memberId			= 3670507;
+		var limit				= 25;
+		var delayedFilter		= null;
+		var delayedFilterPage	= null;
+		var delayedFilterTotal	= null;
+		var MLSConfirmMessage	= false;
+		var	disabledFields		= {"1":["price"],"2":["price","price_min","currency_id","price_type","sale_state","promotion_level_id"],"3":["price","price_min","currency_id","price_type","sale_state","promotion_level_id"],"4":["price","price_min","currency_id","price_type","sale_state","language_id","cat1","cat2","cat3","promotion_level_id","registrar"],"6":["domain_name"],"5":["price_type","sale_state"],"7":["domain_name"]};
+		var optMLSRegistrar		= "SELLER SIDE SUPPORT";
+		var optRegistrar		= "ALL REGISTRARS";
+		var suggestionNewText	= "Appraisal pending";
+		var noDomainSelected	= "Please select at least one domain first!";
+		var noPortfolioSelected	= "-]ERROR_NO_PORTFOLIO_SELECTED[-";
+		var noOptionSelected	= "Please first select an option to apply!";
+		var confirmDeleteSingle	= "Are you sure you want to remove this domain from your Sedo account?";
+		var confirmDeleteAll	= "Are you sure you want to remove the selected #NUMBER# domains from your Sedo account?";
+		var forsaleFalse		= "no";
+		var	successBulkMsg		= "Success bulk update!";
+		var	customizeSelect1	= "# of";
+		var	customizeSelect2	= "possible fields checked";
+		var	confirmMLSTerms		= "Please confirm your acceptance of the Terms and Conditions.";
+		var successSuggestion	= "Your Price Suggestion is now being calculated.";
+		var suggestionBulkInfo	= "Press the &quot;Save&quot; button below to request a free Price Suggestion";
+		var portfolioAll		= "Select all domains in your portfolio";
+		var priceNotSet			= "Not set";
+		var valueNotSet			= "Not set";
+		var optionOther			= "Other";
+		var	enterPaymentDetails = 'Payment Details required! The SedoMLS sales process requires your most up to date payment details to be on file with Sedo so that an automated payment can be sent instantly to your account when your domain is sold. <br /> <a href="/member/bankdata.php4?language=us" class="internalLink">Update payment details now</a>';
+		var	disabledFieldInfo	= new Array( '',
+											"This option cannot be edited as the domain is not listed for sale. To list the domain for sale please update the &quot;For Sale&quot; option within the Sales Setting View.",
+											"This option cannot be edited as the domain may not be listed for sale.",
+											"This option cannot be edited as the domain is in auction.",
+											"This option cannot be edited as the domain is in transfer.",
+											"This option cannot be edited while there are open offers for the domain. Please first close all negotiations. #LINK_OPEN#View open offers#LINK_CLOSE#.",
+											"-]DISABLED_FIELD_REASON_DELETED[-" );
+		var	disabledLinkInfo	= new Array( '',
+											"-]DISABLED_LINK_REASON_NOT_FORSALE[-",
+											"-]DISABLED_LINK_REASON_SALE_LOCK[-",
+											"-]DISABLED_LINK_REASON_AUCTION[-",
+											"-]DISABLED_LINK_REASON_MLS_LOCK[-",
+											"-]DISABLED_LINK_REASON_OPEN_BIDS[-",
+											"The Details Page is not available for deleted domains.",
+											"The Details Page is not available for domains not added to your account" );
+		var buttonShow			= "Show";
+		var buttonHide			= "Hide";
+		var	errorServiceCall	= "error_domainmanagement_service_call";
+		var actionLimits		= {"shop":10,"premium_auction":10,"topdomain":10};
+		var queueNumberStatus	= "Remaining Updates:";
+		var max_chars_mls_status= 41;
+		var orderBy;
+		var dir;
+		var resultSize;
+		var resultList;
+		var selected;
+		var urlOrderby;
+		var urlComplete;
+		var urlSuggestionFilter;
+		var confirmMLS;
+		var bankdata;
+		var mlsDomainFilter;
+		var suggestionNew;
+		var remainingSuggestions;
+		var errorLimitSuggestions;
+		var portfolioFiltered;
+		var serviceCall			= false;
+		var domainIdArray 		= [];
+		var filterArray 		= [];
+		var disabledDomains		= [];
+		var mlsDomainIdArray	= [];
+		var sid 				= "";
+        </script>
+
+
+        <script type="text/javascript">
+	<!--
+			// Add class newWhite for new German homepage
+			$( function() {
+				if( $( document ).getUrlParam( 'language' ) && $( document ).getUrlParam( 'language' ) == 'd' ) {
+					$( 'body' ).addClass( 'newWhite' );
+				}
+			});
+
+		urlOrderby 				= "/member/dnmanagement.php4?language=us&view=DomainManagementStandardOverview&orderby=";
+		urlComplete				= "/member/dnmanagement.php4?language=us&view=DomainManagementStandardOverview&orderby=&dir=";
+		urlSuggestionFilter 	= "/member/dnmanagement.php4?language=us&view=DomainManagementStandardOverview&orderby=&dir=&filterField=pricesuggestion_status&filterValue=";
+		orderBy					= "";
+		dir						= "";
+		resultSize				= 0;
+		page					= 0;
+		pageSize				= 0;
+		serviceCall				= false;
+		domainIdArray 			= [];
+		mlsDomainIdArray		= [];
+		filterArray				= [];
+		disabledDomains			= [];
+		confirmMLS				= false;
+		bankdata				= false;
+		fieldList				= ["domain_name","price","price_type","price_min","currency_id","promotion_level_id","views","revenue"];
+		mlsDomainFilter			= "";
+		suggestionNew			= false;
+		remainingSuggestions	= 50;
+		errorLimitSuggestions 	= "Your request cannot be processed because the number domains you have selected exceeds your daily limit. You have 50 price suggestions remaining today. Please deselect some domains and resubmit your request.";
+		portfolioFiltered		= "Apply settings to filtered group (0 domains)";
+		MLSActOriginOptions		= {
+			action:		1,
+			dialog:		2
+		};
+
+					errorMsgGauss	= "";
+
+	//-->
+        </script>
+
+
+        <script type="text/javascript" src="https://cdn.sedo.com/script/domainmanagement/domainmanagement.js?v=20190906"></script>
+
+
+
+
+        <div class="thirdnavi thirdnavi100">
+            <ul>
+                <li class="selected"><a href="/member/dnmanagement.php4?language=us">Domain Management</a></li>
+                <li><a href="/member/sell/index.php?language=us">Offers Received</a></li>
+                <li><a href="/member/domainsignup/?language=us">Add Domains</a></li>
+                <li><a href="/member/ownership_verification.php?language=us">Domain Ownership Verification</a></li>
+            </ul>
+        </div>
+        <div id="dnm_body">
+
+
+
+
+
+
+
+
+
+
+
+            <div class="content">
+
+                <div class="contentbox" id="dnm_body_layer">
+
+
+                    <div class="topWhiteNavigation">
+
+                        <strong>Change your view:</strong>&nbsp;&nbsp;
+                        <select name="view" id="select_view">
+                            <option value="DomainManagementStandardOverview" id="select_view_standard" selected="">Standard Overview</option>
+                            <option value="DomainManagementSalesSettings" id="select_view_sales">Sales Settings</option>
+                            <option value="DomainManagementCategorySettings" id="select_view_category">Category Settings</option>
+                            <option value="DomainManagementParkingSettings" id="select_view_parking_opt">Parking Optimization</option>
+                            <option value="DomainManagementParkingStatistics" id="select_view_parking_stat">Parking Statistics</option>
+                            <option value="DomainManagementPersonalOverview" id="select_view_custom">Custom Overview</option>
+                            <option value="DomainManagementDeletedDomains" id="select_view_deleted">Deleted Domains</option>
+                            <option value="DomainManagementMLSPromotionStatus" id="select_view_premium">SedoMLS Premium Promotion</option>
+                        </select>
+                        &nbsp;<a href="/member/dnmanagement.php4?language=us&amp;view=DomainManagementPersonalOverview" id="open_customization">Customize your view</a>
+
+                        <span class="dmnmngHelp">
+
+                            <a href="/faq/faq.php?language=us&amp;faqid=3105" onclick="javascript:return showpopup(this.href,900,650)">Help</a>
+                            <a href="/faq/faq.php?language=us&amp;faqid=3105" onclick="javascript:return showpopup(this.href,900,650)"><span class="icon dm help" title="Help"></span></a>
+                        </span>
+
+                        <span id="portfolioSearch">
+                            <ul class="dropdown dropdownSelect layer_filter_option_container" style="top:2px;">
+                                <li>
+                                    <input type="readonly" class="layer_filter_option_text navitext_100" value="">
+                                    <input type="button" class="buttonResultDown bubble_button buttonSelect">
+                                    <ul class="sub_menu" style="visibility: hidden;">
+                                        <div class="actionLayerInput">
+                                            <div class="actionLayerMiddle">
+                                                <div class="layer_filter_domain_option_list">
+                                                    <li><a href="#" class="layer_filter_domain_option" id="-1">Filter by Portfolio</a></li>
+                                                    <li><a href="#" class="layer_filter_domain_option" id="-2">Filter by Group</a></li>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <a class="buttonResult submit_filter_domain" href="#">
+                                <span>Search</span>
+                            </a>
+                        </span>
+                    </div>
+
+                    <form action="/member/dnmanagement.php4?language=us&amp;view=DomainManagementStandardOverview&amp;orderby=&amp;dir=" id="dmform" name="dmform" method="POST">
+                        <input type="hidden" name="csrf_token" value="N/CFNwbLSCS0QGBJ90rH+usD9ldfNhsyNcTOcYX6iXvgdVwQSkSb0Znqio1kiZYy">
+
+                        <div id="paidServicesTeaser">
+                            <span class="teaserText">Your feedback is desired!</span>
+                            <a class="teaserButton" href="https://sedoit.typeform.com/to/VxGlsd?system=https://sedo.com/member/dnmanagement.php4">
+                                Answer survey
+                            </a>
+                        </div>
+
+                        <div id="div_domain_info" class="m09 whitebox">
+                            <span class="right">
+                                <a href="#" id="domain_info_close">
+                                    <img src="https://cdn.sedo.com/fileadmin/images/03_general/closeBubble.gif" class="domainInfoClose">
+                                </a>
+                            </span>
+                            <p style="text-align:left;">
+                                <a href="#" id="recently_deleted_link">1 domain</a> was removed from your account in the last 7 days.
+                            </p>
+                        </div>
+                        <div id="div_reapply_mls" class="m09 whitebox" style="display:none;">
+                            <div class="messageBoxInfo">
+                                <p>
+                                    Please note that some of your changes had an impact on your promotion status. Please reapply to SedoMLS with the new registrar. <br>For the list of affected domains click <a href="#" id="reapply_mls_domains">here</a>.
+                                </p>
+                            </div>
+                        </div>
+                        <div id="loading_queue" class="m09 whitebox" style="display:none;">
+                            <div class="messageBoxloading_queue">
+                                <p><span>Your bulk update is being processed.</span> <span id="queue_number_status"></span></p>
+                            </div>
+                        </div>
+                        <div id="error" style="display:none;">
+                            <div class="messageBoxError">
+                                <span class="sedoSprites exclamationmark"></span>
+                                <h1 id="errorMessage"></h1>
+                            </div>
+                        </div>
+                        <div id="errorMLS" class="m09 whitebox" style="display:none;">
+                            <div class="messageBoxError">
+                                <span class="sedoSprites exclamationmark"></span>
+                                <h1 id="errorMessageMLS"></h1>
+                            </div>
+                        </div>
+                        <div id="errorGauss" class="m09 whitebox" style="display:none;">
+                            <div class="messageBoxInfo">
+                                <h1 id="errorMessageGauss"></h1>
+                            </div>
+                        </div>
+
+                        <div id="success" class="successBox" style="display:none;">
+                            <div class="messageBoxSuccess">
+                                <span class="sedoSprites checkIcon"></span>
+                                <h1 id="successMessage"></h1>
+                            </div>
+                        </div>
+                        <div id="div_check_portfolio" style="visibility:hidden;">
+                            <div class="messageBoxInfo">
+                                <h1><span><input type="checkbox" name="check_portfolio" id="check_portfolio"></span><label for="check_portfolio"><span id="check_all_text"></span></label></h1>
+                            </div>
+                        </div>
+                        <div style="margin: 0pt auto;">
+
+                            <table class="actionBar" width="919px">
+                                <tbody>
+                                    <tr>
+                                        <td colspan="3" style="text-align:right;">
+                                            <strong>Date Range: </strong>
+                                            <select id="accounting_period" name="accounting_period">
+                                                <option label="Last 7 Days" value="19996">Last 7 Days</option>
+                                                <option label="Month to Date" value="19999" selected="selected">Month to Date</option>
+                                                <option label="Last 31 Days" value="19998">Last 31 Days</option>
+                                                <option label="Last 12 months" value="19997">Last 12 months</option>
+
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width:10px;">
+                                            <div class="arrowRightUp"></div>
+                                        </td>
+                                        <td>
+                                            <ul class="dropdown">
+                                                <li>
+                                                    <a href="#" class="buttonResultDown"><span>Set Prices</span></a>
+                                                    <ul class="sub_menu">
+                                                        <div class="actionLayer">
+                                                            <div class="actionLayerMiddle">
+                                                                <li><a class="action_shoporder" id="action_order_appraisal_premium" href="#">Order Premium Appraisal(s)</a></li>
+                                                            </div>
+                                                        </div>
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    <a class="buttonResult action_promote_mls" href="#">
+                                                        <span>Activate SedoMLS Premium</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="buttonResultDown"><span>Promote Domains</span></a>
+                                                    <ul class="sub_menu">
+                                                        <div class="actionLayer">
+                                                            <div class="actionLayerMiddle">
+                                                                <li><a class="action_premium_auction" id="premium_auction_533" href="#">GreatDomains Auction</a></li>
+                                                                <li><a class="action_promote_mls" id="action_order_active_premium" href="#">Activate SedoMLS Premium</a></li>
+                                                                <li><a class="action_order_nep" id="action_order_showcase" href="#" data-campaign-query-string="">Order a Homepage Showcase</a></li>
+                                                                <li><a class="action_order_nep" id="action_order_direct_auction" href="#" data-campaign-query-string="">Order a Direct Auction</a></li>
+                                                                <li><a class="action_order_nep" id="action_order_category_showcase" href="#" data-campaign-query-string="">Order a Category Showcase</a></li>
+                                                                <li><a class="action_apply_topdomain" id="action_order_top_domain" href="#">Apply for Top Domains listing</a></li>
+                                                            </div>
+                                                        </div>
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="buttonResult button_delete">
+                                                        <span>Delete</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </td>
+                                        <td style="text-align:right;">
+
+                                            <div class="js_delayed_navigation">
+                                                <strong>Sort by: </strong>
+                                                <select class="orderby_additional" name="orderby_additional">
+                                                    <option value="0" id="orderby_none">Select</option>
+                                                    <option value="domain_created" id="orderby_domain_created">Date entered</option>
+                                                    <option value="status" id="orderby_status">Status</option>
+                                                    <option value="is_project" id="orderby_is_project">Domain / Website</option>
+                                                    <option value="code_full" id="orderby_code_full">TLD</option>
+                                                    <option value="revenue" id="orderby_revenue">Revenue</option>
+                                                </select>
+                                                &nbsp;&nbsp;		<span class="right">
+
+
+
+
+
+
+
+
+
+
+                                                </span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table><ul>
+                            </ul><table class="tableBlue menuTco" cellspacing="0" cellpadding="0" border="0" id="resultList">
+                                <thead>
+                                    <tr>
+                                        <th class="firstStatic"><input type="checkbox" class="checkall">&nbsp;</th>
+                                        <th colspan="2" class="subTco" id="resultListHeadlineDomainName">
+                                            <div>
+                                                <p>
+                                                    <span class="left">Domain name</span>
+                                                    <span class="right editTheadCell"></span>
+                                                </p>
+                                            </div>
+                                            <li>
+                                                <div class="tcoLayer">
+                                                    <div class="p-shadow">
+                                                        <div id="options-DomainManagementStandardOverview-domain_name">
+
+                                                            <a class="sort_mode" href="#">
+                                                                <p class="first">
+                                                                    <b class="ascending"></b>
+                                                                    <span>Sort Ascending</span>
+                                                                </p>
+                                                            </a>
+                                                            <a class="sort_mode" href="#">
+                                                                <p>
+                                                                    <b class="descending"></b>
+                                                                    <span>Sort Descending</span>
+                                                                </p>
+                                                            </a>
+                                                            <p class="filter_mode_link last">
+                                                                <a href="#" class="filter_mode_link filterLink">
+                                                                    <b><input type="checkbox" name="filter_mode_domain_name" id="filter_mode_domain_name" class="filter_mode"></b>
+                                                                    <span>Filter</span>
+                                                                </a>
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </th>
+                                        <th class="subTco" id="resultListHeadlinePrice_us">
+                                            <div>
+                                                <p class="header_price">
+                                                    <span class="left">Price</span>
+                                                    <span class="right editTheadCell"></span>
+                                                </p>
+                                            </div>
+                                            <li>
+                                                <div class="tcoLayer">
+                                                    <div class="p-shadow">
+                                                        <div id="options-DomainManagementStandardOverview-price">
+
+                                                            <a class="sort_mode" href="#">
+                                                                <p class="first">
+                                                                    <b class="ascending"></b>
+                                                                    <span>Sort Ascending</span>
+                                                                </p>
+                                                            </a>
+                                                            <a class="sort_mode" href="#">
+                                                                <p>
+                                                                    <b class="descending"></b>
+                                                                    <span>Sort Descending</span>
+                                                                </p>
+                                                            </a>
+                                                            <a id="edit_mode_price" class="edit_mode" href="#">
+                                                                <p>
+                                                                    <b class="edit"></b>
+                                                                    <span>Edit Prices</span>
+                                                                </p>
+                                                            </a>
+                                                            <p class="filter_mode_link last">
+                                                                <a href="#" class="filter_mode_link filterLink">
+                                                                    <b><input type="checkbox" name="filter_mode_price" id="filter_mode_price" class="filter_mode"></b>
+                                                                    <span>Filter</span>
+                                                                </a>
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </th>
+                                        <th class="subTco" id="resultListHeadlinePriceType_us">
+                                            <div>
+                                                <p id="header_price_type">
+                                                    <span class="left">Price Option</span>
+                                                    <span class="right editTheadCell"></span>
+                                                </p>
+                                            </div>
+                                            <li>
+                                                <div class="tcoLayer">
+                                                    <div class="p-shadow">
+                                                        <div id="options-DomainManagementStandardOverview-price_type">
+
+                                                            <a class="sort_mode" href="#">
+                                                                <p class="first">
+                                                                    <b class="ascending"></b>
+                                                                    <span>Sort Ascending</span>
+                                                                </p>
+                                                            </a>
+                                                            <a class="sort_mode" href="#">
+                                                                <p>
+                                                                    <b class="descending"></b>
+                                                                    <span>Sort Descending</span>
+                                                                </p>
+                                                            </a>
+                                                            <a id="edit_mode_price_type" class="edit_mode" href="#">
+                                                                <p>
+                                                                    <b class="edit"></b>
+                                                                    <span>Edit Price Options</span>
+                                                                </p>
+                                                            </a>
+                                                            <p class="filter_mode_link last">
+                                                                <a href="#" class="filter_mode_link filterLink">
+                                                                    <b><input type="checkbox" name="filter_mode_price_type" id="filter_mode_price_type" class="filter_mode"></b>
+                                                                    <span>Filter</span>
+                                                                </a>
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </th>
+                                        <th class="subTco" id="resultListHeadlinePromotionLevel_us">
+                                            <div>
+                                                <p>
+                                                    <span class="left">Promo Level</span>
+                                                    <span class="right editTheadCell"></span>
+                                                </p>
+                                            </div>
+                                            <li>
+                                                <div class="tcoLayer">
+                                                    <div class="p-shadow">
+                                                        <div id="options-DomainManagementStandardOverview-promotion_level_id">
+
+                                                            <a class="sort_mode" href="#">
+                                                                <p class="first">
+                                                                    <b class="ascending"></b>
+                                                                    <span>Sort Ascending</span>
+                                                                </p>
+                                                            </a>
+                                                            <a class="sort_mode" href="#">
+                                                                <p>
+                                                                    <b class="descending"></b>
+                                                                    <span>Sort Descending</span>
+                                                                </p>
+                                                            </a>
+                                                            <p class="filter_mode_link last">
+                                                                <a href="#" class="filter_mode_link filterLink">
+                                                                    <b><input type="checkbox" name="filter_mode_promotion_level_id" id="filter_mode_promotion_level_id" class="filter_mode"></b>
+                                                                    <span>Filter</span>
+                                                                </a>
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </th>
+                                        <th class="subTco" id="resultListHeadlineViews_us">
+                                            <div>
+                                                <p>
+                                                    <span class="left">Uniques</span>
+                                                    <span class="right editTheadCell"></span>
+                                                </p>
+                                            </div>
+                                            <li>
+                                                <div class="tcoLayer">
+                                                    <div class="p-shadow">
+                                                        <div id="options-DomainManagementStandardOverview-views">
+
+                                                            <a class="sort_mode" href="#">
+                                                                <p class="first">
+                                                                    <b class="ascending"></b>
+                                                                    <span>Sort Ascending</span>
+                                                                </p>
+                                                            </a>
+                                                            <a class="sort_mode" href="#">
+                                                                <p>
+                                                                    <b class="descending"></b>
+                                                                    <span>Sort Descending</span>
+                                                                </p>
+                                                            </a>
+                                                            <p class="filter_mode_link last">
+                                                                <a href="#" class="filter_mode_link filterLink">
+                                                                    <b><input type="checkbox" name="filter_mode_views" id="filter_mode_views" class="filter_mode"></b>
+                                                                    <span>Filter</span>
+                                                                </a>
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </th>
+                                        <th class="subTco" id="resultListHeadlineRevenue_us">
+                                            <div>
+                                                <p>
+                                                    <span class="left">Earnings</span>
+                                                    <span class="right editTheadCell"></span>
+                                                </p>
+                                            </div>
+                                            <li>
+                                                <div class="tcoLayer">
+                                                    <div class="p-shadow">
+                                                        <div id="options-DomainManagementStandardOverview-revenue">
+
+                                                            <a class="sort_mode" href="#">
+                                                                <p class="first">
+                                                                    <b class="ascending"></b>
+                                                                    <span>Sort Ascending</span>
+                                                                </p>
+                                                            </a>
+                                                            <a class="sort_mode" href="#">
+                                                                <p>
+                                                                    <b class="descending"></b>
+                                                                    <span>Sort Descending</span>
+                                                                </p>
+                                                            </a>
+                                                            <p class="filter_mode_link last">
+                                                                <a href="#" class="filter_mode_link filterLink">
+                                                                    <b><input type="checkbox" name="filter_mode_revenue" id="filter_mode_revenue" class="filter_mode"></b>
+                                                                    <span>Filter</span>
+                                                                </a>
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </th>
+                                    </tr>
+
+                                </thead>
+                                <tbody>
+                                    <tr class="filter_toolbar toolBar" style="display: none;">
+                                        <td>&nbsp;</td>
+                                        <td colspan="2" class="field_domain_name">
+                                            <div id="filter_option_domain_name" class="filterSelector" style="visibility: hidden;">
+                                                <span>
+                                                    <ul class="dropdown dropdownSelect layer_filter_option_container" style="top:2px;">
+                                                        <li>
+                                                            <input type="readonly" class="layer_filter_option_text navitext_100" value="">
+                                                            <input type="hidden" class="layer_filter_option_value" id="filter_domain_name" value="0" name="filter[domain_name][domain_name]">
+                                                            <input type="button" class="buttonResultDown bubble_button buttonSelect">
+                                                            <ul class="sub_menu" style="visibility: hidden;">
+                                                                <div class="actionLayerInput">
+                                                                    <div class="actionLayerMiddle">
+                                                                        <div class="layer_filter_domain_option_list">
+                                                                            <li><a href="#" class="layer_filter_domain_option" id="-1">Filter by Portfolio</a></li>
+                                                                            <li><a href="#" class="layer_filter_domain_option" id="-2">Filter by Group</a></li>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </ul>
+                                                        </li>
+                                                    </ul>
+                                                    <input type="button" class="submit_filter_domain buttonOk">
+                                                </span>
+                                            </div>
+                                        </td>
+                                        <td style="text-align:right;">
+                                            <span id="filter_option_price" title="Enter a price to view exact matches or view a range by including either the greater than &quot;>&quot; or less than &quot;<&quot; symbol before the price." class="filterSelector" style="visibility: hidden;">
+                                                <input type="text" id="filter_price" name="filter[price][price]" value="" style="width:40px">
+                                                <input type="button" class="submit_filter buttonOk">
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <div id="filter_option_price_type" class="filterSelector" style="visibility: hidden;">
+                                                <span>
+                                                    <select name="filter[price_type][price_type]" size="1" id="filter_price_type" class="filter_price_type_us">
+                                                        <option label="Select" value="0">Select</option>
+                                                        <option label="Buy Now" value="fixed">Buy Now</option>
+                                                        <option label="make offer" value="bidrange">make offer</option>
+                                                    </select>
+
+                                                    <input type="button" class="submit_filter buttonOk">
+                                                </span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div id="filter_option_promotion_level_id" class="filterSelector" style="visibility: hidden;">
+                                                <span>
+                                                    <select name="filter[promotion_level_id][promotion_level_id]" size="1" id="filter_promotion_level_id">
+                                                        <option label="Select" value="0">Select</option>
+                                                        <option label="Level 1" value="1">Level 1</option>
+                                                        <option label="Level 2" value="2">Level 2</option>
+                                                        <option label="Level 3" value="3">Level 3</option>
+                                                        <option label="Level 4" value="4">Level 4</option>
+                                                    </select>
+
+                                                    <input type="button" class="submit_filter buttonOk">
+                                                </span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <span id="filter_option_views" title="Enter a number of Uniques to view exact matches or view a range by including either the greater than &quot;>&quot; or less than &quot;<&quot; symbol before the number of Uniques." class="filterSelector" style="visibility: hidden;">
+                                                <input type="text" id="filter_views" name="filter[views][views]" value="" style="width:40px">
+                                                <input type="button" class="submit_filter buttonOk">
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span id="filter_option_revenue" title="Enter a specific Earnings value to view exact matches or view a range by including either the greater than &quot;>&quot; or less than &quot;<&quot; symbol before the number of Uniques." class="filterSelector" style="visibility: hidden;">
+                                                <input type="text" id="filter_revenue" name="filter[revenue][revenue]" value="" style="width:40px">
+                                                <input type="button" class="submit_filter buttonOk">
+                                            </span>
+                                        </td>
+                                    </tr>
+                                    <tr class="edit_upper_toolbar toolBar">
+                                        <td>&nbsp;</td>
+                                        <td colspan="2">
+                                            &nbsp;
+                                        </td>
+                                        <td>
+                                            <div class="edit_option edit_option_price">
+                                                <span id="edit_option_bulk">
+                                                    <input type="checkbox" class="check_edit_all" id="check_edit_all_price">
+                                                </span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="edit_option edit_option_price_type">
+                                                <span>
+                                                    <select name="bulk_edit_price_type" size="1" id="bulk_edit_price_type" class="bulk_edit_price_type_us">
+                                                        <option label="Select" value="0">Select</option>
+                                                        <option label="Buy Now" value="8">Buy Now</option>
+                                                        <option label="make offer" value="9">make offer</option>
+                                                    </select>
+
+                                                    <input type="checkbox" class="check_edit_all" id="check_edit_all_price_type">
+                                                </span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            &nbsp;
+                                        </td>
+                                        <td>
+                                            &nbsp;
+                                        </td>
+                                        <td>
+                                            &nbsp;
+                                        </td>
+                                    </tr>
+                                    <tr class="even">
+                                        <td colspan="7"><div align="center">No results found</div></td>
+                                    </tr>
+                                    <tr class="edit_lower_toolbar toolBar">
+                                        <td>&nbsp;</td>
+                                        <td colspan="2" class="field_domain_name">&nbsp;</td>
+                                        <td>
+                                            <div class="edit_option edit_option_price">
+                                                <a class="cancel_bulk_edit" id="cancel_bulk_edit_price" href="#" title="Cancel"></a>
+                                                <a class="buttonResult submit_bulk_edit" id="submit_bulk_edit_price" href="#" title="Apply">
+
+                                                </a>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="edit_option edit_option_price_type">
+                                                <a class="cancel_bulk_edit" id="cancel_bulk_edit_price_type" href="#" title="Cancel"></a>
+                                                <a class="buttonResult submit_bulk_edit" id="submit_bulk_edit_price_type" href="#" title="Apply">
+
+                                                </a>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="edit_option edit_option_promotion_level_id">
+                                                <a class="cancel_bulk_edit" id="cancel_bulk_edit_promotion_level_id" href="#" title="Cancel"></a>
+                                                <a class="buttonResult submit_bulk_edit" id="submit_bulk_edit_promotion_level_id" href="#" title="Apply">
+
+                                                </a>
+                                            </div>
+                                        </td>
+                                        <td>&nbsp;</td>
+                                        <td>&nbsp;</td>
+                                    </tr>
+                                </tbody>
+
+                                <tfoot>
+                                    <tr>
+                                        <td class="firstStatic">
+                                            <input type="checkbox" class="checkall">&nbsp;
+                                        </td>
+                                        <td colspan="7" style="text-align: right;">
+                                            Results per page:
+                                            <select name="limit" size="1" id="limit">
+                                                <option value="25" id="limit25" selected="">25</option>
+                                                <option value="50" id="limit50">50</option>
+                                                <option value="100" id="limit100">100</option>
+                                                <option value="200" id="limit200">200</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                </tfoot>
+                            </table>			<table class="actionBarBottom" width="919px">
+                                <tbody>
+                                    <tr>
+                                        <td style="width:10px;">
+                                            <div class="arrowRightDown"></div>
+                                        </td>
+                                        <td>
+                                            <ul class="dropdown">
+                                                <li>
+                                                    <a href="#" class="buttonResultDown"><span>Set Prices</span></a>
+                                                    <ul class="sub_menu">
+                                                        <div class="actionLayer">
+                                                            <div class="actionLayerMiddle">
+                                                                <li><a class="action_shoporder" id="action_order_appraisal_premium" href="#">Order Premium Appraisal(s)</a></li>
+                                                            </div>
+                                                        </div>
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    <a class="buttonResult action_promote_mls" href="#">
+                                                        <span>Activate SedoMLS Premium</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="buttonResultDown"><span>Promote Domains</span></a>
+                                                    <ul class="sub_menu">
+                                                        <div class="actionLayer">
+                                                            <div class="actionLayerMiddle">
+                                                                <li><a class="action_premium_auction" id="premium_auction_533" href="#">GreatDomains Auction</a></li>
+                                                                <li><a class="action_promote_mls" id="action_order_active_premium" href="#">Activate SedoMLS Premium</a></li>
+                                                                <li><a class="action_order_nep" id="action_order_showcase" href="#" data-campaign-query-string="">Order a Homepage Showcase</a></li>
+                                                                <li><a class="action_order_nep" id="action_order_direct_auction" href="#" data-campaign-query-string="">Order a Direct Auction</a></li>
+                                                                <li><a class="action_order_nep" id="action_order_category_showcase" href="#" data-campaign-query-string="">Order a Category Showcase</a></li>
+                                                                <li><a class="action_apply_topdomain" id="action_order_top_domain" href="#">Apply for Top Domains listing</a></li>
+                                                            </div>
+                                                        </div>
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="buttonResult button_delete">
+                                                        <span>Delete</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </td>
+                                        <td style="text-align:right;">
+
+                                            <div class="js_delayed_navigation">
+                                                <strong>Sort by: </strong>
+                                                <select class="orderby_additional" name="orderby_additional">
+                                                    <option value="0" id="orderby_none">Select</option>
+                                                    <option value="domain_created" id="orderby_domain_created">Date entered</option>
+                                                    <option value="status" id="orderby_status">Status</option>
+                                                    <option value="is_project" id="orderby_is_project">Domain / Website</option>
+                                                    <option value="code_full" id="orderby_code_full">TLD</option>
+                                                    <option value="revenue" id="orderby_revenue">Revenue</option>
+                                                </select>
+                                                &nbsp;&nbsp;		<span class="right">
+
+
+
+
+
+
+
+
+
+
+                                                </span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                        </div>
+
+                        <div class="whitebox">
+                            <div id="informational_message" style="display:block;">
+                                <div class="messageBox100">
+                                    <h1>Set your domains at a fixed Buy Now price and all previous bidders will be notified about the new price and can purchase the domain name instantly!</h1>
+                                    <br>
+                                    <h1>Activate SedoMLS Premium today! If your registrar is not yet part of the SedoMLS Premium network, <a href="" class="registrar_email_link">please email your account manager</a> there to request that they join!</h1>
+                                </div>
+                            </div>
+                        </div>
+
+                    </form>
+
+                    <ul class="dropdown dropdownSelect layer_edit_option_container" style="visibility:hidden;">
+                        <li>
+                            <input type="readonly" class="layer_edit_option_text navitext_100" value="">
+                            <input type="hidden" class="layer_edit_option_value" value="">
+                            <input type="button" class="buttonResultDown bubble_button buttonSelect">
+
+                            <ul class="sub_menu" style="visibility: hidden;">
+                                <div class="actionLayerInput">
+                                    <div class="actionLayerMiddle">
+                                        <div class="layer_list layer_edit_option_list_bulk" style="display:none;">
+                                            <li><a href="#" class="layer_edit_option_bulk" id="-4">Use highest counter-offer</a></li>
+                                            <li><a href="#" class="layer_edit_option_bulk" id="-5">Use highest offer received</a></li>
+                                            <li><a href="#" class="layer_edit_option_bulk" id="-6">Use most recent offer</a></li>
+                                            <li><a href="#" class="layer_edit_option_bulk" id="-8">Use the appraised price</a></li>
+                                        </div>
+                                        <div class="layer_list layer_edit_option_list_single" style="display:none;">
+                                        </div>
+                                    </div>
+                                </div>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</main>

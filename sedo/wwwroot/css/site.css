@@ -12903,3 +12903,13 @@ body {
 .frame-space-after-extra-large {
     margin-bottom: 5em
 }
+
+.logo1 {
+    width:50px;
+    height:20px;
+}
+img {
+    height:40px;
+    width:50px;
+}
+/* sell-domain/how it works*/

@@ -1,0 +1,901 @@
+﻿<main role="main" id="content-main-wrapper" class="content-wrapper-full transit-wrapper" data-dynamic="true">
+    <!-- typo3PageId: 104 -->
+    <div id="col3">
+        <div class="precontent">
+            <h1>My Domains</h1>
+            <p>Update sales settings, negotiate offers and add domains to your account</p>
+        </div>
+        <div class="keyvisual">
+        </div>
+        <div class="clear"></div>
+        <script type="text/javascript">
+
+            var pllink = '?language=us';
+            var lang = 'us';
+            var bnp = '';
+
+            var showWizard = true;
+
+            var autoCatCreator = {
+                auto: 'auto',
+                member: 'member'
+            };
+
+            var errorMsg = {
+                tc: 'You must accept the Terms & Conditions below to continue.',
+                nodom: 'Please enter at least one domain.',
+                pricerTld: 'Ineligible TLD',
+                pricerGeneral: 'Not available'
+            }
+            var msg = {
+                psgTextLoading: 'Calculating price suggestion',
+                psgTextReady: 'Apply price suggestion',
+                altDvi: 'Review Domain Value Indicators'
+            }
+            var wizard = {
+                intro: 'Would you like to use our wizard?',
+                finale: 'Thanks for using the wizard!'
+            }
+            var headline = {
+                mls: 'SedoMLS Premium Activation Status',
+                dvi: 'Big Data Pricer Disclaimer and Notice',
+                finalPage: 'Your domains are currently being reviewed',
+                highValueDomain: 'Automated Price Suggestion'
+            }
+            var btnText = {
+                apply: 'Apply to all',
+                cancel: 'Cancel',
+                moveDomainToRegistrar: 'Move to this registrar'
+            }
+            var supportLink = {
+                invalidTLD: '<a href="https://sedo.com/us/know-how-support/?language=us" target="_blank" class="external_link">support center</a>'
+            }
+
+            var domainSignupTextareaDefaultText = 'Separate domains with a comma, space, or line break.\
+\n(E.g. domain.com, domain.net, domain.org)';
+
+            var domainListPrefill = '';
+
+
+        </script>
+
+        <div id="domainSignupContent">
+
+            <h1>Add Domains to sell and park</h1>
+
+            <div id="domainSignupStepsNav">
+                <span class="step01 js_domainSignupContentClick active">Step 1: Enter Domains</span>
+                <span class="step02 js_domainSignupContentClick">Step 2: Price Domains</span>
+                <span class="step03 js_domainSignupContentClick">Step 3: Activate SedoMLS Premium</span>
+            </div>
+
+            <div class="box error" id="js_domainSignupError" style="display:none;"></div>
+
+
+            <div id="js_step0" class="js_domainSignupContentElement step clear step1" style="">
+
+                <div class="column left">
+
+                    <div class="box lightBlue">
+                        <h2>Option 1: Enter up to 200 domain names</h2>
+                        <textarea id="domainSignupTextarea">Separate domains with a comma, space, or line break.
+(E.g. domain.com, domain.net, domain.org)</textarea>
+
+
+                        <textarea id="js_domainSignupTextareaHidden" style="display:none;"></textarea>
+                    </div>
+                    <div class="box lightBlue">
+                        <h2>Option 2: Add more than 200 domain names <a href="https://sedo.com/us/my-sedo/add-domains/excelsheet-import/?language=us" class="link domainUploadPage">Go to our upload page</a></h2>
+                    </div>
+
+                    <div class="box">
+                        <input class="input terms" id="acceptTerms" name="acceptTerms" type="checkbox">
+                        <label class="label terms" for="acceptTerms">
+                            I have read the <a href="https://sedo.com/us/about-us/policies/domain-marketplace-agreement/" class="external_link">Marketplace Agreement</a>, <a href="https://sedo.com/us/about-us/policies/domain-transfer-agreement/" class="external_link">Transfer Agreement</a>, <a href="https://sedo.com/us/about-us/policies/terms-of-use/" class="external_link" target="_blank">User Agreement</a> and <a href="https://sedo.com/us/about-us/policies/" class="external_link" target="_blank">Guidelines</a> and confirm that I am the rightful owner of this domain and/or website. Should I sell the domain, I understand I will pay a commission in accordance with the <a href="https://sedo.com/us/what-we-offer/price-list/" class="external_link" target="_blank">price list</a>. By setting my domain's DNS preferences to Sedo's parking servers, I also agree to Sedo's <a href="https://sedo.com/us/about-us/policies/updated-domain-parking-terms-and-conditions-sedocom/" class="external_link" target="_blank">Domain Parking Terms &amp; Conditions</a>.
+                        </label>
+                    </div>
+
+                    <div class="buttonContainer">
+                        <span class="js_domainSignupContentClickNext">
+                            <a href="#" class="btnGnXL" title="Go to Step 2">
+                                <span>Go to Step 2</span>
+                            </a>
+                        </span>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div id="js_step1" class="js_domainSignupContentElement step step2" style="display:none;">
+
+                <!--  Bubbles: Bubble -->
+                <div class="bubble" id="bubble01">
+                    <div class="bubbletop"></div>
+                    <div class="bubblebody">
+                        <div id="bubble01Tip" class="tiptoleftup">
+                            <div id="bubble01Content" class="contentBubble">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bubblebot"></div>
+                </div>
+                <!-- /Bubbles: Bubble -->
+                <h2>Set Buy Now Prices</h2>
+                <p class="subline">We recommend setting Buy Now prices, which sell faster and allow buyers to purchase domains without the hassle of negotiations.</p>
+
+                <div class="inline-block"><span class="left">Press <span class="icon bulk-edit fixed"></span> to bulk edit</span><span class="right"><a href="#" class="link" id="js_wizard" title="Start Add Domains Wizard">Start Add Domains Wizard</a></span></div>
+
+
+                <form id="js_domainlist" name="domainlistform">
+
+
+
+
+                    <table class="table domains tableBlue" cellpadding="0" cellspacing="0" id="js_domainSignupContentTableStep2">
+                        <colgroup></colgroup>
+                        <colgroup width="15%"></colgroup>
+                        <colgroup width="9%"></colgroup>
+                        <colgroup width="13%"></colgroup>
+                        <colgroup width="12%"></colgroup>
+                        <colgroup width="10%"></colgroup>
+                        <thead>
+                            <tr>
+                                <th class="domain"><div>Domain</div></th>
+                                <th class="price">
+                                    <div>
+                                        <span class="left">Price</span> <span class="icon bulk-edit right js_bulk_edit" id="js_bulk_price"></span>
+                                    </div>
+                                </th>
+                                <th class="currency">
+                                    <div>
+                                        <span class="left">$/€/£</span> <span class="icon bulk-edit right js_bulk_edit" id="js_bulk_currency"></span>
+
+                                        <div rel="currency" id="js_wizardContent0" class="domain-wizard-bubble js_wizardContent" style="display:none;">
+                                            <div class="wizard-header">
+                                                <div class="wizard-status">Add Domains Wizard (1 of 4) <span class="button close">Exit Wizard</span></div>
+                                                <div class="wizard-headline">Select a listing currency</div>
+                                            </div>
+
+                                            <div class="wizard-content">
+                                                <p class="middle">
+                                                    <strong>Listing currency:</strong>
+                                                    <select name="" class="input select currency" id="js_wizardPriceCurrencyValue">
+                                                        <option value="1">EUR</option>
+                                                        <option value="3" selected="">$US</option>
+                                                        <option value="4">GBP</option>
+                                                    </select>
+                                                    <a href="#" class="btnDGyN" id="js_wizardPriceCurrencyApply"><span>Apply</span></a>
+                                                </p>
+                                                <p>This is the currency for your domain listings. Please review the applied recommendation and then proceed to the next step.</p>
+
+                                                <p class="align-right"><a class="internal_link js_wizardContentNext" href="#">Continue</a></p>
+                                                <span class="arrow down"></span>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </th>
+                                <th class="price-option">
+                                    <div>
+                                        <span class="left">Price Option</span> <span class="icon bulk-edit right js_bulk_edit" id="js_bulk_price_option"></span>
+
+                                        <div rel="price-option" id="js_wizardContent1" class="domain-wizard-bubble js_wizardContent" style="display:none;">
+                                            <div class="wizard-header">
+                                                <div class="wizard-status">Add Domains Wizard (2 of 4) <span class="button close">Exit Wizard</span></div>
+                                                <div class="wizard-headline">Sell more with Buy Now listings</div>
+                                            </div>
+
+                                            <div class="wizard-content">
+                                                <p class="middle">
+                                                    <strong>Select a price option:</strong>
+                                                    <select name="" class="input select price-option" id="js_wizardPriceOptionValue">
+                                                        <option value="0"></option>
+                                                        <option value="1">Not for sale</option>
+                                                        <option value="2" selected="">Buy Now</option>
+                                                        <option value="3">Make Offer</option>
+                                                    </select>
+                                                    <a href="#" class="btnDGyN" id="js_wizardPriceOptionApply"><span>Apply</span></a>
+                                                </p>
+                                                <p>More potential buyers will see your domains - and have the chance to purchase them instantly - if they’re listed as <strong>Buy Now</strong>. Many of our distribution partners only display Buy Now domains to their buyers. For domains set as Make Offer, you must negotiate with the buyer in order to reach an agreement.</p>
+
+                                                <p class="align-right"><a class="internal_link js_wizardContentNext" href="#">Continue</a></p>
+                                                <span class="arrow down"></span>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </th>
+                                <th class="minprice">
+                                    <div>
+                                        <span class="left">Min. Offer</span> <span class="icon bulk-edit right js_bulk_edit" id="js_bulk_minprice"></span>
+
+                                        <div rel="minprice" id="js_wizardContent2" class="domain-wizard-bubble js_wizardContent" style="display:none;">
+                                            <div class="wizard-header">
+                                                <div class="wizard-status">Add Domains Wizard (3 of 4) <span class="button close">Exit Wizard</span></div>
+                                                <div class="wizard-headline">Set a minimum offer</div>
+                                            </div>
+
+                                            <div class="wizard-content">
+                                                <p>Set a minimum offer and it's more likely that bids will convert into sales. How? If buyers submit a bid that is below your minimum offer, your offer page will display the minimum offer, giving them a better indication of where to start negotiations. This also means you do not receive notifications about bids that fall below that minimum offer.</p>
+                                                <p class="middle">
+                                                    <strong>Use a percentage of your set price as your minimum offer:</strong>
+                                                    <select name="" class="input select minprice-option" id="js_wizardMinPriceValue">
+                                                        <option value="0.2">20%</option>
+                                                        <option value="0.3">30%</option>
+                                                        <option value="0.4">40%</option>
+                                                        <option value="0.5">50%</option>
+                                                        <option value="0.6" selected="">60%</option>
+                                                    </select>
+                                                    <a href="#" class="btnDGyN" id="js_wizardMinPriceOptionApply"><span>Apply</span></a>
+                                                </p>
+                                                <p class="align-right"><a class="internal_link js_wizardContentNext" href="#">Continue</a></p>
+                                                <span class="arrow down"></span>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </th>
+                                <th class="domain-type last">
+                                    <div>
+
+                                        <span class="left">Domain/Project</span>
+                                        <span class="right">
+                                            <span>
+                                                <a href="javascript:void(0);" onclick="showpopup('/services/offer_project_info.php?language=us',600,470)">
+                                                    <i class="sedo-ui-icon fa fa-info-circle fa-info-white"></i>
+                                                </a>
+                                                <span class="icon right bulk-edit js_bulk_edit" id="js_bulk_domain_type"></span>
+                                            </span>
+                                        </span>
+
+                                        <div rel="domain_type" id="js_wizardContent3" class="domain-wizard-bubble js_wizardContent" style="display:none;">
+                                            <div class="wizard-header">
+                                                <div class="wizard-status">Add Domains Wizard (4 of 4) <span class="button close">Exit Wizard</span></div>
+                                                <div class="wizard-headline">List a domain or project (website) for sale</div>
+                                            </div>
+
+                                            <div class="wizard-content">
+                                                <p>Update your domain listing to a domain with project (website). How? Choose “project” from the dropdown. Make sure that your domain meets all of the needed criteria to be listed for sale as a project.</p>
+                                                <p class="middle">
+                                                    <strong>Decide whether to add a domain or project:</strong>
+                                                    <select name="" class="input select domain-type" id="js_wizardDomainTypeValue">
+                                                        <option value="0"></option>
+                                                        <option value="1" selected="">Domain</option>
+                                                        <option value="2">Project</option>
+                                                    </select>
+                                                    <a href="#" class="btnDGyN" id="js_wizardDomainTypeApply"><span>Apply</span></a>
+                                                </p>
+                                                <p class="align-right"><a class="internal_link js_wizardContentNext" href="#">Continue</a></p>
+                                                <span class="arrow down"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </th>
+                            </tr>
+                            <tr class="bulkbar js_bulkbar" style="display:none;">
+                                <td class="domain"></td>
+                                <td class="price js_price">
+                                    <div>
+                                        <span class="js_bulk_choice" style="display:none;">
+                                            <input type="text" name="" class="input text price js_bulk_value" id="js_bulk_value_price">
+                                            <span class="right"><input type="checkbox" name="" id="js_checkall_price" class="input checkbox price js_checkall"></span>
+                                        </span>
+                                    </div>
+                                </td>
+                                <td class="currency js_currency">
+                                    <div>
+                                        <span class="js_bulk_choice" style="display:none;">
+                                            <select name="" class="input select currency js_bulk_value" id="js_bulk_value_currency">
+                                                <option value="1">EUR</option>
+                                                <option value="3" selected="">$US</option>
+                                                <option value="4">GBP</option>
+                                            </select>
+                                            <span class="right"><input type="checkbox" name="" id="js_checkall_currency" class="input checkbox currency js_checkall"></span>
+                                        </span>
+                                    </div>
+                                </td>
+                                <td class="price-option js_price_option">
+                                    <div>
+                                        <span class="js_bulk_choice" style="display:none;">
+                                            <select name="" class="input select price-option js_bulk_value" id="js_bulk_value_price_option">
+                                                <option value="0"></option>
+                                                <option value="1">Not for sale</option>
+                                                <option value="2" selected="">Buy Now</option>
+                                                <option value="3">Make Offer</option>
+                                            </select>
+                                            <span class="right"><input type="checkbox" name="" id="js_checkall_price_option" class="input checkbox price-option js_checkall"></span>
+                                        </span>
+                                    </div>
+                                </td>
+                                <td class="minprice js_minprice">
+                                    <div>
+                                        <span class="js_bulk_choice" style="display:none;">
+                                            <input type="text" name="" class="input text minprice js_bulk_value" id="js_bulk_value_minprice">
+                                            <span class="right"><input type="checkbox" name="" id="js_checkall_minprice" class="input checkbox minprice js_checkall"></span>
+                                        </span>
+                                    </div>
+                                </td>
+                                <td class="domain-type js_domain_type">
+                                    <div>
+                                        <span class="js_bulk_choice" style="display:none;">
+                                            <select name="" class="input select domain-type js_bulk_value" id="js_bulk_value_domain_type">
+                                                <option value="0"></option>
+                                                <option value="1" selected="">Domain</option>
+                                                <option value="2">Project</option>
+                                            </select>
+                                            <span class="right"><input type="checkbox" name="" id="js_checkall_domain_type" class="input checkbox domain-type js_checkall"></span>
+                                        </span>
+                                    </div>
+                                </td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+
+                        <tfoot>
+                            <tr class="bulkbar js_bulkbar" style="display:none;">
+                                <td class="domain"></td>
+                                <td class="price js_price"></td>
+                                <td class="currency js_currency"></td>
+                                <td class="price-option js_price_option"></td>
+                                <td class="minprice js_minprice"></td>
+                                <td class="domain-type js_domain_type"></td>
+                            </tr>
+                        </tfoot>
+                    </table>
+
+                    <div class="inline-block center" id="js_step02_pending_table">
+                        <span class="icon loading"></span>
+                        <span>Processing your domains, please wait...</span>
+                    </div>
+
+                </form>
+
+                <div class="buttonContainer">
+                    <span class="js_domainSignupContentClickPrevious">
+                        <a class="internal_link" href="#">Go back to Step 1</a>
+                    </span>
+                    <span class="js_domainSignupContentClickNext">
+                        <a href="#" class="btnGnXL"><span>Go to Step 3</span></a>
+                    </span>
+                </div>
+            </div>
+
+
+            <div id="js_step2" class="js_domainSignupContentElement step step3" style="display:none;">
+                <h2>Want to sell more from the start? Activate SedoMLS Premium</h2>
+                <p class="subline">Any domain listed with us is automatically distributed via SedoMLS to a network of global partners. However, to get access to more potential buyers worldwide, and to sell more names, more quickly, you should activate SedoMLS Premium. By specifying your registrar and selecting <strong>yes</strong> below we are able to carry out instant domain transfers on your behalf and increase the distribution of your domains. Please accept the SedoMLS Premium Terms of Use below if you want to activate your domains for SedoMLS.</p>
+
+                <div class="inline-block"><span class="left">Press <span class="icon bulk-edit fixed"></span> to bulk edit</span></div>
+
+                <div class="box info js_invalidBankData" style="display: none;"><a class="js_openBankDataSettings link" href="/member/bankdata.php4?language=us" target="_blank">Please complete your payment details!</a> This information is required for SedoMLS Premium activation so that we can pay you immediately upon a sale.</div>
+
+                <div class="box info mls" id="mlsWarnings" style="display: none;">
+                    <ul>
+                        <li class="mls-yellow">These domains must be listed at Buy Now and priced above $US 20 in order to activate for SedoMLS Premium. Go to step 2 to <span class="js_domainSignupContentClickPrevious"><a class="internal_link" href="#">Edit price settings</a></span></li>
+                        <li class="mls-red">SedoMLS Premium activation is currently not available for these TLDs. Even though Premium activation is not available, setting Buy Now prices will still get you distribution at a number of SedoMLS partners.</li>
+                    </ul>
+                </div>
+
+                <div class="floatbox">
+
+                    <div class="column left">
+                        <div class="clear">
+                            <form id="js_mlslist" name="mlslist">
+                                <table class="table domains tableBlue" cellpadding="0" cellspacing="0" id="js_domainSignupContentTableStep3">
+                                    <colgroup width="40%"></colgroup>
+                                    <colgroup width="20%"></colgroup>
+                                    <colgroup width="40%"></colgroup>
+                                    <thead>
+                                        <tr>
+                                            <th class="domain"><div>Domain</div></th>
+                                            <th class="registrar"><div>Registrar <span class="icon bulk-edit right js_bulk_edit" id="js_bulk_registrar"></span></div></th>
+                                            <th class="activate-mls"><div>Activate SedoMLS Premium <span class="icon bulk-edit right js_bulk_edit" id="js_bulk_activate_mls"></span></div></th>
+                                        </tr>
+                                        <tr class="bulkbar js_bulkbar" style="display:none;">
+                                            <td class="domain"></td>
+                                            <td class="registrar js_registrar">
+                                                <div>
+                                                    <span class="js_bulk_choice" style="display:none;">
+                                                        <select name="" class="input select registrar js_bulk_value" id="js_bulk_value_registrar">
+                                                            <option value="">Please select</option>
+                                                            <optgroup label="-- SELLER SIDE SUPPORT --">
+                                                                <option value="398" title="101 Domain">101 Domain [S]</option>
+                                                                <option value="410" title="22.cn 爱名网">22.cn 爱名网 [S]</option>
+                                                                <option value="461" title="Aruba Business">Aruba Business [S]</option>
+                                                                <option value="345" title="BigRock.com">BigRock.com [S]</option>
+                                                                <option value="292" title="BizCN 商务中国">BizCN 商务中国 [S]</option>
+                                                                <option value="407" title="checkdomain.de">checkdomain.de [S]</option>
+                                                                <option value="29" title="DirectNic">DirectNic [S]</option>
+                                                                <option value="337" title="Domain-Bestellsystem">Domain-Bestellsystem [S]</option>
+                                                                <option value="338" title="Domain24">Domain24 [S]</option>
+                                                                <option value="264" title="DomainDiscover">DomainDiscover [S]</option>
+                                                                <option value="285" title="Domainers Registrar">Domainers Registrar [S]</option>
+                                                                <option value="581" title="Domainshype">Domainshype [S]</option>
+                                                                <option value="339" title="Domainvermarkter">Domainvermarkter [S]</option>
+                                                                <option value="363" title="Don Dominio">Don Dominio [S]</option>
+                                                                <option value="274" title="Dynadot LLC">Dynadot LLC [S]</option>
+                                                                <option value="27" title="eNom">eNom [S]</option>
+                                                                <option value="370" title="Epik">Epik [S]</option>
+                                                                <option value="224" title="Fabulous.com">Fabulous.com [S]</option>
+                                                                <option value="368" title="GiDiNet">GiDiNet [S]</option>
+                                                                <option value="462" title="Hetzner.co.za">Hetzner.co.za [S]</option>
+                                                                <option value="332" title="Hexonet.net">Hexonet.net [S]</option>
+                                                                <option value="413" title="Hover.com">Hover.com [S]</option>
+                                                                <option value="315" title="Internet.bs">Internet.bs [S]</option>
+                                                                <option value="20" title="InterNetWire">InterNetWire [S]</option>
+                                                                <option value="6" title="InterNetX">InterNetX [S]</option>
+                                                                <option value="464" title="iPage">iPage [S]</option>
+                                                                <option value="465" title="IPOWER">IPOWER [S]</option>
+                                                                <option value="573" title="Juming technology co., LTD">Juming technology co., LTD [S]</option>
+                                                                <option value="361" title="Logicboxes">Logicboxes [S]</option>
+                                                                <option value="569" title="LWS">LWS [S]</option>
+                                                                <option value="261" title="Name.com">Name.com [S]</option>
+                                                                <option value="376" title="NameSilo">NameSilo [S]</option>
+                                                                <option value="556" title="Nederland Live">Nederland Live [S]</option>
+                                                                <option value="466" title="Netfirms">Netfirms [S]</option>
+                                                                <option value="16" title="Network Solutions">Network Solutions [S]</option>
+                                                                <option value="479" title="Nitroserve.nl">Nitroserve.nl [S]</option>
+                                                                <option value="336" title="PartnerGate">PartnerGate [S]</option>
+                                                                <option value="467" title="Powweb">Powweb [S]</option>
+                                                                <option value="432" title="Profilebuilder">Profilebuilder [S]</option>
+                                                                <option value="545" title="Public Domain Registry">Public Domain Registry [S]</option>
+                                                                <option value="505" title="Public Domain Registry Ltd">Public Domain Registry Ltd [S]</option>
+                                                                <option value="15" title="Register.com">Register.com [S]</option>
+                                                                <option value="403" title="Resellerclub">Resellerclub [S]</option>
+                                                                <option value="231" title="RRP Key-Systems">RRP Key-Systems [S]</option>
+                                                                <option value="559" title="sav.com">sav.com [S]</option>
+                                                                <option value="468" title="Siteground">Siteground [S]</option>
+                                                                <option value="582" title="Smart-NIC">Smart-NIC [S]</option>
+                                                                <option value="388" title="Solodom">Solodom [S]</option>
+                                                                <option value="328" title="Tucows/OpenSRS">Tucows/OpenSRS [S]</option>
+                                                                <option value="567" title="URL Solutions Inc.">URL Solutions Inc. [S]</option>
+                                                                <option value="560" title="V2 Technosys DBA BookYour.in">V2 Technosys DBA BookYour.in [S]</option>
+                                                                <option value="374" title="Vautron">Vautron [S]</option>
+                                                                <option value="408" title="Verio.com">Verio.com [S]</option>
+                                                                <option value="469" title="Vistaprint">Vistaprint [S]</option>
+                                                                <option value="502" title="web.com Wholesale">web.com Wholesale [S]</option>
+                                                                <option value="308" title="webnames.ca">webnames.ca [S]</option>
+                                                                <option value="480" title="West.cn 西部数码">West.cn 西部数码 [S]</option>
+                                                                <option value="487" title="World4You">World4You [S]</option>
+                                                            </optgroup>
+                                                            <optgroup label="-- ALL REGISTRARS --">
+                                                                <option value="3" title="1&amp;1">1&amp;1 </option>
+                                                                <option value="572" title="1&amp;1 IONOS">1&amp;1 IONOS </option>
+                                                                <option value="398" title="101 Domain">101 Domain [S]</option>
+                                                                <option value="375" title="123domain.eu">123domain.eu </option>
+                                                                <option value="492" title="1and1.co.uk">1and1.co.uk </option>
+                                                                <option value="493" title="1and1.com">1and1.com </option>
+                                                                <option value="499" title="1and1.es">1and1.es </option>
+                                                                <option value="498" title="1and1.fr">1and1.fr </option>
+                                                                <option value="310" title="1blu AG">1blu AG </option>
+                                                                <option value="392" title="1und1.de">1und1.de </option>
+                                                                <option value="410" title="22.cn 爱名网">22.cn 爱名网 [S]</option>
+                                                                <option value="430" title="35.com">35.com </option>
+                                                                <option value="291" title="Above INC">Above INC </option>
+                                                                <option value="543" title="Aftermarket.pl">Aftermarket.pl </option>
+                                                                <option value="491" title="AIT domains">AIT domains </option>
+                                                                <option value="511" title="Alibaba Cloud Computing Ltd.">Alibaba Cloud Computing Ltd. </option>
+                                                                <option value="219" title="all-inkl.com">all-inkl.com </option>
+                                                                <option value="271" title="AllDomains">AllDomains </option>
+                                                                <option value="318" title="Alpine Domains Inc.">Alpine Domains Inc. </option>
+                                                                <option value="551" title="Amazon AWS">Amazon AWS </option>
+                                                                <option value="249" title="AMEN">AMEN </option>
+                                                                <option value="554" title="Argeweb">Argeweb </option>
+                                                                <option value="438" title="ARI Registry">ARI Registry </option>
+                                                                <option value="226" title="Arsys">Arsys </option>
+                                                                <option value="461" title="Aruba Business">Aruba Business [S]</option>
+                                                                <option value="34" title="ASCIO Technologies">ASCIO Technologies </option>
+                                                                <option value="345" title="BigRock.com">BigRock.com [S]</option>
+                                                                <option value="292" title="BizCN 商务中国">BizCN 商务中国 [S]</option>
+                                                                <option value="459" title="Bluehost">Bluehost </option>
+                                                                <option value="405" title="bnamed">bnamed </option>
+                                                                <option value="580" title="Bookmyname">Bookmyname </option>
+                                                                <option value="508" title="BrandIt">BrandIt </option>
+                                                                <option value="252" title="BulkRegister">BulkRegister </option>
+                                                                <option value="443" title="Centralnic">Centralnic </option>
+                                                                <option value="407" title="checkdomain.de">checkdomain.de [S]</option>
+                                                                <option value="538" title="Corehub, S.R.L.">Corehub, S.R.L. </option>
+                                                                <option value="417" title="Corporation Service Company">Corporation Service Company </option>
+                                                                <option value="384" title="Cridea">Cridea </option>
+                                                                <option value="25" title="Cronon AG">Cronon AG </option>
+                                                                <option value="535" title="cyon GmbH">cyon GmbH </option>
+                                                                <option value="270" title="cypack.com">cypack.com </option>
+                                                                <option value="563" title="D-Hosting">D-Hosting </option>
+                                                                <option value="217" title="DENIC direct">DENIC direct </option>
+                                                                <option value="23" title="Deutsche Telekom">Deutsche Telekom </option>
+                                                                <option value="29" title="DirectNic">DirectNic [S]</option>
+                                                                <option value="205" title="Domain Loft">Domain Loft </option>
+                                                                <option value="215" title="Domain People">Domain People </option>
+                                                                <option value="355" title="Domain Reg of America">Domain Reg of America </option>
+                                                                <option value="337" title="Domain-Bestellsystem">Domain-Bestellsystem [S]</option>
+                                                                <option value="280" title="Domain-Offensive">Domain-Offensive </option>
+                                                                <option value="281" title="Domain.com">Domain.com </option>
+                                                                <option value="338" title="Domain24">Domain24 [S]</option>
+                                                                <option value="510" title="DomainAgents">DomainAgents </option>
+                                                                <option value="269" title="domainca.com">domainca.com </option>
+                                                                <option value="473" title="Domainclub">Domainclub </option>
+                                                                <option value="24" title="Domaindiscount24">Domaindiscount24 </option>
+                                                                <option value="264" title="DomainDiscover">DomainDiscover [S]</option>
+                                                                <option value="285" title="Domainers Registrar">Domainers Registrar [S]</option>
+                                                                <option value="11" title="Domainfactory">Domainfactory </option>
+                                                                <option value="514" title="DomainIt">DomainIt </option>
+                                                                <option value="287" title="Domainmonster.com">Domainmonster.com </option>
+                                                                <option value="7" title="Domainname.at">Domainname.at </option>
+                                                                <option value="301" title="DomainQuadrat">DomainQuadrat </option>
+                                                                <option value="503" title="Domainsbot">Domainsbot </option>
+                                                                <option value="581" title="Domainshype">Domainshype [S]</option>
+                                                                <option value="242" title="DomainSite">DomainSite </option>
+                                                                <option value="339" title="Domainvermarkter">Domainvermarkter [S]</option>
+                                                                <option value="524" title="Domeneshop AS">Domeneshop AS </option>
+                                                                <option value="516" title="Dominion Domains">Dominion Domains </option>
+                                                                <option value="363" title="Don Dominio">Don Dominio [S]</option>
+                                                                <option value="206" title="Dotster">Dotster </option>
+                                                                <option value="399" title="Dreamhost">Dreamhost </option>
+                                                                <option value="579" title="DreamHost">DreamHost </option>
+                                                                <option value="283" title="Dropped.pl">Dropped.pl </option>
+                                                                <option value="274" title="Dynadot LLC">Dynadot LLC [S]</option>
+                                                                <option value="317" title="easyDNS">easyDNS </option>
+                                                                <option value="530" title="easyname GmbH">easyname GmbH </option>
+                                                                <option value="416" title="EasySpace">EasySpace </option>
+                                                                <option value="548" title="elitedomains.de">elitedomains.de </option>
+                                                                <option value="444" title="eName China 易名中国">eName China 易名中国 </option>
+                                                                <option value="216" title="Encirca">Encirca </option>
+                                                                <option value="27" title="eNom">eNom [S]</option>
+                                                                <option value="527" title="EPAG">EPAG </option>
+                                                                <option value="370" title="Epik">Epik [S]</option>
+                                                                <option value="238" title="EuroDNS">EuroDNS </option>
+                                                                <option value="372" title="Eurodomini">Eurodomini </option>
+                                                                <option value="537" title="Europeregistry">Europeregistry </option>
+                                                                <option value="561" title="Expireddomains.net">Expireddomains.net </option>
+                                                                <option value="224" title="Fabulous.com">Fabulous.com [S]</option>
+                                                                <option value="533" title="Fasthosts">Fasthosts </option>
+                                                                <option value="393" title="Fondation RESTENA">Fondation RESTENA </option>
+                                                                <option value="331" title="GABIA Inc.">GABIA Inc. </option>
+                                                                <option value="230" title="Galcomm">Galcomm </option>
+                                                                <option value="240" title="Gandi">Gandi </option>
+                                                                <option value="368" title="GiDiNet">GiDiNet [S]</option>
+                                                                <option value="346" title="GMO Internet Inc.">GMO Internet Inc. </option>
+                                                                <option value="26" title="GoDaddy">GoDaddy </option>
+                                                                <option value="426" title="Google">Google </option>
+                                                                <option value="19" title="Greatnet">Greatnet </option>
+                                                                <option value="257" title="Greek NIC">Greek NIC </option>
+                                                                <option value="544" title="HeartInternet">HeartInternet </option>
+                                                                <option value="504" title="Hetzner">Hetzner </option>
+                                                                <option value="462" title="Hetzner.co.za">Hetzner.co.za [S]</option>
+                                                                <option value="332" title="Hexonet.net">Hexonet.net [S]</option>
+                                                                <option value="9" title="Host Europe">Host Europe </option>
+                                                                <option value="540" title="HostGator">HostGator </option>
+                                                                <option value="566" title="Hosting Ukraine">Hosting Ukraine </option>
+                                                                <option value="463" title="Hostnet.nl">Hostnet.nl </option>
+                                                                <option value="528" title="Hostpoint.ch">Hostpoint.ch </option>
+                                                                <option value="223" title="Hostserver">Hostserver </option>
+                                                                <option value="413" title="Hover.com">Hover.com [S]</option>
+                                                                <option value="22" title="http.net">http.net </option>
+                                                                <option value="506" title="IEDR.IE">IEDR.IE </option>
+                                                                <option value="365" title="iNames">iNames </option>
+                                                                <option value="380" title="Incubatec">Incubatec </option>
+                                                                <option value="246" title="INDOM">INDOM </option>
+                                                                <option value="546" title="Infomaniak Network SA">Infomaniak Network SA </option>
+                                                                <option value="577" title="Innovadeus Pvt Ltd / Dodeus">Innovadeus Pvt Ltd / Dodeus </option>
+                                                                <option value="584" title="InstantDomainSearch">InstantDomainSearch </option>
+                                                                <option value="323" title="instra.com">instra.com </option>
+                                                                <option value="229" title="Interdominios">Interdominios </option>
+                                                                <option value="549" title="Internet New Business Concepts BV">Internet New Business Concepts BV </option>
+                                                                <option value="315" title="Internet.bs">Internet.bs [S]</option>
+                                                                <option value="20" title="InterNetWire">InterNetWire [S]</option>
+                                                                <option value="306" title="InterNetworX">InterNetworX </option>
+                                                                <option value="6" title="InterNetX">InterNetX [S]</option>
+                                                                <option value="578" title="Internic.ca">Internic.ca </option>
+                                                                <option value="312" title="InTrust Domains">InTrust Domains </option>
+                                                                <option value="464" title="iPage">iPage [S]</option>
+                                                                <option value="465" title="IPOWER">IPOWER [S]</option>
+                                                                <option value="573" title="Juming technology co., LTD">Juming technology co., LTD [S]</option>
+                                                                <option value="17" title="Kontent">Kontent </option>
+                                                                <option value="255" title="Lead Networks">Lead Networks </option>
+                                                                <option value="361" title="Logicboxes">Logicboxes [S]</option>
+                                                                <option value="35" title="Loomes AG">Loomes AG </option>
+                                                                <option value="552" title="Loopia">Loopia </option>
+                                                                <option value="536" title="LWS">LWS </option>
+                                                                <option value="569" title="LWS">LWS [S]</option>
+                                                                <option value="245" title="Mailclub">Mailclub </option>
+                                                                <option value="525" title="MarkMonitor">MarkMonitor </option>
+                                                                <option value="571" title="Mat Bao Corporation">Mat Bao Corporation </option>
+                                                                <option value="568" title="Maximus Media Pty Ltd.">Maximus Media Pty Ltd. </option>
+                                                                <option value="208" title="Melbourne IT">Melbourne IT </option>
+                                                                <option value="529" title="METANET AG">METANET AG </option>
+                                                                <option value="395" title="Mijndomein.nl">Mijndomein.nl </option>
+                                                                <option value="377" title="mitsu.in">mitsu.in </option>
+                                                                <option value="534" title="Mittwald">Mittwald </option>
+                                                                <option value="214" title="Moniker.com">Moniker.com </option>
+                                                                <option value="31" title="MyDomain.com (dotster.com)">MyDomain.com (dotster.com) </option>
+                                                                <option value="256" title="Name Action Chile">Name Action Chile </option>
+                                                                <option value="305" title="Name Bargain">Name Bargain </option>
+                                                                <option value="261" title="Name.com">Name.com [S]</option>
+                                                                <option value="244" title="Namebay">Namebay </option>
+                                                                <option value="424" title="NameBright">NameBright </option>
+                                                                <option value="488" title="NameCase GmbH">NameCase GmbH </option>
+                                                                <option value="241" title="NameCheap">NameCheap </option>
+                                                                <option value="585" title="NameCheap2">NameCheap2 </option>
+                                                                <option value="266" title="NameISP">NameISP </option>
+                                                                <option value="450" title="Nameking">Nameking </option>
+                                                                <option value="258" title="NameSecure">NameSecure </option>
+                                                                <option value="376" title="NameSilo">NameSilo [S]</option>
+                                                                <option value="556" title="Nederland Live">Nederland Live [S]</option>
+                                                                <option value="254" title="Neodomaine">Neodomaine </option>
+                                                                <option value="574" title="Net-Build GmbH">Net-Build GmbH </option>
+                                                                <option value="500" title="Net4India.com">Net4India.com </option>
+                                                                <option value="466" title="Netfirms">Netfirms [S]</option>
+                                                                <option value="541" title="NETIM">NETIM </option>
+                                                                <option value="570" title="Netistrar LTD">Netistrar LTD </option>
+                                                                <option value="16" title="Network Solutions">Network Solutions [S]</option>
+                                                                <option value="373" title="Networking4all">Networking4all </option>
+                                                                <option value="423" title="Neustar">Neustar </option>
+                                                                <option value="479" title="Nitroserve.nl">Nitroserve.nl [S]</option>
+                                                                <option value="583" title="Nokta">Nokta </option>
+                                                                <option value="202" title="Nominalia">Nominalia </option>
+                                                                <option value="201" title="Nominet">Nominet </option>
+                                                                <option value="490" title="now.cn 时代互联">now.cn 时代互联 </option>
+                                                                <option value="531" title="One.com">One.com </option>
+                                                                <option value="478" title="Onlide.com">Onlide.com </option>
+                                                                <option value="250" title="Online.net">Online.net </option>
+                                                                <option value="489" title="Oray.com">Oray.com </option>
+                                                                <option value="239" title="OVH">OVH </option>
+                                                                <option value="518" title="OwnRegistrar">OwnRegistrar </option>
+                                                                <option value="336" title="PartnerGate">PartnerGate [S]</option>
+                                                                <option value="452" title="Pheenix">Pheenix </option>
+                                                                <option value="268" title="Planetdomain">Planetdomain </option>
+                                                                <option value="359" title="Pop.it">Pop.it </option>
+                                                                <option value="550" title="porkbun">porkbun </option>
+                                                                <option value="521" title="Portsgroup">Portsgroup </option>
+                                                                <option value="234" title="PowerPipe">PowerPipe </option>
+                                                                <option value="467" title="Powweb">Powweb [S]</option>
+                                                                <option value="562" title="Premium.pl">Premium.pl </option>
+                                                                <option value="432" title="Profilebuilder">Profilebuilder [S]</option>
+                                                                <option value="220" title="prosite">prosite </option>
+                                                                <option value="545" title="Public Domain Registry">Public Domain Registry [S]</option>
+                                                                <option value="505" title="Public Domain Registry Ltd">Public Domain Registry Ltd [S]</option>
+                                                                <option value="367" title="Rapidomaine">Rapidomaine </option>
+                                                                <option value="222" title="Ratiokontakt">Ratiokontakt </option>
+                                                                <option value="8" title="RCQ Quality">RCQ Quality </option>
+                                                                <option value="360" title="Realtime Register">Realtime Register </option>
+                                                                <option value="324" title="Rebel.com">Rebel.com </option>
+                                                                <option value="326" title="Reg.ru">Reg.ru </option>
+                                                                <option value="436" title="register.ca">register.ca </option>
+                                                                <option value="15" title="Register.com">Register.com [S]</option>
+                                                                <option value="276" title="Register.es">Register.es </option>
+                                                                <option value="279" title="Register.it">Register.it </option>
+                                                                <option value="409" title="Register4Less.com">Register4Less.com </option>
+                                                                <option value="555" title="Registrar.MK">Registrar.MK </option>
+                                                                <option value="484" title="Registro.it">Registro.it </option>
+                                                                <option value="403" title="Resellerclub">Resellerclub [S]</option>
+                                                                <option value="231" title="RRP Key-Systems">RRP Key-Systems [S]</option>
+                                                                <option value="523" title="Ru Domains LLC">Ru Domains LLC </option>
+                                                                <option value="526" title="Safenames">Safenames </option>
+                                                                <option value="391" title="Saipan DataCom Inc.">Saipan DataCom Inc. </option>
+                                                                <option value="559" title="sav.com">sav.com [S]</option>
+                                                                <option value="12" title="Schlund Technologies">Schlund Technologies </option>
+                                                                <option value="4" title="Schlund+Partner">Schlund+Partner </option>
+                                                                <option value="522" title="Sered">Sered </option>
+                                                                <option value="366" title="Serverplan">Serverplan </option>
+                                                                <option value="557" title="Shenzhen Hyrui Internet Technology Co. LTD.">Shenzhen Hyrui Internet Technology Co. LTD. </option>
+                                                                <option value="457" title="Sibername">Sibername </option>
+                                                                <option value="304" title="Signature Domains">Signature Domains </option>
+                                                                <option value="468" title="Siteground">Siteground [S]</option>
+                                                                <option value="582" title="Smart-NIC">Smart-NIC [S]</option>
+                                                                <option value="431" title="SnapNames">SnapNames </option>
+                                                                <option value="388" title="Solodom">Solodom [S]</option>
+                                                                <option value="354" title="Starhosting.nl">Starhosting.nl </option>
+                                                                <option value="576" title="Stilmark">Stilmark </option>
+                                                                <option value="5" title="Strato">Strato </option>
+                                                                <option value="28" title="T-Online">T-Online </option>
+                                                                <option value="379" title="tirupatidomains.in">tirupatidomains.in </option>
+                                                                <option value="532" title="Transip">Transip </option>
+                                                                <option value="328" title="Tucows/OpenSRS">Tucows/OpenSRS [S]</option>
+                                                                <option value="448" title="UDAG">UDAG </option>
+                                                                <option value="383" title="Ukrnames">Ukrnames </option>
+                                                                <option value="421" title="Uniregistry">Uniregistry </option>
+                                                                <option value="10" title="United Domains Deutschl.">United Domains Deutschl. </option>
+                                                                <option value="352" title="United Domains USA">United Domains USA </option>
+                                                                <option value="422" title="UnitedTLD">UnitedTLD </option>
+                                                                <option value="437" title="UOL Host">UOL Host </option>
+                                                                <option value="567" title="URL Solutions Inc.">URL Solutions Inc. [S]</option>
+                                                                <option value="560" title="V2 Technosys DBA BookYour.in">V2 Technosys DBA BookYour.in [S]</option>
+                                                                <option value="501" title="vadian.net">vadian.net </option>
+                                                                <option value="507" title="variomedia">variomedia </option>
+                                                                <option value="374" title="Vautron">Vautron [S]</option>
+                                                                <option value="408" title="Verio.com">Verio.com [S]</option>
+                                                                <option value="469" title="Vistaprint">Vistaprint [S]</option>
+                                                                <option value="517" title="Web Host Canada">Web Host Canada </option>
+                                                                <option value="209" title="Web Host One">Web Host One </option>
+                                                                <option value="502" title="web.com Wholesale">web.com Wholesale [S]</option>
+                                                                <option value="381" title="Webhosting24">Webhosting24 </option>
+                                                                <option value="308" title="webnames.ca">webnames.ca [S]</option>
+                                                                <option value="18" title="WebWide">WebWide </option>
+                                                                <option value="480" title="West.cn 西部数码">West.cn 西部数码 [S]</option>
+                                                                <option value="385" title="WHOIS.co.kr">WHOIS.co.kr </option>
+                                                                <option value="539" title="Whois.com">Whois.com </option>
+                                                                <option value="227" title="WildWestDomains">WildWestDomains </option>
+                                                                <option value="547" title="Wix.com Inc.">Wix.com Inc. </option>
+                                                                <option value="487" title="World4You">World4You [S]</option>
+                                                                <option value="404" title="XinNet">XinNet </option>
+                                                                <option value="364" title="Yourhosting.nl">Yourhosting.nl </option>
+                                                                <option value="512" title="ZNET TECHNOLOGIES PVT LTD">ZNET TECHNOLOGIES PVT LTD </option>
+                                                                <option value="">Other</option>
+                                                            </optgroup>
+                                                        </select>
+                                                        <span class="right"><input type="checkbox" name="" id="js_checkall_registrar" class="input checkbox bulk registrar js_checkall"></span>
+                                                    </span>
+                                                </div>
+                                            </td>
+                                            <td class="activate-mls js_activate_mls last">
+                                                <div>
+                                                    <span class="js_bulk_choice" style="display:none;">
+                                                        <select name="" class="input select activate-mls js_bulk_value" id="js_bulk_value_activate_mls">
+                                                            <option value="0">No</option>
+                                                            <option value="1" selected="selected">Yes</option>
+                                                        </select>
+                                                        <span class="right"><input type="checkbox" name="" id="js_checkall_activate_mls" class="input checkbox bulk activate-mls js_checkall"></span>
+                                                    </span>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </thead>
+
+                                    <tbody></tbody>
+
+                                    <tfoot>
+                                        <tr class="bulkbar js_bulkbar" style="display:none;">
+                                            <td class="domain"></td>
+                                            <td class="registrar js_registrar"></td>
+                                            <td class="activate-mls js_activate_mls last"></td>
+                                        </tr>
+                                    </tfoot>
+
+                                </table>
+                            </form>
+                        </div>
+                        <div class="floatbox faq clear">
+                            <div class="column faq first left">
+                                <h3>What is the difference between SedoMLS and SedoMLS Premium?</h3>
+
+                                All domains listed at Sedo are distributed to a selection of SedoMLS partners, who display your names for sale at their sites. SedoMLS Premium is a free upgrade that distributes your domains to even more potential buyers globally and enables an instant domain transfer on your behalf.
+                            </div>
+                            <div class="column faq second left">
+                                <h3>Which registrars are part of SedoMLS Premium?</h3>
+                                To activate SedoMLS Premium, your domains must be at a registrar with Seller Side Support. These registrars are marked in the dropdown menu of the Registrar column with the symbol [S]. We are continuing to add registrars to SedoMLS Premium.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="column right">
+                        <h3>SedoMLS Premium Perks</h3>
+                        <ul class="mlsPerks">
+                            <li>Reach more buyers globally</li>
+                            <li>Sell names 3x faster</li>
+                            <li>Transfer domains instantly to buyers</li>
+                            <li>Receive payments faster</li>
+                        </ul>
+                    </div>
+
+                    <div class="column left">
+                        <div class="floatbox">
+                            <label class="mlsTerms">
+                                <input type="checkbox" name="mlsTerms" class="mlsTerms" value="1">
+                                &nbsp;I confirm that I have read and fully agree to the <a id="js_toggle_mls_terms" class="internal_link" href="#">SedoMLS Premium Terms of Use</a>.
+                            </label>
+                        </div>
+                        <div class="floatbox faq clear" id="js_mls_terms" style="display:none;">
+                            <p>
+                                <a name="mls_terms"></a>
+                            </p><h2>SedoMLS Premium Terms of Use</h2>
+                            <p></p>
+                            <p style="line-height:16px;">
+                                Promoting domains on the SedoMLS Premium sales network lets you sell your domains much faster by getting instant exposure to thousands of new potential buyers! By activating your domains for SedoMLS Premium you agree to the following special Terms &amp; Conditions:
+                            </p>
+                            <ul>
+                                <li style="line-height:16px;">A 20% commission fee applies if your domain is sold on the SedoMLS Premium partner network. Domains listed within SedoMLS Premium are charged the regular 15% commission if sold on Sedo’s standard marketplace. Minimum commissions may apply.</li>
+                                <li style="line-height:16px;">You agree that after Sedo receives payment from the buyer your domain will be instantly transferred to the new owner and removed from your registrar account, without any further approval.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+
+                <span class="btnLine">
+                    <span class="js_domainSignupContentClickPrevious">
+                        <a class="internal_link" href="#">Go back to Step 2</a>
+                    </span>
+                    <span class="js_domainSignupContentClickNext">
+                        <a href="#" class="btnGnXL"><span>Finish Adding Domains</span></a>
+                    </span>
+                </span>
+
+            </div>
+
+
+            <div id="js_step5" class="js_domainSignupContentElement step final" style="display:none;">
+
+                <strong>Thank you for adding your domains!</strong>
+                <p>As soon as we've manually verified your ownership of these domains, they will appear in the <a href="/member/dnmanagement.php4?%2Fmember%2Fdomainsignup%2Findex_php%3Flanguage=us" class="external_link">My Sedo</a> section of your account.</p>
+
+                <div class="sedo-ui-ribbon-container">
+                    <div class="sedo-ui-ribbonbox-ribbon">
+                        <div class="sedo-ui-ribbon-topleft"><h2>A faster method of owner verification:</h2></div>
+                    </div>
+                    <div class="sedo-ui-ribbonbox-main">
+
+                        <h3>Self-Verification</h3>
+                        <p>Fast-track the proof of ownership with Sedo's <strong><a href="/member/ownership_verification.php?%2Fmember%2Fdomainsignup%2Findex_php%3Flanguage=us" class="external_link">self-verification service</a></strong> and sell your domains even quicker.</p>
+                        <div class="col2 clearfix">
+                            <div class="left">
+                                <img src="https://cdn.sedo.com/fileadmin/images/park_domains/sedo_icons_domain-parking_60x60_01.png" alt="">
+                            </div>
+                            <div class="left ds-content">
+                                <strong>Advantages:</strong>
+                                <ul class="check">
+                                    <li>Efficiency: Enter your verification ID and <strong>we will confirm you as the owner</strong> in next to no time.</li>
+                                    <li>Anonymity: We can confirm ownership <strong>despite a protected privacy WHOIS</strong> entry.</li>
+                                    <li>
+                                        Flexibility: <strong>Offer domains for sale anytime</strong>, even during a weekend. It is an entirely
+                                        automated process.
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <p><strong><a href="https://sedo.com/us/sell-domains/" class="external_link">Follow our step-by-step guide now</a></strong> and start selling domains today.</p>
+                    </div>
+                </div>
+
+                <div class="sedo-ui-ribbon-container">
+                    <div class="sedo-ui-ribbonbox-ribbon">
+                        <div class="sedo-ui-ribbon-topleft"><h2>Sell your domains faster while earning payouts prior to your domain selling</h2></div>
+                    </div>
+                    <div class="sedo-ui-ribbonbox-main">
+                        <h3>Domain Parking</h3>
+                        <div class="col2 clearfix">
+                            <div class="left">
+                                <img src="https://cdn.sedo.com/fileadmin/images/park_domains/sedo_icons_domain-parking_60x60_02.png" alt="">
+                            </div>
+                            <div class="left ds-content">
+                                <p>Parked domains <strong>sell faster</strong> than domains that aren't parked, as Sedo provides a webpage with a prominent <strong>for sale tag.</strong><br><br>Additionally, parking <strong>earns you revenue</strong> by renting your unused domains, filling them with ad space.</p>
+                                <strong><a href="https://sedo.com/us/park-domains/" class="external_link">Learn more about Domain Parking</a></strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+
+
+
+
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </div>
+    </div>
+</main>

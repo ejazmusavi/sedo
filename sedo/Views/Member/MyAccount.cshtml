@@ -1,0 +1,673 @@
+﻿<main role="main" id="content-main-wrapper" class="content-wrapper-full transit-wrapper" data-dynamic="true">
+    <!-- typo3PageId: 140 -->
+    <div id="col3">
+        <div class="precontent">
+            <h1>My Account</h1>
+            <p>Manage your personal information, preferences and account status</p>
+        </div>
+        <div class="keyvisual">
+        </div>
+        <div class="clear"></div>
+
+        <div class="thirdnavi">
+            <ul>
+                <li class="selected"><a href="/member/editaccount.php3?language=us">Personal information</a></li>
+                <li><a href="/member/bankdata.php4?language=us">Payment Details</a></li>
+                <li><a href="/member/membercert/index.php?language=us">Member Certification</a></li>
+                <li><a href="/member/account_setting.php?language=us">Account Settings</a></li>
+            </ul>
+        </div>
+        <div class="content">
+            <div class="contentbox">
+
+
+
+
+
+
+
+                <form name="accountform" method="post" action="/member/editaccount.php3?language=us&amp;">
+                    <input type="hidden" name="csrf_token" value="N/CFNwbLSCS0QGBJ90rH+usD9ldfNhsyNcTOcYX6iXvgdVwQSkSb0Znqio1kiZYy">
+                    <input type="hidden" name="checkparameters" value="1">
+                    <input type="hidden" name="task" value="save">
+                    <input type="hidden" name="gobackto" value="">
+                    <input type="hidden" name="memberid" value="0">
+                    <input type="hidden" name="back_to_auction" value="0">
+                    <input type="hidden" name="auction_bid" value="0">
+                    <input type="hidden" name="bcp_keynum" value="">
+
+
+                    <div class="m09 whitebox">
+                        <div class="sedoform">
+                            <h1>
+                                Login data
+                            </h1>
+                            <p>Your login name and password will allow you to enter the member´s area.&nbsp;Offers for your domain names will be sent to this email address. Please make sure to check this email address regularly for new mail.</p>
+
+                            <div align="center">
+                                <div class="floatbox">
+                                    <div class="sub col50 left alignr">
+                                        <div class="margin">
+                                            <p>*<strong>Login Name:</strong></p>
+                                        </div>
+                                    </div>
+                                    <div class="sub col50 right alignl">
+                                        <div class="margin">
+                                            <p>ejazmusavi</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="floatbox">
+                                    <div class="sub col50 left alignr">
+                                        <div class="margin">
+                                            <p>*<strong>Password:</strong></p>
+                                        </div>
+                                    </div>
+                                    <div class="sub col50 right alignl">
+                                        <div class="margin">
+                                            <p><a class="internal_link" href="/member/setpassword.php?language=us">make changes here</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="floatbox">
+                                    <div class="sub col50 left alignr">
+                                        <div class="margin">
+                                            <p>*<strong>Email:</strong></p>
+                                        </div>
+                                    </div>
+                                    <div class="sub col50 right alignl">
+                                        <div class="margin">
+                                            <p><input type="text" size="15" maxlength="125" name="email" class="input" value="ejazmusavi11@gmail.com" tabindex="1"></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="m09 whitebox">
+                        <div class="sedoform">
+                            <h1>
+                                Personal Information
+                            </h1>
+
+                            <div class="blockcolsingle1">
+                                <div class="row">
+                                    <label class="col1">
+                                        <span>*Prefix:</span>
+                                    </label>
+                                    <span class="col2">
+                                        <select class="Form_Select Input_Text" name="addition" size="1" tabindex="2">
+                                            <option value="1">Ms.</option>
+                                            <option value="0" selected="">Mr.</option>
+                                        </select>
+                                    </span>
+                                </div>
+                                <div class="row">
+                                    <label class="col1">
+                                        <span>*First Name:</span>
+                                    </label>
+                                    <span class="col2">
+                                        ejaz
+                                        <input type="hidden" name="prename" value="Ejaz">
+                                    </span>
+                                </div>
+
+                                <div class="row">
+                                    <label class="col1">
+                                        <span>*Last Name:</span>
+                                    </label>
+                                    <span class="col2">
+                                        musavi
+                                        <input type="hidden" name="lastname" value="Musavi">
+                                    </span>
+                                </div>
+
+
+                                <div class="row">
+                                    <label class="col1">
+                                        Organization:
+                                    </label>
+                                    <span class="col2">
+                                        <input type="text" size="15" maxlength="125" name="organization" value="Sico" class="input" tabindex="3">
+                                    </span>
+                                </div>
+                                <!-- FIXME: add row with note about latin chars -->
+                                <div class="row">
+                                    <label class="col1">
+                                        <span>Phone:</span>
+                                    </label>
+                                    <span class="col2" style="height:50px;">
+                                        <select name="phoneCode" class="" tabindex="4">
+                                            <option value="">Please choose...</option>
+                                            <option value="">---</option>
+                                            <option value="222">+1 (United States)</option>
+                                            <option value="40">+1 (Canada)</option>
+                                            <option value="221">+44 (United Kingdom)</option>
+                                            <option value="83">+49 (Germany)</option>
+                                            <option value="76">+33 (France)</option>
+                                            <option value="194">+34 (Spain)</option>
+                                            <option value="106">+39 (Italy)</option>
+                                            <option value="">---</option>
+                                            <option value="265">+358 (Åland Islands)</option>
+                                            <option value="5">+355 (Albania)</option>
+                                            <option value="6">+213 (Algeria)</option>
+                                            <option value="8">+376 (Andorra)</option>
+                                            <option value="10">+1 (Anguilla)</option>
+                                            <option value="12">+1 (Antigua and Barbuda)</option>
+                                            <option value="13">+54 (Argentina)</option>
+                                            <option value="14">+374 (Armenia)</option>
+                                            <option value="15">+297 (Aruba)</option>
+                                            <option value="16">+61 (Australia)</option>
+                                            <option value="17">+43 (Austria)</option>
+                                            <option value="18">+994 (Azerbaijan)</option>
+                                            <option value="209">+242 (Bahamas)</option>
+                                            <option value="19">+973 (Bahrain)</option>
+                                            <option value="20">+880 (Bangladesh)</option>
+                                            <option value="21">+1 (Barbados)</option>
+                                            <option value="23">+32 (Belgium)</option>
+                                            <option value="24">+501 (Belize)</option>
+                                            <option value="25">+229 (Benin)</option>
+                                            <option value="26">+1 (Bermuda)</option>
+                                            <option value="27">+975 (Bhutan)</option>
+                                            <option value="28">+591 (Bolivia)</option>
+                                            <option value="29">+387 (Bosnia and Herzegovina)</option>
+                                            <option value="30">+267 (Botswana)</option>
+                                            <option value="32">+55 (Brazil)</option>
+                                            <option value="33">+284 (British Indian Ocean Territory)</option>
+                                            <option value="34">+673 (Brunei)</option>
+                                            <option value="35">+359 (Bulgaria)</option>
+                                            <option value="36">+226 (Burkina Faso)</option>
+                                            <option value="39">+237 (Cameroon)</option>
+                                            <option value="40">+1 (Canada)</option>
+                                            <option value="268">+34 (Canary Islands)</option>
+                                            <option value="41">+238 (Cape Verde)</option>
+                                            <option value="210">+1 (Cayman Islands)</option>
+                                            <option value="42">+236 (Central African Republic)</option>
+                                            <option value="44">+44 (Channel Islands, Guernsey)</option>
+                                            <option value="45">+44 (Channel Islands, Jersey)</option>
+                                            <option value="46">+56 (Chile)</option>
+                                            <option value="47">+86 (China)</option>
+                                            <option value="50">+57 (Colombia)</option>
+                                            <option value="54">+506 (Costa Rica)</option>
+                                            <option value="55">+225 (Cote d'Ivoire)</option>
+                                            <option value="56">+385 (Croatia)</option>
+                                            <option value="271">+599 (Curacao)</option>
+                                            <option value="58">+357 (Cyprus)</option>
+                                            <option value="59">+420 (Czech Republic)</option>
+                                            <option value="60">+45 (Denmark)</option>
+                                            <option value="62">+1 (Dominica)</option>
+                                            <option value="63">+1 (Dominican Republic)</option>
+                                            <option value="65">+593 (Ecuador)</option>
+                                            <option value="66">+20 (Egypt)</option>
+                                            <option value="67">+503 (El Salvador)</option>
+                                            <option value="70">+372 (Estonia)</option>
+                                            <option value="71">+251 (Ethiopia)</option>
+                                            <option value="73">+298 (Faroe Islands)</option>
+                                            <option value="74">+679 (Fiji)</option>
+                                            <option value="75">+358 (Finland)</option>
+                                            <option value="76">+33 (France)</option>
+                                            <option value="77">+594 (French Guiana)</option>
+                                            <option value="78">+689 (French Polynesia)</option>
+                                            <option value="81">+241 (Gabon)</option>
+                                            <option value="244">+220 (Gambia)</option>
+                                            <option value="82">+995 (Georgia)</option>
+                                            <option value="83">+49 (Germany)</option>
+                                            <option value="84">+233 (Ghana)</option>
+                                            <option value="85">+350 (Gibraltar)</option>
+                                            <option value="86">+30 (Greece)</option>
+                                            <option value="87">+299 (Greenland)</option>
+                                            <option value="88">+1 (Grenada)</option>
+                                            <option value="90">+1 (Guam)</option>
+                                            <option value="91">+502 (Guatemala)</option>
+                                            <option value="93">+592 (Guyana)</option>
+                                            <option value="96">+504 (Honduras)</option>
+                                            <option value="97">+852 (Hong Kong)</option>
+                                            <option value="98">+36 (Hungary)</option>
+                                            <option value="99">+354 (Iceland)</option>
+                                            <option value="100">+91 (India)</option>
+                                            <option value="101">+62 (Indonesia)</option>
+                                            <option value="104">+353 (Ireland)</option>
+                                            <option value="246">+44 (Isle of Man)</option>
+                                            <option value="105">+972 (Israel)</option>
+                                            <option value="106">+39 (Italy)</option>
+                                            <option value="107">+1 (Jamaica)</option>
+                                            <option value="108">+81 (Japan)</option>
+                                            <option value="109">+962 (Jordan)</option>
+                                            <option value="110">+7 (Kazakhstan)</option>
+                                            <option value="111">+254 (Kenya)</option>
+                                            <option value="114">+82 (Korea, Republic of)</option>
+                                            <option value="262">+383 (Kosovo)</option>
+                                            <option value="115">+965 (Kuwait)</option>
+                                            <option value="116">+996 (Kyrgyzstan)</option>
+                                            <option value="117">+856 (Laos)</option>
+                                            <option value="118">+371 (Latvia)</option>
+                                            <option value="119">+961 (Lebanon)</option>
+                                            <option value="120">+266 (Lesotho)</option>
+                                            <option value="121">+231 (Liberia)</option>
+                                            <option value="123">+423 (Liechtenstein)</option>
+                                            <option value="124">+370 (Lithuania)</option>
+                                            <option value="125">+352 (Luxembourg)</option>
+                                            <option value="126">+853 (Macao)</option>
+                                            <option value="127">+389 (Macedonia)</option>
+                                            <option value="247">+261 (Madagascar)</option>
+                                            <option value="128">+265 (Malawi)</option>
+                                            <option value="129">+60 (Malaysia)</option>
+                                            <option value="248">+960 (Maldives)</option>
+                                            <option value="130">+223 (Mali)</option>
+                                            <option value="131">+356 (Malta)</option>
+                                            <option value="133">+596 (Martinique)</option>
+                                            <option value="134">+222 (Mauritania)</option>
+                                            <option value="135">+230 (Mauritius)</option>
+                                            <option value="137">+52 (Mexico)</option>
+                                            <option value="139">+373 (Moldova)</option>
+                                            <option value="140">+377 (Monaco)</option>
+                                            <option value="141">+976 (Mongolia)</option>
+                                            <option value="261">+382 (Montenegro)</option>
+                                            <option value="142">+1 (Montserrat)</option>
+                                            <option value="143">+212 (Morocco)</option>
+                                            <option value="144">+258 (Mozambique)</option>
+                                            <option value="145">+95 (Myanmar)</option>
+                                            <option value="146">+264 (Namibia)</option>
+                                            <option value="148">+977 (Nepal)</option>
+                                            <option value="149">+31 (Netherlands)</option>
+                                            <option value="150">+599 (Netherlands Antilles)</option>
+                                            <option value="151">+687 (New Caledonia)</option>
+                                            <option value="152">+64 (New Zealand)</option>
+                                            <option value="153">+505 (Nicaragua)</option>
+                                            <option value="154">+227 (Niger)</option>
+                                            <option value="155">+234 (Nigeria)</option>
+                                            <option value="159">+47 (Norway)</option>
+                                            <option value="160">+968 (Oman)</option>
+                                            <option value="161" selected="">+92 (Pakistan)</option>
+                                            <option value="249">+9725 (Palestinian Territories)</option>
+                                            <option value="163">+507 (Panama)</option>
+                                            <option value="165">+595 (Paraguay)</option>
+                                            <option value="166">+51 (Peru)</option>
+                                            <option value="167">+63 (Philippines)</option>
+                                            <option value="169">+48 (Poland)</option>
+                                            <option value="170">+351 (Portugal)</option>
+                                            <option value="171">+1 (Puerto Rico)</option>
+                                            <option value="172">+974 (Qatar)</option>
+                                            <option value="173">+262 (Reunion)</option>
+                                            <option value="174">+40 (Romania)</option>
+                                            <option value="175">+7 (Russia)</option>
+                                            <option value="176">+250 (Rwanda)</option>
+                                            <option value="269">+590 (Saint Barthélemy)</option>
+                                            <option value="177">+1 (Saint Kitts and Nevis)</option>
+                                            <option value="178">+1 (Saint Lucia)</option>
+                                            <option value="179">+1 (Saint Vincent and the Grenadines)</option>
+                                            <option value="180">+1 (Samoa)</option>
+                                            <option value="183">+966 (Saudi Arabia)</option>
+                                            <option value="184">+221 (Senegal)</option>
+                                            <option value="260">+381 (Serbia)</option>
+                                            <option value="235">+381 (Serbia and Montenegro)</option>
+                                            <option value="185">+248 (Seychelles)</option>
+                                            <option value="186">+232 (Sierra Leone)</option>
+                                            <option value="187">+65 (Singapore)</option>
+                                            <option value="188">+421 (Slovakia)</option>
+                                            <option value="189">+386 (Slovenia)</option>
+                                            <option value="192">+27 (South Africa)</option>
+                                            <option value="194">+34 (Spain)</option>
+                                            <option value="195">+94 (Sri Lanka)</option>
+                                            <option value="270">+590 (St. Martin (French Part))</option>
+                                            <option value="199">+597 (Surinam)</option>
+                                            <option value="201">+268 (Swaziland)</option>
+                                            <option value="202">+46 (Sweden)</option>
+                                            <option value="203">+41 (Switzerland)</option>
+                                            <option value="205">+886 (Taiwan)</option>
+                                            <option value="207">+255 (Tanzania)</option>
+                                            <option value="208">+66 (Thailand)</option>
+                                            <option value="250">+228 (Togo)</option>
+                                            <option value="212">+1 (Trinidad and Tobago)</option>
+                                            <option value="213">+216 (Tunisia)</option>
+                                            <option value="214">+90 (Turkey)</option>
+                                            <option value="216">+1 (Turks and Caicos Islands)</option>
+                                            <option value="218">+256 (Uganda)</option>
+                                            <option value="219">+380 (Ukraine)</option>
+                                            <option value="220">+971 (United Arab Emirates)</option>
+                                            <option value="221">+44 (United Kingdom)</option>
+                                            <option value="222">+1 (United States)</option>
+                                            <option value="224">+598 (Uruguay)</option>
+                                            <option value="226">+678 (Vanuatu)</option>
+                                            <option value="227">+39 (Vatican City State)</option>
+                                            <option value="229">+84 (Vietnam)</option>
+                                            <option value="237">+260 (Zambia)</option>
+                                        </select>
+                                        <br>
+                                        <input type="text" size="15" maxlength="30" name="phone" value="3129903808" class="input" style="margin-top:5px;" tabindex="5">
+                                    </span>
+                                </div>
+                                <div class="row">
+                                    <label class="col1">
+                                        <span>Mobile phone:</span>
+                                    </label>
+                                    <span class="col2" style="height:50px;">
+                                        <select name="mobileCode" class="" tabindex="6">
+                                            <option value="">Please choose...</option>
+                                            <option value="">---</option>
+                                            <option value="222">+1 (United States)</option>
+                                            <option value="40">+1 (Canada)</option>
+                                            <option value="221">+44 (United Kingdom)</option>
+                                            <option value="83">+49 (Germany)</option>
+                                            <option value="76">+33 (France)</option>
+                                            <option value="194">+34 (Spain)</option>
+                                            <option value="106">+39 (Italy)</option>
+                                            <option value="">---</option>
+                                            <option value="265">+358 (Åland Islands)</option>
+                                            <option value="5">+355 (Albania)</option>
+                                            <option value="6">+213 (Algeria)</option>
+                                            <option value="8">+376 (Andorra)</option>
+                                            <option value="10">+1 (Anguilla)</option>
+                                            <option value="12">+1 (Antigua and Barbuda)</option>
+                                            <option value="13">+54 (Argentina)</option>
+                                            <option value="14">+374 (Armenia)</option>
+                                            <option value="15">+297 (Aruba)</option>
+                                            <option value="16">+61 (Australia)</option>
+                                            <option value="17">+43 (Austria)</option>
+                                            <option value="18">+994 (Azerbaijan)</option>
+                                            <option value="209">+242 (Bahamas)</option>
+                                            <option value="19">+973 (Bahrain)</option>
+                                            <option value="20">+880 (Bangladesh)</option>
+                                            <option value="21">+1 (Barbados)</option>
+                                            <option value="23">+32 (Belgium)</option>
+                                            <option value="24">+501 (Belize)</option>
+                                            <option value="25">+229 (Benin)</option>
+                                            <option value="26">+1 (Bermuda)</option>
+                                            <option value="27">+975 (Bhutan)</option>
+                                            <option value="28">+591 (Bolivia)</option>
+                                            <option value="29">+387 (Bosnia and Herzegovina)</option>
+                                            <option value="30">+267 (Botswana)</option>
+                                            <option value="32">+55 (Brazil)</option>
+                                            <option value="33">+284 (British Indian Ocean Territory)</option>
+                                            <option value="34">+673 (Brunei)</option>
+                                            <option value="35">+359 (Bulgaria)</option>
+                                            <option value="36">+226 (Burkina Faso)</option>
+                                            <option value="39">+237 (Cameroon)</option>
+                                            <option value="40">+1 (Canada)</option>
+                                            <option value="268">+34 (Canary Islands)</option>
+                                            <option value="41">+238 (Cape Verde)</option>
+                                            <option value="210">+1 (Cayman Islands)</option>
+                                            <option value="42">+236 (Central African Republic)</option>
+                                            <option value="44">+44 (Channel Islands, Guernsey)</option>
+                                            <option value="45">+44 (Channel Islands, Jersey)</option>
+                                            <option value="46">+56 (Chile)</option>
+                                            <option value="47">+86 (China)</option>
+                                            <option value="50">+57 (Colombia)</option>
+                                            <option value="54">+506 (Costa Rica)</option>
+                                            <option value="55">+225 (Cote d'Ivoire)</option>
+                                            <option value="56">+385 (Croatia)</option>
+                                            <option value="271">+599 (Curacao)</option>
+                                            <option value="58">+357 (Cyprus)</option>
+                                            <option value="59">+420 (Czech Republic)</option>
+                                            <option value="60">+45 (Denmark)</option>
+                                            <option value="62">+1 (Dominica)</option>
+                                            <option value="63">+1 (Dominican Republic)</option>
+                                            <option value="65">+593 (Ecuador)</option>
+                                            <option value="66">+20 (Egypt)</option>
+                                            <option value="67">+503 (El Salvador)</option>
+                                            <option value="70">+372 (Estonia)</option>
+                                            <option value="71">+251 (Ethiopia)</option>
+                                            <option value="73">+298 (Faroe Islands)</option>
+                                            <option value="74">+679 (Fiji)</option>
+                                            <option value="75">+358 (Finland)</option>
+                                            <option value="76">+33 (France)</option>
+                                            <option value="77">+594 (French Guiana)</option>
+                                            <option value="78">+689 (French Polynesia)</option>
+                                            <option value="81">+241 (Gabon)</option>
+                                            <option value="244">+220 (Gambia)</option>
+                                            <option value="82">+995 (Georgia)</option>
+                                            <option value="83">+49 (Germany)</option>
+                                            <option value="84">+233 (Ghana)</option>
+                                            <option value="85">+350 (Gibraltar)</option>
+                                            <option value="86">+30 (Greece)</option>
+                                            <option value="87">+299 (Greenland)</option>
+                                            <option value="88">+1 (Grenada)</option>
+                                            <option value="90">+1 (Guam)</option>
+                                            <option value="91">+502 (Guatemala)</option>
+                                            <option value="93">+592 (Guyana)</option>
+                                            <option value="96">+504 (Honduras)</option>
+                                            <option value="97">+852 (Hong Kong)</option>
+                                            <option value="98">+36 (Hungary)</option>
+                                            <option value="99">+354 (Iceland)</option>
+                                            <option value="100">+91 (India)</option>
+                                            <option value="101">+62 (Indonesia)</option>
+                                            <option value="104">+353 (Ireland)</option>
+                                            <option value="246">+44 (Isle of Man)</option>
+                                            <option value="105">+972 (Israel)</option>
+                                            <option value="106">+39 (Italy)</option>
+                                            <option value="107">+1 (Jamaica)</option>
+                                            <option value="108">+81 (Japan)</option>
+                                            <option value="109">+962 (Jordan)</option>
+                                            <option value="110">+7 (Kazakhstan)</option>
+                                            <option value="111">+254 (Kenya)</option>
+                                            <option value="114">+82 (Korea, Republic of)</option>
+                                            <option value="262">+383 (Kosovo)</option>
+                                            <option value="115">+965 (Kuwait)</option>
+                                            <option value="116">+996 (Kyrgyzstan)</option>
+                                            <option value="117">+856 (Laos)</option>
+                                            <option value="118">+371 (Latvia)</option>
+                                            <option value="119">+961 (Lebanon)</option>
+                                            <option value="120">+266 (Lesotho)</option>
+                                            <option value="121">+231 (Liberia)</option>
+                                            <option value="123">+423 (Liechtenstein)</option>
+                                            <option value="124">+370 (Lithuania)</option>
+                                            <option value="125">+352 (Luxembourg)</option>
+                                            <option value="126">+853 (Macao)</option>
+                                            <option value="127">+389 (Macedonia)</option>
+                                            <option value="247">+261 (Madagascar)</option>
+                                            <option value="128">+265 (Malawi)</option>
+                                            <option value="129">+60 (Malaysia)</option>
+                                            <option value="248">+960 (Maldives)</option>
+                                            <option value="130">+223 (Mali)</option>
+                                            <option value="131">+356 (Malta)</option>
+                                            <option value="133">+596 (Martinique)</option>
+                                            <option value="134">+222 (Mauritania)</option>
+                                            <option value="135">+230 (Mauritius)</option>
+                                            <option value="137">+52 (Mexico)</option>
+                                            <option value="139">+373 (Moldova)</option>
+                                            <option value="140">+377 (Monaco)</option>
+                                            <option value="141">+976 (Mongolia)</option>
+                                            <option value="261">+382 (Montenegro)</option>
+                                            <option value="142">+1 (Montserrat)</option>
+                                            <option value="143">+212 (Morocco)</option>
+                                            <option value="144">+258 (Mozambique)</option>
+                                            <option value="145">+95 (Myanmar)</option>
+                                            <option value="146">+264 (Namibia)</option>
+                                            <option value="148">+977 (Nepal)</option>
+                                            <option value="149">+31 (Netherlands)</option>
+                                            <option value="150">+599 (Netherlands Antilles)</option>
+                                            <option value="151">+687 (New Caledonia)</option>
+                                            <option value="152">+64 (New Zealand)</option>
+                                            <option value="153">+505 (Nicaragua)</option>
+                                            <option value="154">+227 (Niger)</option>
+                                            <option value="155">+234 (Nigeria)</option>
+                                            <option value="159">+47 (Norway)</option>
+                                            <option value="160">+968 (Oman)</option>
+                                            <option value="161">+92 (Pakistan)</option>
+                                            <option value="249">+9725 (Palestinian Territories)</option>
+                                            <option value="163">+507 (Panama)</option>
+                                            <option value="165">+595 (Paraguay)</option>
+                                            <option value="166">+51 (Peru)</option>
+                                            <option value="167">+63 (Philippines)</option>
+                                            <option value="169">+48 (Poland)</option>
+                                            <option value="170">+351 (Portugal)</option>
+                                            <option value="171">+1 (Puerto Rico)</option>
+                                            <option value="172">+974 (Qatar)</option>
+                                            <option value="173">+262 (Reunion)</option>
+                                            <option value="174">+40 (Romania)</option>
+                                            <option value="175">+7 (Russia)</option>
+                                            <option value="176">+250 (Rwanda)</option>
+                                            <option value="269">+590 (Saint Barthélemy)</option>
+                                            <option value="177">+1 (Saint Kitts and Nevis)</option>
+                                            <option value="178">+1 (Saint Lucia)</option>
+                                            <option value="179">+1 (Saint Vincent and the Grenadines)</option>
+                                            <option value="180">+1 (Samoa)</option>
+                                            <option value="183">+966 (Saudi Arabia)</option>
+                                            <option value="184">+221 (Senegal)</option>
+                                            <option value="260">+381 (Serbia)</option>
+                                            <option value="235">+381 (Serbia and Montenegro)</option>
+                                            <option value="185">+248 (Seychelles)</option>
+                                            <option value="186">+232 (Sierra Leone)</option>
+                                            <option value="187">+65 (Singapore)</option>
+                                            <option value="188">+421 (Slovakia)</option>
+                                            <option value="189">+386 (Slovenia)</option>
+                                            <option value="192">+27 (South Africa)</option>
+                                            <option value="194">+34 (Spain)</option>
+                                            <option value="195">+94 (Sri Lanka)</option>
+                                            <option value="270">+590 (St. Martin (French Part))</option>
+                                            <option value="199">+597 (Surinam)</option>
+                                            <option value="201">+268 (Swaziland)</option>
+                                            <option value="202">+46 (Sweden)</option>
+                                            <option value="203">+41 (Switzerland)</option>
+                                            <option value="205">+886 (Taiwan)</option>
+                                            <option value="207">+255 (Tanzania)</option>
+                                            <option value="208">+66 (Thailand)</option>
+                                            <option value="250">+228 (Togo)</option>
+                                            <option value="212">+1 (Trinidad and Tobago)</option>
+                                            <option value="213">+216 (Tunisia)</option>
+                                            <option value="214">+90 (Turkey)</option>
+                                            <option value="216">+1 (Turks and Caicos Islands)</option>
+                                            <option value="218">+256 (Uganda)</option>
+                                            <option value="219">+380 (Ukraine)</option>
+                                            <option value="220">+971 (United Arab Emirates)</option>
+                                            <option value="221">+44 (United Kingdom)</option>
+                                            <option value="222">+1 (United States)</option>
+                                            <option value="224">+598 (Uruguay)</option>
+                                            <option value="226">+678 (Vanuatu)</option>
+                                            <option value="227">+39 (Vatican City State)</option>
+                                            <option value="229">+84 (Vietnam)</option>
+                                            <option value="237">+260 (Zambia)</option>
+                                        </select>
+                                        <br>
+                                        <input type="text" size="15" maxlength="30" name="mobile" value="" class="input" style="margin-top:5px;" tabindex="7">
+                                    </span>
+                                </div>
+                                <div class="row">
+                                    <label class="col1">
+                                        <span>Fax:</span>
+                                    </label>
+                                    <span class="col2">
+                                        <input type="text" size="15" maxlength="30" name="fax" value="" class="input" tabindex="8">
+                                    </span>
+                                </div>
+                            </div>
+
+
+                            <div class="blockcolsingle2">
+
+
+                                <div class="row">
+                                    <label class="col1">
+                                        <span>*Street Address:</span>
+                                    </label>
+                                    <span class="col2">
+                                        <input type="text" size="15" maxlength="125" name="street" value="khurram colony" class="input" tabindex="9">
+                                    </span>
+                                </div>
+
+
+                                <div class="row">
+                                    <label class="col1">
+                                        <span>*City/Zip Code:</span>
+                                    </label>
+                                    <span class="col2">
+                                        <input type="text" size="15" maxlength="100" name="city" value="Rawalpindi" class="input1l" tabindex="10">
+                                        <input type="text" size="5" maxlength="20" name="zipcode" value="00044" class="input1r" tabindex="11">&nbsp;
+                                    </span>
+                                </div>
+                                <div class="row">
+                                    <label class="col1">
+                                        <span>*Country:</span>
+                                    </label>
+                                    <span class="col2">
+                                        <input type="hidden" id="js_country_select" name="country" value="161">
+                                        Pakistan
+                                    </span>
+                                </div>
+                                <div class="row" id="state_list" style="display:none">
+                                    <label class="col1">
+                                        <span class="state_select">*State/Province:</span>
+                                    </label>
+                                    <span class="col2">
+                                        <span id="state_select">
+                                            <select name="state_list" id="js_state_select" class="Form_Select Input_Text " tabindex="12">
+                                            </select>
+
+                                        </span>
+                                    </span>
+                                </div>
+                                <div class="row">
+                                    <label class="col1">
+                                        *Language:
+                                    </label>
+                                    <span class="col2">
+                                        <select name="userlanguage" class="Form_Select Input_Text" tabindex="13">
+                                            <option label="English" value="13" selected="selected">English</option>
+                                            <option label="Deutsch" value="20">Deutsch</option>
+                                            <option label="Français" value="18">Français</option>
+                                            <option label="Español" value="46">Español</option>
+                                            <option label="中文" value="8">中文</option>
+                                            <option label="Português" value="37">Português</option>
+                                        </select>
+
+                                    </span>
+                                </div>
+                                <div class="row">
+                                    <label class="col1">
+                                        &nbsp;
+                                    </label>
+                                    <span class="col2">
+                                        &nbsp;
+                                    </span>
+                                </div>
+                                <div class="row">
+                                    <label class="col1">
+                                        Bank Details:
+                                    </label>
+                                    <span class="col2">
+                                        <a class="internal_link" href="/member/bankdata.php4?language=us">make changes here</a>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="clear"></div>
+                        <div id="tax_data" class="sedoform">
+                        </div>
+                    </div>
+
+
+                    <div class="m09 whitebox">
+                        <p>
+                            <input type="Checkbox" name="acceptagb" tabindex="14">
+                            I confirm that I have read Sedo´s <a class="internal_link" href="/uk/about-us/policies/terms-of-use/" target="_blank">Terms and Conditions</a> and <a class="internal_link" href="/us/about-us/policies/protecting-your-privacy/" target="_blank">Privacy Policy</a> and accept them by selecting the checkbox.
+                        </p>
+                    </div>
+
+
+                    <div class="m09">
+                        Please make sure to enter the required data into the spaces marked with an asterisk.
+                    </div>
+
+
+                    <div class="m09">
+                        <div class="right">
+                            <input class="submitbutton sb160" type="submit" name="submit" value="Save changes" tabindex="15">
+                        </div>
+                    </div>
+
+                </form>
+                <br>
+                <br>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var selectedState = 0;
+    </script>
+
+</main>

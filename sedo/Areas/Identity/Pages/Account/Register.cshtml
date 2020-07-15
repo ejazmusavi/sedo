@@ -1,0 +1,738 @@
+﻿@page
+@model RegisterModel
+@{
+    ViewData["Title"] = "Register";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+@*<div class="row">
+        <div class="col-md-4">
+            <form asp-route-returnUrl="@Model.ReturnUrl" method="post">
+                <h4>Create a new account.</h4>
+                <hr />
+                <div asp-validation-summary="All" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="Input.Email"></label>
+                    <input asp-for="Input.Email" class="form-control" />
+                    <span asp-validation-for="Input.Email" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Input.Password"></label>
+                    <input asp-for="Input.Password" class="form-control" />
+                    <span asp-validation-for="Input.Password" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Input.ConfirmPassword"></label>
+                    <input asp-for="Input.ConfirmPassword" class="form-control" />
+                    <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
+                </div>
+                <button type="submit" class="btn btn-primary">Register</button>
+            </form>
+        </div>
+    </div>*@
+<main role="main" id="content-main-wrapper" class="content-wrapper-full" data-dynamic="true">
+    <div id="registration-wizard" class="wizard">
+
+        <div class="wizard-step wizard-step-1" style="display: block;">
+
+            <div class="wizard-step-wrapper">
+                <nav>
+                    <ul class="steps">
+                        <li>
+                            <a class="btn active">
+                                <svg class="s-font-info">
+                                    <use xlink:href="#s-font-info"></use>
+                                </svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="btn">
+                                <svg class="s-font-icon-bidder">
+                                    <use xlink:href="#s-font-icon-bidder"></use>
+                                </svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="btn">
+                                <svg class="s-font-icon-edit">
+                                    <use xlink:href="#s-font-icon-edit"></use>
+                                </svg>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+
+            <div id="registration-wrapper" class="clearfix">
+                <div class="headline">
+                    <h2>Get started with your free account.</h2>
+                    <p>Register today to buy, sell or park domains.</p>
+                    <p>* <span class="u-smaller">Required</span></p>
+                </div>
+
+                <form id="form-registration-step1">
+                    <div class="std-input full required">
+                        <label for="username">User name</label>
+                        <input type="text" id="username">
+                        <span class="validator" data-tooltip="">
+                            <svg class="s-font-check">
+                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-font-check"></use>
+                            </svg>
+                            <svg class="s-font-icon-help">
+                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-font-icon-help"></use>
+                            </svg>
+                        </span>
+                    </div>
+                    <div class="std-input full required">
+                        <label for="email">Email</label>
+                        <input type="text" id="email">
+                        <span class="validator" data-tooltip="">
+                            <svg class="s-font-check">
+                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-font-check"></use>
+                            </svg>
+                            <svg class="s-font-icon-help">
+                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-font-icon-help"></use>
+                            </svg>
+                        </span>
+                    </div>
+
+                    <div class="std-input full required">
+                        <label for="confirm-email">Confirm email</label>
+                        <input type="text" id="confirm-email">
+                        <span class="validator" data-tooltip="">
+                            <svg class="s-font-check">
+                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-font-check"></use>
+                            </svg>
+                            <svg class="s-font-icon-help">
+                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-font-icon-help"></use>
+                            </svg>
+                        </span>
+                    </div>
+                    <div class="std-input full required">
+                        <label for="password">Password</label>
+                        <input type="password" id="password">
+                        <div id="password-indicator"></div>
+                        <span class="validator" data-tooltip="">
+                            <svg class="s-font-check">
+                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-font-check"></use>
+                            </svg>
+                            <svg class="s-font-icon-help">
+                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-font-icon-help"></use>
+                            </svg>
+                        </span>
+                    </div>
+                    <div class="options">
+                        <a class="btn-cta blue wizard-next-btn" id="account-create-btn" data-target="2">Save and continue</a>
+                        <div class="already-registered">
+                            <p>
+                                Do you already have a Sedo account?
+                            </p>
+                            <a href="#" class="btn-cta wire">Log in here</a>
+                        </div>
+                    </div>
+                </form>
+                <div id="registration-benefits-wrapper">
+                    <ul id="registration-benefits-list">
+                        <li class="icon">
+                            <span class="step-icon watchlist">
+                                <svg class="s-font-icon-watchlist"><use xlink:href="#s-font-icon-watchlist"></use></svg>
+                            </span>
+                            <span>Manage your watchlist however you like.</span>
+                        </li>
+                        <li class="icon">
+                            <span class="step-icon pie-chart">
+                                <svg class="s-font-pie-chart"><use xlink:href="#s-font-pie-chart"></use></svg>
+                            </span>
+                            <span>Detailed statistics about your earnings.</span>
+                        </li>
+                        <li class="icon">
+                            <span class="step-icon dashboard">
+                                <svg class="s-font-dashboard"><use xlink:href="#s-font-dashboard"></use></svg>
+                            </span>
+                            <span>Dashboard at a glance - Manage your portfolio.</span>
+                        </li>
+                        <li class="icon">
+                            <span class="step-icon rss">
+                                <svg class="s-font-rss"><use xlink:href="#s-font-rss"></use></svg>
+                            </span>
+                            <span>Receive updates about trends and about us.</span>
+                        </li>
+                    </ul>
+                </div>
+                <span id="error-message-step1"></span>
+            </div>
+
+        </div>
+
+        <div class="wizard-step wizard-step-2" style="display: none;">
+
+            <div class="wizard-step-wrapper">
+                <nav>
+                    <ul class="steps">
+                        <li>
+                            <a class="btn">
+                                <svg class="s-font-info">
+                                    <use xlink:href="#s-font-info"></use>
+                                </svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="btn active">
+                                <svg class="s-font-icon-bidder">
+                                    <use xlink:href="#s-font-icon-bidder"></use>
+                                </svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="btn">
+                                <svg class="s-font-icon-edit">
+                                    <use xlink:href="#s-font-icon-edit"></use>
+                                </svg>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+
+            <div id="registration-wrapper">
+                <div class="headline">
+                    <h2>Set up account</h2>
+                    <p>We require certain information for you to be able to buy and sell.</p>
+                    <p>* <span class="u-smaller">Required</span></p>
+                </div>
+
+                <form id="form-registration-step2">
+
+                    <div class="clearfix">
+                        <div class="left">
+                            <div class="std-input full required custom-select">
+                                <label for="addition">Form of address</label>
+                                <div class="custom-select-wrapper" tabindex="0">
+                                    <select id="addition" name="addition">
+                                        <option value="" selected="">Please select</option>
+                                        <option value="">-------------</option>
+                                        <option value="1">Ms</option>
+                                        <option value="0">Mr</option>
+                                    </select>
+                                    <span class="validator" data-tooltip="">
+                                        <svg class="s-font-check">
+                                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-font-check"></use>
+                                        </svg>
+                                        <svg class="s-font-icon-help">
+                                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-font-icon-help"></use>
+                                        </svg>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="right">
+                            <div class="std-input full required custom-select u-hidden">
+                                <label for="trader-select">Dealer status</label>
+                                <div class="custom-select-wrapper" tabindex="8">
+                                    <select id="trader-select" name="trader-status"></select>
+                                    <span class="validator" data-tooltip="">
+                                        <svg class="s-font-check">
+                                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-font-check"></use>
+                                        </svg>
+                                        <svg class="s-font-icon-help">
+                                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-font-icon-help"></use>
+                                        </svg>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="clearfix">
+                        <div class="left">
+                            <div class="std-input full required">
+                                <label for="firstname">First name</label>
+                                <input type="text" id="firstname" tabindex="1">
+                                <span class="validator" data-tooltip="">
+                                    <svg class="s-font-check">
+                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-font-check"></use>
+                                    </svg>
+                                    <svg class="s-font-icon-help">
+                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-font-icon-help"></use>
+                                    </svg>
+                                </span>
+                            </div>
+                            <div class="std-input full required">
+                                <label for="lastname">Last name</label>
+                                <input type="text" id="lastname" tabindex="2">
+                                <span class="validator" data-tooltip="">
+                                    <svg class="s-font-check">
+                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-font-check"></use>
+                                    </svg>
+                                    <svg class="s-font-icon-help">
+                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-font-icon-help"></use>
+                                    </svg>
+                                </span>
+                            </div>
+
+                        </div>
+                        <div class="right">
+                            <div class="std-input full">
+                                <label for="company">Company</label>
+                                <input type="text" id="company" tabindex="9">
+                                <span class="validator" data-tooltip="">
+                                    <svg class="s-font-check">
+                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-font-check"></use>
+                                    </svg>
+                                    <svg class="s-font-icon-help">
+                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-font-icon-help"></use>
+                                    </svg>
+                                </span>
+                            </div>
+                            <div class="std-input full required u-hidden">
+                                <label for="vat">VAT ID</label>
+                                <input type="text" id="vat" tabindex="10">
+                                <span class="validator" data-tooltip="">
+                                    <svg class="s-font-check">
+                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-font-check"></use>
+                                    </svg>
+                                    <svg class="s-font-icon-help">
+                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-font-icon-help"></use>
+                                    </svg>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="clearfix">
+                        <div class="left">
+                            <div class="std-input full required">
+                                <label for="street">Street name</label>
+                                <input type="text" id="street" tabindex="3">
+                                <span class="validator" data-tooltip="">
+                                    <svg class="s-font-check">
+                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-font-check"></use>
+                                    </svg>
+                                    <svg class="s-font-icon-help">
+                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-font-icon-help"></use>
+                                    </svg>
+                                </span>
+                            </div>
+
+                            <div class="clearfix">
+                                <div class="std-input full required zip">
+                                    <label for="zip">Postal code</label>
+                                    <input type="text" id="zip" tabindex="4">
+                                    <span class="validator" data-tooltip="">
+                                        <svg class="s-font-check">
+                                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-font-check"></use>
+                                        </svg>
+                                        <svg class="s-font-icon-help">
+                                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-font-icon-help"></use>
+                                        </svg>
+                                    </span>
+                                </div>
+                                <div class="std-input full required city">
+                                    <label for="city">City</label>
+                                    <input type="text" id="city" tabindex="5">
+                                    <span class="validator" data-tooltip="">
+                                        <svg class="s-font-check">
+                                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-font-check"></use>
+                                        </svg>
+                                        <svg class="s-font-icon-help">
+                                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-font-icon-help"></use>
+                                        </svg>
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="std-input full custom-select required">
+                                <label for="country">Country</label>
+                                <div class="custom-select-wrapper" tabindex="6">
+                                    <select id="country-select" name="country"><option value="">Please choose...</option><option value="265">Åland Islands</option><option value="5">Albania</option><option value="6">Algeria</option><option value="7">American Samoa</option><option value="8">Andorra</option><option value="10">Anguilla</option><option value="11">Antarctica</option><option value="12">Antigua and Barbuda</option><option value="13">Argentina</option><option value="14">Armenia</option><option value="15">Aruba</option><option value="243">Ascension Island</option><option value="16">Australia</option><option value="17">Austria</option><option value="18">Azerbaijan</option><option value="209">Bahamas</option><option value="19">Bahrain</option><option value="20">Bangladesh</option><option value="21">Barbados</option><option value="23">Belgium</option><option value="24">Belize</option><option value="25">Benin</option><option value="26">Bermuda</option><option value="27">Bhutan</option><option value="28">Bolivia</option><option value="29">Bosnia and Herzegovina</option><option value="30">Botswana</option><option value="31">Bouvet Island</option><option value="32">Brazil</option><option value="33">British Indian Ocean Territory</option><option value="34">Brunei</option><option value="35">Bulgaria</option><option value="36">Burkina Faso</option><option value="39">Cameroon</option><option value="40">Canada</option><option value="268">Canary Islands</option><option value="41">Cape Verde</option><option value="210">Cayman Islands</option><option value="42">Central African Republic</option><option value="44">Channel Islands, Guernsey</option><option value="45">Channel Islands, Jersey</option><option value="46">Chile</option><option value="47">China</option><option value="48">Christmas Island</option><option value="49">Cocos (Keeling) Islands</option><option value="50">Colombia</option><option value="51">Comoros</option><option value="53">Cook Islands</option><option value="54">Costa Rica</option><option value="55">Cote d'Ivoire</option><option value="56">Croatia</option><option value="271">Curacao</option><option value="58">Cyprus</option><option value="59">Czech Republic</option><option value="60">Denmark</option><option value="61">Djibouti</option><option value="62">Dominica</option><option value="63">Dominican Republic</option><option value="64">East Timor</option><option value="65">Ecuador</option><option value="66">Egypt</option><option value="67">El Salvador</option><option value="70">Estonia</option><option value="71">Ethiopia</option><option value="72">Falklands Islands</option><option value="73">Faroe Islands</option><option value="74">Fiji</option><option value="75">Finland</option><option value="76">France</option><option value="77">French Guiana</option><option value="78">French Polynesia</option><option value="79">French Southern Territories</option><option value="80">French, Metropolitan</option><option value="81">Gabon</option><option value="244">Gambia</option><option value="82">Georgia</option><option value="83">Germany</option><option value="84">Ghana</option><option value="85">Gibraltar</option><option value="86">Greece</option><option value="87">Greenland</option><option value="88">Grenada</option><option value="89">Guadeloupe</option><option value="90">Guam</option><option value="91">Guatemala</option><option value="92">Guinea</option><option value="93">Guyana</option><option value="95">Heard and McDonald Islands</option><option value="96">Honduras</option><option value="97">Hong Kong</option><option value="98">Hungary</option><option value="99">Iceland</option><option value="100">India</option><option value="101">Indonesia</option><option value="104">Ireland</option><option value="246">Isle of Man</option><option value="105">Israel</option><option value="106">Italy</option><option value="107">Jamaica</option><option value="108">Japan</option><option value="109">Jordan</option><option value="110">Kazakhstan</option><option value="111">Kenya</option><option value="112">Kiribati</option><option value="114">Korea, Republic of</option><option value="262">Kosovo</option><option value="115">Kuwait</option><option value="116">Kyrgyzstan</option><option value="117">Laos</option><option value="118">Latvia</option><option value="119">Lebanon</option><option value="120">Lesotho</option><option value="121">Liberia</option><option value="123">Liechtenstein</option><option value="124">Lithuania</option><option value="125">Luxembourg</option><option value="126">Macao</option><option value="127">Macedonia</option><option value="247">Madagascar</option><option value="128">Malawi</option><option value="129">Malaysia</option><option value="248">Maldives</option><option value="130">Mali</option><option value="131">Malta</option><option value="132">Marshall Islands</option><option value="133">Martinique</option><option value="134">Mauritania</option><option value="135">Mauritius</option><option value="136">Mayotte</option><option value="137">Mexico</option><option value="138">Micronesia</option><option value="139">Moldova</option><option value="140">Monaco</option><option value="141">Mongolia</option><option value="261">Montenegro</option><option value="142">Montserrat</option><option value="143">Morocco</option><option value="144">Mozambique</option><option value="145">Myanmar</option><option value="146">Namibia</option><option value="147">Nauru</option><option value="148">Nepal</option><option value="149">Netherlands</option><option value="150">Netherlands Antilles</option><option value="151">New Caledonia</option><option value="152">New Zealand</option><option value="153">Nicaragua</option><option value="154">Niger</option><option value="155">Nigeria</option><option value="156">Niue</option><option value="157">Norfolk Island</option><option value="158">Northern Mariana Islands</option><option value="159">Norway</option><option value="160">Oman</option><option value="161">Pakistan</option><option value="162">Palau</option><option value="249">Palestinian Territories</option><option value="163">Panama</option><option value="164">Papua New Guinea</option><option value="165">Paraguay</option><option value="166">Peru</option><option value="167">Philippines</option><option value="168">Pitcairn</option><option value="169">Poland</option><option value="170">Portugal</option><option value="171">Puerto Rico</option><option value="172">Qatar</option><option value="173">Reunion</option><option value="174">Romania</option><option value="175">Russia</option><option value="176">Rwanda</option><option value="269">Saint Barthélemy</option><option value="177">Saint Kitts and Nevis</option><option value="178">Saint Lucia</option><option value="179">Saint Vincent and the Grenadines</option><option value="180">Samoa</option><option value="181">San Marino</option><option value="182">Sao Tome and Principe</option><option value="183">Saudi Arabia</option><option value="184">Senegal</option><option value="260">Serbia</option><option value="235">Serbia and Montenegro</option><option value="185">Seychelles</option><option value="186">Sierra Leone</option><option value="187">Singapore</option><option value="264">Sint Maarten</option><option value="188">Slovakia</option><option value="189">Slovenia</option><option value="190">Solomon Islands</option><option value="192">South Africa</option><option value="193">South Georgia and the South Sandwich Islands</option><option value="194">Spain</option><option value="195">Sri Lanka</option><option value="196">St. Helena</option><option value="270">St. Martin (French Part)</option><option value="197">St. Pierre and Miquelon</option><option value="199">Surinam</option><option value="200">Svalbard and Jan Mayen Islands</option><option value="201">Swaziland</option><option value="202">Sweden</option><option value="203">Switzerland</option><option value="205">Taiwan</option><option value="207">Tanzania</option><option value="208">Thailand</option><option value="252">Timor-Leste</option><option value="250">Togo</option><option value="242">Tokelau</option><option value="211">Tonga</option><option value="212">Trinidad and Tobago</option><option value="213">Tunisia</option><option value="214">Turkey</option><option value="216">Turks and Caicos Islands</option><option value="217">Tuvalu</option><option value="218">Uganda</option><option value="219">Ukraine</option><option value="220">United Arab Emirates</option><option value="221">United Kingdom</option><option value="222">United States</option><option value="223">United States Minor Outlying Islands</option><option value="224">Uruguay</option><option value="226">Vanuatu</option><option value="227">Vatican City State</option><option value="229">Vietnam</option><option value="230">Virgin Islands (British)</option><option value="231">Virgin Islands (US)</option><option value="232">Wallis and Futuna Islands</option><option value="233">Western Sahara</option><option value="236">Zaire</option><option value="237">Zambia</option></select>
+                                    <span class="validator" data-tooltip="">
+                                        <svg class="s-font-check">
+                                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-font-check"></use>
+                                        </svg>
+                                        <svg class="s-font-icon-help">
+                                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-font-icon-help"></use>
+                                        </svg>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="std-input full custom-select required u-hidden">
+                                <label for="state">State/Province</label>
+                                <div class="custom-select-wrapper" tabindex="7">
+                                    <select id="state-select" name="country"></select>
+                                    <span class="validator" data-tooltip="">
+                                        <svg class="s-font-check">
+                                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-font-check"></use>
+                                        </svg>
+                                        <svg class="s-font-icon-help">
+                                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-font-icon-help"></use>
+                                        </svg>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="right">
+                            <div class="clearfix">
+                                <div class="std-input full custom-select phonecode">
+                                    <label for="phonecode">Country selection</label>
+                                    <div class="custom-select-wrapper" tabindex="11">
+                                        <select id="phonecode-select" name="phonecode">
+                                            <option value="" selected="">Please select</option>
+                                            <option value="">---</option>
+                                            <option value="222">+1 (United States)</option>
+                                            <option value="40">+1 (Canada)</option>
+                                            <option value="221">+44 (United Kingdom)</option>
+                                            <option value="83">+49 (Germany)</option>
+                                            <option value="76">+33 (France)</option>
+                                            <option value="194">+34 (Spain)</option>
+                                            <option value="106">+39 (Italy)</option>
+                                            <option value="">---</option>
+                                            <option value="265">+358 (Åland Islands)</option>
+                                            <option value="5">+355 (Albania)</option>
+                                            <option value="6">+213 (Algeria)</option>
+                                            <option value="8">+376 (Andorra)</option>
+                                            <option value="10">+1 (Anguilla)</option>
+                                            <option value="12">+1 (Antigua and Barbuda)</option>
+                                            <option value="13">+54 (Argentina)</option>
+                                            <option value="14">+374 (Armenia)</option>
+                                            <option value="15">+297 (Aruba)</option>
+                                            <option value="16">+61 (Australia)</option>
+                                            <option value="17">+43 (Austria)</option>
+                                            <option value="18">+994 (Azerbaijan)</option>
+                                            <option value="209">+242 (Bahamas)</option>
+                                            <option value="19">+973 (Bahrain)</option>
+                                            <option value="20">+880 (Bangladesh)</option>
+                                            <option value="21">+1 (Barbados)</option>
+                                            <option value="23">+32 (Belgium)</option>
+                                            <option value="24">+501 (Belize)</option>
+                                            <option value="25">+229 (Benin)</option>
+                                            <option value="26">+1 (Bermuda)</option>
+                                            <option value="27">+975 (Bhutan)</option>
+                                            <option value="28">+591 (Bolivia)</option>
+                                            <option value="29">+387 (Bosnia and Herzegovina)</option>
+                                            <option value="30">+267 (Botswana)</option>
+                                            <option value="32">+55 (Brazil)</option>
+                                            <option value="33">+284 (British Indian Ocean Territory)</option>
+                                            <option value="34">+673 (Brunei)</option>
+                                            <option value="35">+359 (Bulgaria)</option>
+                                            <option value="36">+226 (Burkina Faso)</option>
+                                            <option value="39">+237 (Cameroon)</option>
+                                            <option value="40">+1 (Canada)</option>
+                                            <option value="268">+34 (Canary Islands)</option>
+                                            <option value="41">+238 (Cape Verde)</option>
+                                            <option value="210">+1 (Cayman Islands)</option>
+                                            <option value="42">+236 (Central African Republic)</option>
+                                            <option value="44">+44 (Channel Islands, Guernsey)</option>
+                                            <option value="45">+44 (Channel Islands, Jersey)</option>
+                                            <option value="46">+56 (Chile)</option>
+                                            <option value="47">+86 (China)</option>
+                                            <option value="50">+57 (Colombia)</option>
+                                            <option value="54">+506 (Costa Rica)</option>
+                                            <option value="55">+225 (Cote d'Ivoire)</option>
+                                            <option value="56">+385 (Croatia)</option>
+                                            <option value="271">+599 (Curacao)</option>
+                                            <option value="58">+357 (Cyprus)</option>
+                                            <option value="59">+420 (Czech Republic)</option>
+                                            <option value="60">+45 (Denmark)</option>
+                                            <option value="62">+1 (Dominica)</option>
+                                            <option value="63">+1 (Dominican Republic)</option>
+                                            <option value="65">+593 (Ecuador)</option>
+                                            <option value="66">+20 (Egypt)</option>
+                                            <option value="67">+503 (El Salvador)</option>
+                                            <option value="70">+372 (Estonia)</option>
+                                            <option value="71">+251 (Ethiopia)</option>
+                                            <option value="73">+298 (Faroe Islands)</option>
+                                            <option value="74">+679 (Fiji)</option>
+                                            <option value="75">+358 (Finland)</option>
+                                            <option value="76">+33 (France)</option>
+                                            <option value="77">+594 (French Guiana)</option>
+                                            <option value="78">+689 (French Polynesia)</option>
+                                            <option value="81">+241 (Gabon)</option>
+                                            <option value="244">+220 (Gambia)</option>
+                                            <option value="82">+995 (Georgia)</option>
+                                            <option value="83">+49 (Germany)</option>
+                                            <option value="84">+233 (Ghana)</option>
+                                            <option value="85">+350 (Gibraltar)</option>
+                                            <option value="86">+30 (Greece)</option>
+                                            <option value="87">+299 (Greenland)</option>
+                                            <option value="88">+1 (Grenada)</option>
+                                            <option value="90">+1 (Guam)</option>
+                                            <option value="91">+502 (Guatemala)</option>
+                                            <option value="93">+592 (Guyana)</option>
+                                            <option value="96">+504 (Honduras)</option>
+                                            <option value="97">+852 (Hong Kong)</option>
+                                            <option value="98">+36 (Hungary)</option>
+                                            <option value="99">+354 (Iceland)</option>
+                                            <option value="100">+91 (India)</option>
+                                            <option value="101">+62 (Indonesia)</option>
+                                            <option value="104">+353 (Ireland)</option>
+                                            <option value="246">+44 (Isle of Man)</option>
+                                            <option value="105">+972 (Israel)</option>
+                                            <option value="106">+39 (Italy)</option>
+                                            <option value="107">+1 (Jamaica)</option>
+                                            <option value="108">+81 (Japan)</option>
+                                            <option value="109">+962 (Jordan)</option>
+                                            <option value="110">+7 (Kazakhstan)</option>
+                                            <option value="111">+254 (Kenya)</option>
+                                            <option value="114">+82 (Korea, Republic of)</option>
+                                            <option value="262">+383 (Kosovo)</option>
+                                            <option value="115">+965 (Kuwait)</option>
+                                            <option value="116">+996 (Kyrgyzstan)</option>
+                                            <option value="117">+856 (Laos)</option>
+                                            <option value="118">+371 (Latvia)</option>
+                                            <option value="119">+961 (Lebanon)</option>
+                                            <option value="120">+266 (Lesotho)</option>
+                                            <option value="121">+231 (Liberia)</option>
+                                            <option value="123">+423 (Liechtenstein)</option>
+                                            <option value="124">+370 (Lithuania)</option>
+                                            <option value="125">+352 (Luxembourg)</option>
+                                            <option value="126">+853 (Macao)</option>
+                                            <option value="127">+389 (Macedonia)</option>
+                                            <option value="247">+261 (Madagascar)</option>
+                                            <option value="128">+265 (Malawi)</option>
+                                            <option value="129">+60 (Malaysia)</option>
+                                            <option value="248">+960 (Maldives)</option>
+                                            <option value="130">+223 (Mali)</option>
+                                            <option value="131">+356 (Malta)</option>
+                                            <option value="133">+596 (Martinique)</option>
+                                            <option value="134">+222 (Mauritania)</option>
+                                            <option value="135">+230 (Mauritius)</option>
+                                            <option value="137">+52 (Mexico)</option>
+                                            <option value="139">+373 (Moldova)</option>
+                                            <option value="140">+377 (Monaco)</option>
+                                            <option value="141">+976 (Mongolia)</option>
+                                            <option value="261">+382 (Montenegro)</option>
+                                            <option value="142">+1 (Montserrat)</option>
+                                            <option value="143">+212 (Morocco)</option>
+                                            <option value="144">+258 (Mozambique)</option>
+                                            <option value="145">+95 (Myanmar)</option>
+                                            <option value="146">+264 (Namibia)</option>
+                                            <option value="148">+977 (Nepal)</option>
+                                            <option value="149">+31 (Netherlands)</option>
+                                            <option value="150">+599 (Netherlands Antilles)</option>
+                                            <option value="151">+687 (New Caledonia)</option>
+                                            <option value="152">+64 (New Zealand)</option>
+                                            <option value="153">+505 (Nicaragua)</option>
+                                            <option value="154">+227 (Niger)</option>
+                                            <option value="155">+234 (Nigeria)</option>
+                                            <option value="159">+47 (Norway)</option>
+                                            <option value="160">+968 (Oman)</option>
+                                            <option value="161">+92 (Pakistan)</option>
+                                            <option value="249">+9725 (Palestinian Territories)</option>
+                                            <option value="163">+507 (Panama)</option>
+                                            <option value="165">+595 (Paraguay)</option>
+                                            <option value="166">+51 (Peru)</option>
+                                            <option value="167">+63 (Philippines)</option>
+                                            <option value="169">+48 (Poland)</option>
+                                            <option value="170">+351 (Portugal)</option>
+                                            <option value="171">+1 (Puerto Rico)</option>
+                                            <option value="172">+974 (Qatar)</option>
+                                            <option value="173">+262 (Reunion)</option>
+                                            <option value="174">+40 (Romania)</option>
+                                            <option value="175">+7 (Russia)</option>
+                                            <option value="176">+250 (Rwanda)</option>
+                                            <option value="269">+590 (Saint Barthélemy)</option>
+                                            <option value="177">+1 (Saint Kitts and Nevis)</option>
+                                            <option value="178">+1 (Saint Lucia)</option>
+                                            <option value="179">+1 (Saint Vincent and the Grenadines)</option>
+                                            <option value="180">+1 (Samoa)</option>
+                                            <option value="183">+966 (Saudi Arabia)</option>
+                                            <option value="184">+221 (Senegal)</option>
+                                            <option value="260">+381 (Serbia)</option>
+                                            <option value="235">+381 (Serbia and Montenegro)</option>
+                                            <option value="185">+248 (Seychelles)</option>
+                                            <option value="186">+232 (Sierra Leone)</option>
+                                            <option value="187">+65 (Singapore)</option>
+                                            <option value="188">+421 (Slovakia)</option>
+                                            <option value="189">+386 (Slovenia)</option>
+                                            <option value="192">+27 (South Africa)</option>
+                                            <option value="194">+34 (Spain)</option>
+                                            <option value="195">+94 (Sri Lanka)</option>
+                                            <option value="270">+590 (St. Martin (French Part))</option>
+                                            <option value="199">+597 (Surinam)</option>
+                                            <option value="201">+268 (Swaziland)</option>
+                                            <option value="202">+46 (Sweden)</option>
+                                            <option value="203">+41 (Switzerland)</option>
+                                            <option value="205">+886 (Taiwan)</option>
+                                            <option value="207">+255 (Tanzania)</option>
+                                            <option value="208">+66 (Thailand)</option>
+                                            <option value="250">+228 (Togo)</option>
+                                            <option value="212">+1 (Trinidad and Tobago)</option>
+                                            <option value="213">+216 (Tunisia)</option>
+                                            <option value="214">+90 (Turkey)</option>
+                                            <option value="216">+1 (Turks and Caicos Islands)</option>
+                                            <option value="218">+256 (Uganda)</option>
+                                            <option value="219">+380 (Ukraine)</option>
+                                            <option value="220">+971 (United Arab Emirates)</option>
+                                            <option value="221">+44 (United Kingdom)</option>
+                                            <option value="222">+1 (United States)</option>
+                                            <option value="224">+598 (Uruguay)</option>
+                                            <option value="226">+678 (Vanuatu)</option>
+                                            <option value="227">+39 (Vatican City State)</option>
+                                            <option value="229">+84 (Vietnam)</option>
+                                            <option value="237">+260 (Zambia)</option>
+                                        </select>
+                                        <span class="validator" data-tooltip="">
+                                            <svg class="s-font-check">
+                                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-font-check"></use>
+                                            </svg>
+                                            <svg class="s-font-icon-help">
+                                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-font-icon-help"></use>
+                                            </svg>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="std-input full phone has-info">
+                                    <label for="phone">Telephone number</label>
+                                    <input type="text" id="phone" tabindex="12">
+                                    <span class="infoicon" data-tooltip="Get the best service - Enter your phone number. We can then contact you directly to assist with time-sensitive deals.">
+                                        <svg class="s-font-icon-info">
+                                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-font-icon-info"></use>
+                                        </svg>
+                                    </span>
+
+                                    <span class="validator" data-tooltip="">
+                                        <svg class="s-font-check">
+                                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-font-check"></use>
+                                        </svg>
+                                        <svg class="s-font-icon-help">
+                                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-font-icon-help"></use>
+                                        </svg>
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="std-input full custom-select required">
+                                <label for="language">Preferred language</label>
+                                <div class="custom-select-wrapper" tabindex="13">
+                                    <select id="language-select" name="language">
+                                        <option value="13">English</option>
+                                        <option value="20">Deutsch</option>
+                                        <option value="18">Français</option>
+                                        <option value="46">Español</option>
+                                        <option value="37">Português</option>
+                                        <option value="8">中文（简体）</option>
+                                    </select>
+                                    <span class="validator" data-tooltip="">
+                                        <svg class="s-font-check">
+                                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-font-check"></use>
+                                        </svg>
+                                        <svg class="s-font-icon-help">
+                                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-font-icon-help"></use>
+                                        </svg>
+                                    </span>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="clearfix">
+                        <div class="left">
+                            <div class="checkbox-wrapper required">
+                                <input class="customcheckbox" type="checkbox" id="acceptagb" name="acceptagb" value="">
+                                <label for="acceptagb" tabindex="14">
+                                    I have read and accepted the <a href="https://sedo.com/us/about-us/policies/terms-of-use/" class="external_link" target="_blank">General Terms and Conditions</a> and grant my consent to have my data electronically processed and saved. <strong>The data will not be provided to third parties without authorization.</strong>
+                                </label>
+                                <span class="validator" data-tooltip="">
+                                    <svg class="s-font-check">
+                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-font-check"></use>
+                                    </svg>
+                                    <svg class="s-font-icon-help">
+                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-font-icon-help"></use>
+                                    </svg>
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="right">
+                            <div>
+                                <input class="customcheckbox" type="checkbox" id="newsletter" name="newsletter" value="">
+                                <label for="newsletter" class="cell checkbox label" tabindex="15">I would like to be notified by email about domain tips, new products, exclusive listings and auction events. <br> You can cancel your subscription to our newsletter and promotional mailings or change the email settings in your account at any time.</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="clearfix">
+                        <div id="captcha" class="std-input full left required" tabindex="16">
+                            <span id="captcha-type" class="hidden" captcha-type="google"></span>
+                            <script src="//www.google.com/recaptcha/api.js?hl=en-us"></script>
+                            <script>
+    googleRecaptchaCallback = function () {
+                                    $(document).trigger("recaptcha-event");
+                                }</script>
+                            <div class="g-recaptcha margin-to-the-center-div-box" data-callback="googleRecaptchaCallback" data-sitekey="6LcrkAoTAAAAAJfQ-ZRiXiVG7d3MAbzvZZt0tJqM"><div style="width: 304px; height: 78px;"><div><iframe src="https://www.google.com/recaptcha/api2/anchor?ar=1&amp;k=6LcrkAoTAAAAAJfQ-ZRiXiVG7d3MAbzvZZt0tJqM&amp;co=aHR0cHM6Ly9zZWRvLmNvbTo0NDM.&amp;hl=en&amp;v=nuX0GNR875hMLA1LR7ayD9tc&amp;size=normal&amp;cb=j142xfjeg38j" role="presentation" name="a-ov4j32a6eqv5" scrolling="no" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox allow-storage-access-by-user-activation" width="304" height="78" frameborder="0"></iframe></div><textarea id="g-recaptcha-response" name="g-recaptcha-response" class="g-recaptcha-response" style="width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none; display: none;"></textarea></div><iframe style="display: none;"></iframe></div>
+                            <span class="validator" data-tooltip="">
+                                <svg class="s-font-check">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-font-check"></use>
+                                </svg>
+                                <svg class="s-font-icon-help">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-font-icon-help"></use>
+                                </svg>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="options">
+                        <a class="btn-cta blue wizard-back-btn" data-target="1">Back</a>
+                        <a id="account-save-btn" class="btn-cta blue wizard-next-btn" data-target="3">Create account</a>
+                    </div>
+                </form>
+                <span id="error-message-step2"></span>
+            </div>
+        </div>
+
+        <div class="wizard-step wizard-step-3" style="display: none;">
+
+            <div class="wizard-step-wrapper">
+                <nav>
+                    <ul class="steps">
+                        <li>
+                            <a class="btn">
+                                <svg class="s-font-info">
+                                    <use xlink:href="#s-font-info"></use>
+                                </svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="btn">
+                                <svg class="s-font-icon-bidder">
+                                    <use xlink:href="#s-font-icon-bidder"></use>
+                                </svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="btn active">
+                                <svg class="s-font-icon-edit">
+                                    <use xlink:href="#s-font-icon-edit"></use>
+                                </svg>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+
+            <div id="registration-wrapper">
+                <div class="headline">
+                    <h2>Thank you for your registration.</h2>
+                    <p>Just a few more steps are required.</p>
+                </div>
+
+                <div class="content-body">
+                    <h3>Please confirm and activate your account.</h3>
+                    <p>Check your emails and click on the activation link in the email which we have sent to <strong id="user-email"></strong>.</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="t3-content-fullwidth">
+
+    </div>
+</main>
+
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
