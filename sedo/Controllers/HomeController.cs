@@ -10,6 +10,7 @@ namespace sedo.Controllers
 {
     public class HomeController : Controller
     {
+        [Route("")]
         [Route("{culture}")]
         public IActionResult Index()
         {
@@ -49,7 +50,7 @@ namespace sedo.Controllers
             return View();
         }
         [Route("{culture}/buy-domains/domain-acquisition/")]
-        public IActionResult acquisition()
+        public IActionResult Acquisition()
         {
             return View();
         }
@@ -125,37 +126,34 @@ namespace sedo.Controllers
         {
             return View();
         }
-        [Route("{culture}/about-us/case-studies/")]
-        public IActionResult Read()
-        {
-            return View();
-        }
+
         [Route("{culture}/search/")]
         public IActionResult Com()
         {
             return View();
         }
-        [Route("{culture}/about-us/sedo-the-company/")]
+        [Route("{culture}/about/sedo-the-company/")]
         public IActionResult SedoCompany()
         {
             return View();
         }
-        [Route("{culture}/about-us/news-press/")]
+        [Route("{culture}/about/news-press/")]
         public IActionResult News()
         {
             return View();
         }
-        [Route("{culture}/about-us/events/")]
+        [Route("{culture}/about/events/")]
         public IActionResult Events()
         {
             return View();
         }
-        [Route("{culture}/about-sedo/case-studies/")]
+        [Route("{culture}/about/case-studies/")]
         public IActionResult CaseStudies()
         {
             return View();
         }
-        [Route("{culture}/about-us/careers/")]
+
+        [Route("{culture}/about/careers/")]
         public IActionResult Careers()
         {
             return View();
@@ -170,22 +168,22 @@ namespace sedo.Controllers
         {
             return View();
         }
-        [Route("{culture}/about-us/imprint/")]
+        [Route("{culture}/about/imprint/")]
         public IActionResult CompanyInfo()
         {
             return View();
         }
-        [Route("{culture}/about-us/policies/protecting-your-privacy/")]
+        [Route("{culture}/about/policies/protecting-your-privacy/")]
         public IActionResult ProtectingPrivacy()
         {
             return View();
         }
-        [Route("{culture}/about-us/")]
-        public IActionResult CookieSettings()
-        {
-            return View();
-        }
-        [Route("{culture}/about-us/policies/")]
+        //[Route("{culture}/")]
+        //public IActionResult CookieSettings()
+        //{
+        //    return View();
+        //}
+        [Route("{culture}/about/policies/")]
         public IActionResult Policies()
         {
             return View();
@@ -215,7 +213,16 @@ namespace sedo.Controllers
         //{
         //    return View();
         //}
-
+        //[Route("{culture}/know-how-support/")]
+        //public IActionResult KnowHowSupport()
+        //{
+        //    return View();
+        //}
+        [Route("{culture}/about/")]
+        public IActionResult About()
+        {
+            return View();
+        }
 
 
         public IActionResult Privacy()
