@@ -223,6 +223,11 @@ namespace sedo.Controllers
         {
             return View();
         }
+        [Route("{culture}/us/about-us/news-press/newsroom/sedo-end-user-case-study-desktopcom/")]
+        public IActionResult ReadStory()
+        {
+            return View();
+        }
 
 
         public IActionResult Privacy()
