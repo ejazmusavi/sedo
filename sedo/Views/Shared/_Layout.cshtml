@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - sedo</title>
+    <title>@ViewData["Title"] - Doorth</title>
 
     <environment include="Development">
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
@@ -16,6 +16,9 @@
               integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" />
     </environment>
     <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/forms.css" />
+    <link rel="stylesheet" href="~/css/cas.css" />
+    <link rel="stylesheet" href="~/css/search.css" />
 </head>
 <body>
     <div id="wrapper">
@@ -30,11 +33,10 @@
                     <a id="responsive-navi-button">
                         <span class="burger-icon"></span>
                     </a>
-                    @*<div class="row">
-                            <div class="col-md-2 logo1">
-                                <img src="/img/logo.png "style="width:150px;height:150px" />
-                            </div>
-                        </div>*@
+                    <div id="logo">
+                        <a href="/us/">&nbsp;</a>
+                    </div>
+
 
 
                     <a id="seachbar-responsive-toggle">
@@ -46,7 +48,7 @@
                         <form>
                             <div class="std-input full no-border" id="search-input-wrapper">
                                 <label for="search-input">Your Keyword</label>
-                                <input type="search" id="search-input" name="Sedo Search">
+                                <input type="search" id="search-input" name="Doorth Search">
                             </div>
                             <div id="tld-select" class="std-input full no-border"><div class="tld-dialog-selector"><span class="tld-dialog-selector-text">TLD</span><span class="tld-dialog-selector-toggle"></span></div></div>
                             <div class="std-input full no-border search-submit-wrapper">
@@ -59,7 +61,7 @@
 
                     <div id="loginbox-wrapper">
                         <div id="login-status-logged-off" class="">
-                            <a class="button">
+                            <a class="button" asp-area="Identity" asp-page="/Account/Login">
                                 <div class="icon">
                                     <svg class="s-font-person">
                                         <use xlink:href="#s-font-person">
@@ -73,19 +75,6 @@
                                     Login
                                 </span>
                             </a>
-                            <div class="overlay loginbox-overlay" style="display: none;">
-                                <form action="/auth/login?locale=en_US" method="post" class="loginbox-form">
-                                    <input type="hidden" name="linkurl" value="%2Fmember%2Findex.php3%3Flanguage%3Dus">
-                                    <input type="hidden" name="language" value="us">
-                                    <input type="hidden" name="auto" value="true">
-                                    <input type="hidden" name="service" value="https://sedo.com/login.php3?linkurl=%2Fmember%2Findex.php3%3Flanguage%3Dus">
-
-                                    <input type="text" name="user" placeholder="Username">
-                                    <input type="password" name="pass" placeholder="Password">
-                                    <a class="password-forgot" href="/member/forgotpassword.php3?language=us">Login data?</a>
-                                    <input type="submit" value="Login" name="login" class="loginbox-submit">
-                                </form>
-                            </div>
                         </div>
 
                         <div id="login-status-logged" class="status-logged hidden">
@@ -94,7 +83,7 @@
                             </div>
 
                             <div class="info">
-                                <span class="label">My Sedo</span>
+                                <span class="label">My Doorth</span>
 
                                 <span class="input"></span>
                             </div>
@@ -102,7 +91,7 @@
                             <nav class="my-sedo">
                                 <ul>
                                     <li>
-                                        <a href="/member/index.php3?language=us">My Sedo</a>
+                                        <a href="/member/index.php3?language=us">My Doorth</a>
                                     </li>
                                     <li>
                                         <a href="/member/domainsignup/index.php?language=us">Add Domains</a>
@@ -125,7 +114,7 @@
 
                     <div id="watchlist">
                         <div id="watchlist-status-logged-off" class="">
-                            <a href="/member/register.php" class="button">
+                            <a asp-area="Identity" asp-page="/Account/Register" class="button">
                                 <div class="icon">
                                     <svg class="s-font-person-add">
                                         <use xlink:href="#s-font-person-add">
@@ -158,7 +147,7 @@
                     <nav id="nav-main">
                         <div id="responsive-login" class="logged-off">
                             <div class="logged-off">
-                                <a href="#" id="responsive-logged-off-toggle">
+                                <a id="responsive-logged-off-toggle" asp-area="Identity" asp-page="/Account/Login">
                                     <div class="icon">
                                         <svg class="s-font-person"><use xlink:href="#s-font-person"></use></svg>
                                     </div>
@@ -177,31 +166,35 @@
                                 </a>
 
                                 <nav class="my-sedo-mobile u-hidden">
-                                    <ul><li><a href="/member/index.php3?language=us">My Sedo</a></li><li><a href="/member/domainsignup/index.php?language=us">Add Domains</a></li><li><a href="/member/dnmanagement.php4?language=us">My Domains</a></li><li><a href="/member/parking_tools/overview.php?language=us">Parking Reports</a></li><li><a href="/member/controlpanel/?language=us">Buyer Control Panel</a></li><li><a href="/member/domainforsalewatch.php4?language=us">Keyword Watchlist</a></li><li><a href="/member/transfer/index.php?language=us">Transfer Center</a></li><li><a href="/member/billing/invoicelist.php?language=us">Billing</a></li><li><a href="/member/partner/index.php?language=us">Partner Program</a></li><li><a href="/member/editaccount.php3?language=us">My Account</a></li><li><a href="/logout.php?language=us">Logout</a></li></ul>
+                                    <ul>
+                                        <li><a href="/member/index">My Doorth</a></li>
+                                        <li><a href="/member/domainsignup/index">Add Domains</a></li>
+                                        <li><a href="/member/dnmanagement">My Domains</a></li>
+                                        <li><a href="/member/parking_tools/overview">Parking Reports</a></li>
+                                        <li><a href="/member/controlpanel/?language=us">Buyer Control Panel</a></li>
+                                        <li><a href="/member/domainforsalewatch?language=us">Keyword Watchlist</a></li>
+                                        <li><a href="/member/transfer/index?language=us">Transfer Center</a></li>
+                                        <li><a href="/member/billing/invoicelist?language=us">Billing</a></li>
+                                        <li><a href="/member/partner/index?language=us">Partner Program</a></li>
+                                        <li><a href="/member/editaccount?language=us">My Account</a></li>
+                                        <li><a href="/logout?language=us">Logout</a></li>
+                                        <li>
+                                            <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
+                                                <button type="submit" class="nav-link btn btn-link text-dark">Logout</button>
+                                            </form>
+                                        </li>
+                                    </ul>
                                 </nav>
                             </div>
 
-                        </div>
-                        <div id="responsive-login-wrapper">
-                            <form action="/auth/login?locale=en_US" method="post" class="loginbox-form">
-                                <input type="hidden" name="linkurl" value="%2Fmember%2Findex.php3%3Flanguage%3Dus">
-                                <input type="hidden" name="language" value="us">
-                                <input type="hidden" name="auto" value="true">
-                                <input type="hidden" name="service" value="https://sedo.com/login.php3?linkurl=%2Fmember%2Findex.php3%3Flanguage%3Dus">
-
-                                <input type="text" name="user" placeholder="Username">
-                                <input type="password" name="pass" placeholder="Password">
-                                <a class="password-forgot" href="/member/forgotpassword.php3?language=us">Login data?</a>
-                                <input type="submit" value="Login" name="login" class="loginbox-submit">
-                            </form>
                         </div>
 
                         <ul class="mainnav">
                             <li class="mainnav-item">
                                 <a href="/us/what-we-offer/">What we offer</a><div class="subnav-wrapper">
                                     <ul class="subnav">
-                                        <li class="subnav-item first"><a href="/us/what-we-offer/what-sedo-offers/"><span class="icon"><svg class="s-nav-checklist extend"><use xlink:href="/images/icons/nav-icons.svg#s-nav-checklist"></use></svg></span><span class="label">What Sedo offers</span><span class="desc">All things domaining in one place</span></a></li>
-                                        <li class="subnav-item"><a href="/us/what-we-offer/registry-overview/"><span class="icon"><svg class="s-nav-registry"><use xlink:href="/images/icons/nav-icons.svg#s-nav-registry"></use></svg></span><span class="label">Registry Services</span><span class="desc">Launch your new TLD with Sedo</span></a></li>
+                                        <li class="subnav-item first"><a href="/us/what-we-offer/what-sedo-offers/"><span class="icon"><svg class="s-nav-checklist extend"><use xlink:href="/images/icons/nav-icons.svg#s-nav-checklist"></use></svg></span><span class="label">What Doorth offers</span><span class="desc">All things domaining in one place</span></a></li>
+                                        <li class="subnav-item"><a href="/us/what-we-offer/registry-overview/"><span class="icon"><svg class="s-nav-registry"><use xlink:href="/images/icons/nav-icons.svg#s-nav-registry"></use></svg></span><span class="label">Registry Services</span><span class="desc">Launch your new TLD with Doorth</span></a></li>
                                         <li class="subnav-item"><a href="/us/what-we-offer/registrar-services/"><span class="icon"><svg class="s-nav-registrar-services extended"><use xlink:href="/images/icons/nav-icons.svg#s-nav-registrar-services"></use></svg></span><span class="label">Registrar Services</span><span class="desc">SedoMLS, Registrar Parking, and Expiring Domains</span></a></li>
                                         <li class="subnav-item last"><a href="/us/what-we-offer/price-list/"><span class="icon"><svg class="s-nav-pricetag"><use xlink:href="/images/icons/nav-icons.svg#s-nav-pricetag"></use></svg></span><span class="label">Price List</span><span class="desc">All products, all prices</span></a></li>
                                         <li class="header-infobox">
@@ -311,9 +304,9 @@
                                 </div>
                             </li>
                             <li class="secondnav-item">
-                                <a href="/us/about/">About Sedo</a><div class="subnav-wrapper">
+                                <a href="/us/about/">About Doorth</a><div class="subnav-wrapper">
                                     <ul class="subnav">
-                                        <li class="subnav-item first"><a href="/us/about/sedo-the-company/"><span class="icon"><svg class="s-nav-company"><use xlink:href="/images/icons/nav-icons.svg#s-nav-company"></use></svg></span><span class="label">Sedo the company</span><span class="desc">Who we are, what we stand for</span></a></li>
+                                        <li class="subnav-item first"><a href="/us/about/sedo-the-company/"><span class="icon"><svg class="s-nav-company"><use xlink:href="/images/icons/nav-icons.svg#s-nav-company"></use></svg></span><span class="label">Doorth the company</span><span class="desc">Who we are, what we stand for</span></a></li>
                                         <li class="subnav-item"><a href="/us/about/news-press/"><span class="icon"><svg class="s-nav-newspaper"><use xlink:href="/images/icons/nav-icons.svg#s-nav-newspaper"></use></svg></span><span class="label">News &amp; Press</span><span class="desc">Read our News and Press Releases</span></a></li>
                                         <li class="subnav-item"><a href="/us/about/events/"><span class="icon"><svg class="s-nav-calender"><use xlink:href="/images/icons/nav-icons.svg#s-nav-calender"></use></svg></span><span class="label">Events</span><span class="desc">Meet us at a conference near you</span></a></li>
                                         <li class="subnav-item"><a href="/us/about/case-studies/"><span class="icon"><svg class="s-nav-case-studie"><use xlink:href="/images/icons/nav-icons.svg#s-nav-case-studie"></use></svg></span><span class="label">Case Studies</span><span class="desc">Our customers with their domain success stories</span></a></li>
@@ -349,10 +342,78 @@
                 <div id="footer-top">
                     <div id="footer-top-main">
                         <nav id="footer-nav">
-                            <ul class="main-links"><li><a href="/us/what-we-offer/">What we offer</a><ul class="sub-links"><li><a href="/us/what-we-offer/what-sedo-offers/">What Sedo offers</a></li><li><a href="/us/what-we-offer/registry-overview/">Registry Services</a></li><li><a href="/us/what-we-offer/registrar-services/">Registrar Services</a></li><li><a href="/us/what-we-offer/price-list/">Price List</a></li></ul></li><li><a href="/us/buy-domains/">Buy Domains</a><ul class="sub-links"><li><a href="/us/buy-domains/how-it-works/">How it works</a></li><li><a href="/search/?language=us">Domain Search</a></li><li><a href="/us/buy-domains/domain-acquisition/">Domain Acquisition</a></li><li><a href="/us/buy-domains/auction-calendar/">Auction Calendar</a></li><li><a href="/us/buy-domains/market-trends/">Market Trends</a></li><li><a href="/us/buy-domains/exclusive-broker-domains/">Exclusive Broker Domains</a></li><li><a href="/us/buy-domains/expiring-domains/">Expiring Domains</a></li></ul></li><li><a href="/us/sell-domains/">Sell Domains</a><ul class="sub-links"><li><a href="/us/sell-domains/how-it-works/">How it works</a></li><li><a href="/us/sell-domains/domain-trade/">Domain Trade</a></li><li><a href="/us/sell-domains/domain-auction/">Domain Auction</a></li><li><a href="/us/sell-domains/promotion-options/">Promotion Options</a></li></ul></li><li><a href="/us/park-domains/">Park Domains</a><ul class="sub-links"><li><a href="/us/park-domains/parking-domains/">Parking Domains</a></li></ul></li><li><a href="/us/services/">Our Services</a><ul class="sub-links"><li><a href="/us/services/service-overview/">Service Overview</a></li><li><a href="/us/services/domain-appraisal/">Domain Appraisals</a></li><li><a href="/us/services/broker-service/">Broker Service</a></li><li><a href="/us/services/domain-transfer-service/">Domain Transfer</a></li><li><a href="/us/services/sedos-partner-program/">Partner Program</a></li><li><a href="/us/services/launch-calendar/">Launch calendar</a></li></ul></li><li class="is-visible-mobile"><a href="/us/know-how-support/">Know-How &amp; Support</a><ul class="sub-links"><li><a href="/us/know-how-support/customer-support/">Customer Support</a></li><li><a href="/us/know-how-support/domain-law/">Domain Law</a></li></ul></li><li><a href="/us/about-us/">About Sedo</a><ul class="sub-links"><li><a href="/us/about-us/sedo-the-company/">Sedo the company</a></li><li><a href="/us/about-us/news-press/">News &amp; Press</a></li><li><a href="/us/about-us/events/">Events</a></li><li><a href="/us/about-us/case-studies/">Case Studies</a></li><li><a href="/us/about-us/careers/">Careers</a></li></ul></li></ul>
+                            <ul class="main-links">
+                                <li>
+                                    <a href="/us/what-we-offer/">What we offer</a>
+                                    <ul class="sub-links">
+                                        <li><a href="/us/what-we-offer/what-sedo-offers/">What Doorth offers</a></li>
+                                        <li><a href="/us/what-we-offer/registry-overview/">Registry Services</a></li>
+                                        <li><a href="/us/what-we-offer/registrar-services/">Registrar Services</a></li>
+                                        <li><a href="/us/what-we-offer/price-list/">Price List</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="/us/buy-domains/">Buy Domains</a>
+                                    <ul class="sub-links">
+                                        <li><a href="/us/buy-domains/how-it-works/">How it works</a></li>
+                                        <li><a href="/search/?language=us">Domain Search</a></li>
+                                        <li><a href="/us/buy-domains/domain-acquisition/">Domain Acquisition</a></li>
+                                        <li><a href="/us/buy-domains/auction-calendar/">Auction Calendar</a></li>
+                                        <li><a href="/us/buy-domains/market-trends/">Market Trends</a></li>
+                                        <li><a href="/us/buy-domains/exclusive-broker-domains/">Exclusive Broker Domains</a></li>
+                                        <li>
+                                            <a href="/us/buy-domains/expiring-domains/">Expiring Domains</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="/us/sell-domains/">Sell Domains</a>
+                                    <ul class="sub-links">
+                                        <li><a href="/us/sell-domains/how-it-works/">How it works</a></li>
+                                        <li><a href="/us/sell-domains/domain-trade/">Domain Trade</a></li>
+                                        <li><a href="/us/sell-domains/domain-auction/">Domain Auction</a></li>
+                                        <li><a href="/us/sell-domains/promotion-options/">Promotion Options</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="/us/park-domains/">Park Domains</a><ul class="sub-links">
+                                        <li><a href="/us/park-domains/parking-domains/">Parking Domains</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="/us/services/">Our Services</a><ul class="sub-links">
+                                        <li><a href="/us/services/service-overview/">Service Overview</a></li>
+                                        <li><a href="/us/services/domain-appraisal/">Domain Appraisals</a></li>
+                                        <li><a href="/us/services/broker-service/">Broker Service</a></li>
+                                        <li><a href="/us/services/domain-transfer-service/">Domain Transfer</a></li>
+                                        <li><a href="/us/services/sedos-partner-program/">Partner Program</a></li>
+                                        <li><a href="/us/services/launch-calendar/">Launch calendar</a></li>
+                                    </ul>
+                                </li>
+                                <li class="is-visible-mobile">
+                                    <a href="/us/know-how-support/">Know-How &amp; Support</a>
+                                    <ul class="sub-links">
+                                        <li><a href="/us/know-how-support/customer-support/">Customer Support</a></li>
+                                        <li><a href="/us/know-how-support/domain-law/">Domain Law</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="/us/about-us/">About Doorth</a><ul class="sub-links">
+                                        <li><a href="/us/about-us/sedo-the-company/">Doorth the company</a></li>
+                                        <li><a href="/us/about-us/news-press/">News &amp; Press</a></li>
+                                        <li><a href="/us/about-us/events/">Events</a></li>
+                                        <li><a href="/us/about-us/case-studies/">Case Studies</a></li>
+                                        <li><a href="/us/about-us/careers/">Careers</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
                         </nav>
                         <nav id="footer-nav-help">
-                            <header>Know-How &amp; Support</header><ul><li>FAQ &amp; contact support<br><a href="/us/know-how-support/">Customer Support</a></li><li>Legal Resources<br><a href="/us/know-how-support/domain-law/">Domain Law</a></li></ul>
+                            <header>Know-How &amp; Support</header>
+                            <ul>
+                                <li>FAQ &amp; contact support<br><a href="/us/know-how-support/">Customer Support</a></li>
+                                <li>Legal Resources<br><a href="/us/know-how-support/domain-law/">Domain Law</a></li>
+                            </ul>
                         </nav>
                     </div>
 
@@ -369,7 +430,7 @@
                                     <form id="form-newsletter-registration">
                                         <div class="checkbox-wrapper required" id="footer-newsletter-signup-checkbox-wrapper">
                                             <input class="customcheckbox" type="checkbox" id="footer-newsletter-signup-checkbox" name="newsletter-signup" value="">
-                                            <label for="footer-newsletter-signup-checkbox">Yes, I would like to receive regular e-mail updates on Sedo product news, discounts, promotions and domain news. I can unsubscribe at any time using the unsubscribe link in the respective newsletter.</label>
+                                            <label for="footer-newsletter-signup-checkbox">Yes, I would like to receive regular e-mail updates on Doorth product news, discounts, promotions and domain news. I can unsubscribe at any time using the unsubscribe link in the respective newsletter.</label>
                                         </div>
 
                                         <div class="std-input full required" id="footer-newsletter-email-wrapper">
@@ -401,17 +462,8 @@
                                     <li><a class="logo-ipmc" href="http://www.ipmanagerinc.com/" target="_blank"></a></li>
 
                                     <li class="logo-bbb">
-                                        <bbbseal class="bbbseal bbb_1_50_96"><a href="https://www.bbb.org/us/ma/cambridge/profile/internet-service/sedo-0021-97970#sealclick" class="" target="_blank" rel="nofollow"><img src="https://seal-boston.bbb.org/seals/blue-seal-96-50-bbb-97970.png" style="border: 0;" alt="Sedo Business Review"></a></bbbseal>
-                                        <script type="text/javascript">
-                                            (function () {
-                                                var bbb = document.createElement("script");
-                                                bbb.type = "text/javascript";
-                                                bbb.async = true;
-                                                bbb.src = "https://seal-boston.bbb.org/v3/seals/blue-seal-96-50-bbb-97970.js";
-                                                var s = document.getElementsByTagName("script")[0];
-                                                s.parentNode.insertBefore(bbb, s);
-                                            })();
-                                        </script>
+                                        <bbbseal class="bbbseal bbb_1_50_96"><a href="https://www.bbb.org/us/ma/cambridge/profile/internet-service/sedo-0021-97970#sealclick" class="" target="_blank" rel="nofollow"><img src="https://seal-boston.bbb.org/seals/blue-seal-96-50-bbb-97970.png" style="border: 0;" alt="Doorth Business Review"></a></bbbseal>
+                                        
                                     </li>
 
                                     <li><a class="logo-ica" href="https://www.internetcommerce.org/" target="_blank"></a></li>
@@ -435,7 +487,7 @@
                     </div>
 
                     <div id="copy">
-                        <p>© 1999 - 2020 Sedo.com, LLC</p>
+                        <p>© 1999 - 2020 Doorth.com, LLC</p>
                     </div>
 
                     <nav id="footer-nav-meta">
@@ -510,7 +562,11 @@
         </script>
     </environment>
     <script src="~/js/site.js" asp-append-version="true"></script>
-
+    <script>
+        $('#langswitch').on('click', function () {
+            $(this).find("ul").toggleClass("hover")
+        });
+    </script>
     @RenderSection("Scripts", required: false)
 </body>
 </html>

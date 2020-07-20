@@ -4,7 +4,6 @@
     ViewData["Title"] = "Register";
 }
 
-<h1>@ViewData["Title"]</h1>
 
 @*<div class="row">
         <div class="col-md-4">
@@ -39,14 +38,14 @@
             <div class="wizard-step-wrapper">
                 <nav>
                     <ul class="steps">
-                        <li>
+                        @*<li>
                             <a class="btn active">
                                 <svg class="s-font-info">
                                     <use xlink:href="#s-font-info"></use>
                                 </svg>
                             </a>
                         </li>
-                        <li>
+                            <li>
                             <a class="btn">
                                 <svg class="s-font-icon-bidder">
                                     <use xlink:href="#s-font-icon-bidder"></use>
@@ -59,7 +58,7 @@
                                     <use xlink:href="#s-font-icon-edit"></use>
                                 </svg>
                             </a>
-                        </li>
+                        </li>*@
                     </ul>
                 </nav>
             </div>
@@ -128,7 +127,7 @@
                             <p>
                                 Do you already have a Sedo account?
                             </p>
-                            <a href="#" class="btn-cta wire">Log in here</a>
+                            <a asp-area="Identity" asp-page="/Account/Login" class="btn-cta wire">Log in here</a>
                         </div>
                     </div>
                 </form>

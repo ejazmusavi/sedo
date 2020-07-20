@@ -5,7 +5,6 @@
     ViewData["Title"] = "Log in";
 }
 
-<h1>@ViewData["Title"]</h1>
 @*<div class="row">
     <div class="col-md-4">
         <section>
@@ -117,7 +116,7 @@
 
                             <div class="form__registration-bar">
                                 <p class="form__registration-hint">Don't have an account yet?</p>
-                                <a href="https://sedo.com/member/register.php?language=us" class="btn btn--unobtrusive">Register</a>
+                                <a asp-area="Identity" asp-page="/Account/Register" class="btn btn--unobtrusive">Register</a>
                             </div>
                         </div>
 
@@ -127,7 +126,7 @@
                     <div id="pmlinks">
                         <div>
                             <br><span class="fa fa-question-circle"></span>
-                            <a href="https://sedo.com/member/forgotpassword.php3?language=us">I forgot my password</a>
+                                <a asp-area="Identity" asp-page="/Account/Register" style="line-height:40px;">I forgot my password</a>
                         </div>
                     </div>
 
@@ -135,25 +134,25 @@
                         <nav class="language-nav">
                             <ul class="language-list">
                                 <li class="language-item">
-                                    <a href="https:/auth/login?locale=en_US">English (US)</a>
+                                    <a href="#">English (US)</a>
                                 </li>
                                 <li class="language-item">
-                                    <a href="https:/auth/login?locale=en_GB">English (UK)</a>
+                                    <a href="#">English (UK)</a>
                                 </li>
                                 <li class="language-item">
-                                    <a href="https:/auth/login?locale=de_DE">Deutsch</a>
+                                    <a href="#">Deutsch</a>
                                 </li>
                                 <li class="language-item">
-                                    <a href="https:/auth/login?locale=es_ES">Español</a>
+                                    <a href="#">Español</a>
                                 </li>
                                 <li class="language-item">
-                                    <a href="https:/auth/login?locale=fr_FR">Français</a>
+                                    <a href="#">Français</a>
                                 </li>
                                 <li class="language-item">
-                                    <a href="https:/auth/login?locale=zh_CN">中文（简体)</a>
+                                    <a href="#">中文（简体)</a>
                                 </li>
                                 <li class="language-item">
-                                    <a href="https:/auth/login?locale=pt_BR">Português</a>
+                                    <a href="#">Português</a>
                                 </li>
                             </ul>
                         </nav>
