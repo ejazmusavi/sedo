@@ -36,133 +36,137 @@
         <div class="wizard-step wizard-step-1" style="display: block;">
 
             <div class="wizard-step-wrapper">
-                <nav>
-                    <ul class="steps">
-                        @*<li>
-                            <a class="btn active">
-                                <svg class="s-font-info">
-                                    <use xlink:href="#s-font-info"></use>
-                                </svg>
-                            </a>
-                        </li>
-                            <li>
-                            <a class="btn">
-                                <svg class="s-font-icon-bidder">
-                                    <use xlink:href="#s-font-icon-bidder"></use>
-                                </svg>
-                            </a>
-                        </li>
+                <!--  <nav>
+                <ul class="steps">
+                    <li>
+                        <a class="btn active">
+
+                            @*<svg class="s-font-info">
+        <use xlink:href="#s-font-info"></use>
+    </svg>*@
+                        </a>
+                    </li>
                         <li>
-                            <a class="btn">
-                                <svg class="s-font-icon-edit">
-                                    <use xlink:href="#s-font-icon-edit"></use>
+                        <a class="btn">
+                            <svg class="s-font-icon-bidder">
+                                <use xlink:href="#s-font-icon-bidder"></use>
+                            </svg>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="btn">
+                            <span class="material-icons">
+                                edit
+                            </span>
+                            <svg class="s-font-icon-edit">
+                                <use xlink:href="#s-font-icon-edit"></use>
+                            </svg>
+                        </a>
+                    </li>
+                </ul>
+            </nav>-->
+            </div>
+
+                <div id="registration-wrapper" class="clearfix">
+                    <div class="headline">
+                        <h2>Get started with your free account.</h2>
+                        <p>Register today to buy, sell or park domains.</p>
+                        <p>* <span class="u-smaller">Required</span></p>
+                    </div>
+
+                    <form id="form-registration-step1">
+                        <div class="std-input full required">
+                            <label for="username">User name</label>
+                            <input type="text" id="username">
+                            <span class="validator" data-tooltip="">
+                                <svg class="s-font-check">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-font-check"></use>
                                 </svg>
-                            </a>
-                        </li>*@
-                    </ul>
-                </nav>
-            </div>
-
-            <div id="registration-wrapper" class="clearfix">
-                <div class="headline">
-                    <h2>Get started with your free account.</h2>
-                    <p>Register today to buy, sell or park domains.</p>
-                    <p>* <span class="u-smaller">Required</span></p>
-                </div>
-
-                <form id="form-registration-step1">
-                    <div class="std-input full required">
-                        <label for="username">User name</label>
-                        <input type="text" id="username">
-                        <span class="validator" data-tooltip="">
-                            <svg class="s-font-check">
-                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-font-check"></use>
-                            </svg>
-                            <svg class="s-font-icon-help">
-                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-font-icon-help"></use>
-                            </svg>
-                        </span>
-                    </div>
-                    <div class="std-input full required">
-                        <label for="email">Email</label>
-                        <input type="text" id="email">
-                        <span class="validator" data-tooltip="">
-                            <svg class="s-font-check">
-                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-font-check"></use>
-                            </svg>
-                            <svg class="s-font-icon-help">
-                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-font-icon-help"></use>
-                            </svg>
-                        </span>
-                    </div>
-
-                    <div class="std-input full required">
-                        <label for="confirm-email">Confirm email</label>
-                        <input type="text" id="confirm-email">
-                        <span class="validator" data-tooltip="">
-                            <svg class="s-font-check">
-                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-font-check"></use>
-                            </svg>
-                            <svg class="s-font-icon-help">
-                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-font-icon-help"></use>
-                            </svg>
-                        </span>
-                    </div>
-                    <div class="std-input full required">
-                        <label for="password">Password</label>
-                        <input type="password" id="password">
-                        <div id="password-indicator"></div>
-                        <span class="validator" data-tooltip="">
-                            <svg class="s-font-check">
-                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-font-check"></use>
-                            </svg>
-                            <svg class="s-font-icon-help">
-                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-font-icon-help"></use>
-                            </svg>
-                        </span>
-                    </div>
-                    <div class="options">
-                        <a class="btn-cta blue wizard-next-btn" id="account-create-btn" data-target="2">Save and continue</a>
-                        <div class="already-registered">
-                            <p>
-                                Do you already have a Sedo account?
-                            </p>
-                            <a asp-area="Identity" asp-page="/Account/Login" class="btn-cta wire">Log in here</a>
+                                <svg class="s-font-icon-help">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-font-icon-help"></use>
+                                </svg>
+                            </span>
                         </div>
-                    </div>
-                </form>
-                <div id="registration-benefits-wrapper">
-                    <ul id="registration-benefits-list">
-                        <li class="icon">
-                            <span class="step-icon watchlist">
-                                <svg class="s-font-icon-watchlist"><use xlink:href="#s-font-icon-watchlist"></use></svg>
+                        <div class="std-input full required">
+                            <label for="email">Email</label>
+                            <input type="text" id="email">
+                            <span class="validator" data-tooltip="">
+                                <svg class="s-font-check">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-font-check"></use>
+                                </svg>
+                                <svg class="s-font-icon-help">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-font-icon-help"></use>
+                                </svg>
                             </span>
-                            <span>Manage your watchlist however you like.</span>
-                        </li>
-                        <li class="icon">
-                            <span class="step-icon pie-chart">
-                                <svg class="s-font-pie-chart"><use xlink:href="#s-font-pie-chart"></use></svg>
-                            </span>
-                            <span>Detailed statistics about your earnings.</span>
-                        </li>
-                        <li class="icon">
-                            <span class="step-icon dashboard">
-                                <svg class="s-font-dashboard"><use xlink:href="#s-font-dashboard"></use></svg>
-                            </span>
-                            <span>Dashboard at a glance - Manage your portfolio.</span>
-                        </li>
-                        <li class="icon">
-                            <span class="step-icon rss">
-                                <svg class="s-font-rss"><use xlink:href="#s-font-rss"></use></svg>
-                            </span>
-                            <span>Receive updates about trends and about us.</span>
-                        </li>
-                    </ul>
-                </div>
-                <span id="error-message-step1"></span>
-            </div>
+                        </div>
 
-        </div>
+                        <div class="std-input full required">
+                            <label for="confirm-email">Confirm email</label>
+                            <input type="text" id="confirm-email">
+                            <span class="validator" data-tooltip="">
+                                <svg class="s-font-check">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-font-check"></use>
+                                </svg>
+                                <svg class="s-font-icon-help">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-font-icon-help"></use>
+                                </svg>
+                            </span>
+                        </div>
+                        <div class="std-input full required">
+                            <label for="password">Password</label>
+                            <input type="password" id="password">
+                            <div id="password-indicator"></div>
+                            <span class="validator" data-tooltip="">
+                                <svg class="s-font-check">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-font-check"></use>
+                                </svg>
+                                <svg class="s-font-icon-help">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-font-icon-help"></use>
+                                </svg>
+                            </span>
+                        </div>
+                        <div class="options">
+                            <a class="btn-cta blue wizard-next-btn" id="account-create-btn" data-target="2">Save and continue</a>
+                            <div class="already-registered">
+                                <p>
+                                    Do you already have a Sedo account?
+                                </p>
+                                <a asp-area="Identity" asp-page="/Account/Login" class="btn-cta wire">Log in here</a>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="registration-benefits-wrapper">
+                        <ul id="registration-benefits-list">
+                            <li class="icon">
+                                <span class="step-icon watchlist">
+                                    <svg class="s-font-icon-watchlist"><use xlink:href="#s-font-icon-watchlist"></use></svg>
+                                </span>
+                                <span>Manage your watchlist however you like.</span>
+                            </li>
+                            <li class="icon">
+                                <span class="step-icon pie-chart">
+                                    <svg class="s-font-pie-chart"><use xlink:href="#s-font-pie-chart"></use></svg>
+                                </span>
+                                <span>Detailed statistics about your earnings.</span>
+                            </li>
+                            <li class="icon">
+                                <span class="step-icon dashboard">
+                                    <svg class="s-font-dashboard"><use xlink:href="#s-font-dashboard"></use></svg>
+                                </span>
+                                <span>Dashboard at a glance - Manage your portfolio.</span>
+                            </li>
+                            <li class="icon">
+                                <span class="step-icon rss">
+                                    <svg class="s-font-rss"><use xlink:href="#s-font-rss"></use></svg>
+                                </span>
+                                <span>Receive updates about trends and about us.</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <span id="error-message-step1"></span>
+                </div>
+
+            </div>
 
         <div class="wizard-step wizard-step-2" style="display: none;">
 
