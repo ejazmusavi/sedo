@@ -1,4 +1,4 @@
-﻿<main role="main" id="content-main-wrapper" class="content-wrapper-full transit-wrapper" data-dynamic="true">
+﻿<main role="main" id="content-main-wrapper" class="content-wrapper-full transit-wrapper" >
     <!-- typo3PageId: 105 -->
     <div id="col3">
         <div class="precontent">
@@ -9,119 +9,119 @@
         </div>
         <div class="clear"></div>
         <script type="text/javascript">
-		var upllink 			= "&language=us";
-		var pllink 				= "?language=us";
-		var language 			= "us";
-		var memberId			= 3670507;
-		var limit				= 25;
-		var delayedFilter		= null;
-		var delayedFilterPage	= null;
-		var delayedFilterTotal	= null;
-		var MLSConfirmMessage	= false;
-		var	disabledFields		= {"1":["price"],"2":["price","price_min","currency_id","price_type","sale_state","promotion_level_id"],"3":["price","price_min","currency_id","price_type","sale_state","promotion_level_id"],"4":["price","price_min","currency_id","price_type","sale_state","language_id","cat1","cat2","cat3","promotion_level_id","registrar"],"6":["domain_name"],"5":["price_type","sale_state"],"7":["domain_name"]};
-		var optMLSRegistrar		= "SELLER SIDE SUPPORT";
-		var optRegistrar		= "ALL REGISTRARS";
-		var suggestionNewText	= "Appraisal pending";
-		var noDomainSelected	= "Please select at least one domain first!";
-		var noPortfolioSelected	= "-]ERROR_NO_PORTFOLIO_SELECTED[-";
-		var noOptionSelected	= "Please first select an option to apply!";
-		var confirmDeleteSingle	= "Are you sure you want to remove this domain from your Sedo account?";
-		var confirmDeleteAll	= "Are you sure you want to remove the selected #NUMBER# domains from your Sedo account?";
-		var forsaleFalse		= "no";
-		var	successBulkMsg		= "Success bulk update!";
-		var	customizeSelect1	= "# of";
-		var	customizeSelect2	= "possible fields checked";
-		var	confirmMLSTerms		= "Please confirm your acceptance of the Terms and Conditions.";
-		var successSuggestion	= "Your Price Suggestion is now being calculated.";
-		var suggestionBulkInfo	= "Press the &quot;Save&quot; button below to request a free Price Suggestion";
-		var portfolioAll		= "Select all domains in your portfolio";
-		var priceNotSet			= "Not set";
-		var valueNotSet			= "Not set";
-		var optionOther			= "Other";
-		var	enterPaymentDetails = 'Payment Details required! The SedoMLS sales process requires your most up to date payment details to be on file with Sedo so that an automated payment can be sent instantly to your account when your domain is sold. <br /> <a href="/member/bankdata.php4?language=us" class="internalLink">Update payment details now</a>';
-		var	disabledFieldInfo	= new Array( '',
-											"This option cannot be edited as the domain is not listed for sale. To list the domain for sale please update the &quot;For Sale&quot; option within the Sales Setting View.",
-											"This option cannot be edited as the domain may not be listed for sale.",
-											"This option cannot be edited as the domain is in auction.",
-											"This option cannot be edited as the domain is in transfer.",
-											"This option cannot be edited while there are open offers for the domain. Please first close all negotiations. #LINK_OPEN#View open offers#LINK_CLOSE#.",
-											"-]DISABLED_FIELD_REASON_DELETED[-" );
-		var	disabledLinkInfo	= new Array( '',
-											"-]DISABLED_LINK_REASON_NOT_FORSALE[-",
-											"-]DISABLED_LINK_REASON_SALE_LOCK[-",
-											"-]DISABLED_LINK_REASON_AUCTION[-",
-											"-]DISABLED_LINK_REASON_MLS_LOCK[-",
-											"-]DISABLED_LINK_REASON_OPEN_BIDS[-",
-											"The Details Page is not available for deleted domains.",
-											"The Details Page is not available for domains not added to your account" );
-		var buttonShow			= "Show";
-		var buttonHide			= "Hide";
-		var	errorServiceCall	= "error_domainmanagement_service_call";
-		var actionLimits		= {"shop":10,"premium_auction":10,"topdomain":10};
-		var queueNumberStatus	= "Remaining Updates:";
-		var max_chars_mls_status= 41;
-		var orderBy;
-		var dir;
-		var resultSize;
-		var resultList;
-		var selected;
-		var urlOrderby;
-		var urlComplete;
-		var urlSuggestionFilter;
-		var confirmMLS;
-		var bankdata;
-		var mlsDomainFilter;
-		var suggestionNew;
-		var remainingSuggestions;
-		var errorLimitSuggestions;
-		var portfolioFiltered;
-		var serviceCall			= false;
-		var domainIdArray 		= [];
-		var filterArray 		= [];
-		var disabledDomains		= [];
-		var mlsDomainIdArray	= [];
-		var sid 				= "";
+            var upllink = "&language=us";
+            var pllink = "?language=us";
+            var language = "us";
+            var memberId = 3670507;
+            var limit = 25;
+            var delayedFilter = null;
+            var delayedFilterPage = null;
+            var delayedFilterTotal = null;
+            var MLSConfirmMessage = false;
+            var disabledFields = { "1": ["price"], "2": ["price", "price_min", "currency_id", "price_type", "sale_state", "promotion_level_id"], "3": ["price", "price_min", "currency_id", "price_type", "sale_state", "promotion_level_id"], "4": ["price", "price_min", "currency_id", "price_type", "sale_state", "language_id", "cat1", "cat2", "cat3", "promotion_level_id", "registrar"], "6": ["domain_name"], "5": ["price_type", "sale_state"], "7": ["domain_name"] };
+            var optMLSRegistrar = "SELLER SIDE SUPPORT";
+            var optRegistrar = "ALL REGISTRARS";
+            var suggestionNewText = "Appraisal pending";
+            var noDomainSelected = "Please select at least one domain first!";
+            var noPortfolioSelected = "-]ERROR_NO_PORTFOLIO_SELECTED[-";
+            var noOptionSelected = "Please first select an option to apply!";
+            var confirmDeleteSingle = "Are you sure you want to remove this domain from your Sedo account?";
+            var confirmDeleteAll = "Are you sure you want to remove the selected #NUMBER# domains from your Sedo account?";
+            var forsaleFalse = "no";
+            var successBulkMsg = "Success bulk update!";
+            var customizeSelect1 = "# of";
+            var customizeSelect2 = "possible fields checked";
+            var confirmMLSTerms = "Please confirm your acceptance of the Terms and Conditions.";
+            var successSuggestion = "Your Price Suggestion is now being calculated.";
+            var suggestionBulkInfo = "Press the &quot;Save&quot; button below to request a free Price Suggestion";
+            var portfolioAll = "Select all domains in your portfolio";
+            var priceNotSet = "Not set";
+            var valueNotSet = "Not set";
+            var optionOther = "Other";
+            var enterPaymentDetails = 'Payment Details required! The SedoMLS sales process requires your most up to date payment details to be on file with Sedo so that an automated payment can be sent instantly to your account when your domain is sold. <br /> <a href="/member/bankdata.php4?language=us" class="internalLink">Update payment details now</a>';
+            var disabledFieldInfo = new Array('',
+                "This option cannot be edited as the domain is not listed for sale. To list the domain for sale please update the &quot;For Sale&quot; option within the Sales Setting View.",
+                "This option cannot be edited as the domain may not be listed for sale.",
+                "This option cannot be edited as the domain is in auction.",
+                "This option cannot be edited as the domain is in transfer.",
+                "This option cannot be edited while there are open offers for the domain. Please first close all negotiations. #LINK_OPEN#View open offers#LINK_CLOSE#.",
+                "-]DISABLED_FIELD_REASON_DELETED[-");
+            var disabledLinkInfo = new Array('',
+                "-]DISABLED_LINK_REASON_NOT_FORSALE[-",
+                "-]DISABLED_LINK_REASON_SALE_LOCK[-",
+                "-]DISABLED_LINK_REASON_AUCTION[-",
+                "-]DISABLED_LINK_REASON_MLS_LOCK[-",
+                "-]DISABLED_LINK_REASON_OPEN_BIDS[-",
+                "The Details Page is not available for deleted domains.",
+                "The Details Page is not available for domains not added to your account");
+            var buttonShow = "Show";
+            var buttonHide = "Hide";
+            var errorServiceCall = "error_domainmanagement_service_call";
+            var actionLimits = { "shop": 10, "premium_auction": 10, "topdomain": 10 };
+            var queueNumberStatus = "Remaining Updates:";
+            var max_chars_mls_status = 41;
+            var orderBy;
+            var dir;
+            var resultSize;
+            var resultList;
+            var selected;
+            var urlOrderby;
+            var urlComplete;
+            var urlSuggestionFilter;
+            var confirmMLS;
+            var bankdata;
+            var mlsDomainFilter;
+            var suggestionNew;
+            var remainingSuggestions;
+            var errorLimitSuggestions;
+            var portfolioFiltered;
+            var serviceCall = false;
+            var domainIdArray = [];
+            var filterArray = [];
+            var disabledDomains = [];
+            var mlsDomainIdArray = [];
+            var sid = "";
         </script>
 
 
         <script type="text/javascript">
 	<!--
-			// Add class newWhite for new German homepage
-			$( function() {
-				if( $( document ).getUrlParam( 'language' ) && $( document ).getUrlParam( 'language' ) == 'd' ) {
-					$( 'body' ).addClass( 'newWhite' );
-				}
-			});
+            // Add class newWhite for new German homepage
+            $(function () {
+                if ($(document).getUrlParam('language') && $(document).getUrlParam('language') == 'd') {
+                    $('body').addClass('newWhite');
+                }
+            });
 
-		urlOrderby 				= "/member/dnmanagement.php4?language=us&view=DomainManagementStandardOverview&orderby=";
-		urlComplete				= "/member/dnmanagement.php4?language=us&view=DomainManagementStandardOverview&orderby=&dir=";
-		urlSuggestionFilter 	= "/member/dnmanagement.php4?language=us&view=DomainManagementStandardOverview&orderby=&dir=&filterField=pricesuggestion_status&filterValue=";
-		orderBy					= "";
-		dir						= "";
-		resultSize				= 0;
-		page					= 0;
-		pageSize				= 0;
-		serviceCall				= false;
-		domainIdArray 			= [];
-		mlsDomainIdArray		= [];
-		filterArray				= [];
-		disabledDomains			= [];
-		confirmMLS				= false;
-		bankdata				= false;
-		fieldList				= ["domain_name","price","price_type","price_min","currency_id","promotion_level_id","views","revenue"];
-		mlsDomainFilter			= "";
-		suggestionNew			= false;
-		remainingSuggestions	= 50;
-		errorLimitSuggestions 	= "Your request cannot be processed because the number domains you have selected exceeds your daily limit. You have 50 price suggestions remaining today. Please deselect some domains and resubmit your request.";
-		portfolioFiltered		= "Apply settings to filtered group (0 domains)";
-		MLSActOriginOptions		= {
-			action:		1,
-			dialog:		2
-		};
+            urlOrderby = "/member/dnmanagement.php4?language=us&view=DomainManagementStandardOverview&orderby=";
+            urlComplete = "/member/dnmanagement.php4?language=us&view=DomainManagementStandardOverview&orderby=&dir=";
+            urlSuggestionFilter = "/member/dnmanagement.php4?language=us&view=DomainManagementStandardOverview&orderby=&dir=&filterField=pricesuggestion_status&filterValue=";
+            orderBy = "";
+            dir = "";
+            resultSize = 0;
+            page = 0;
+            pageSize = 0;
+            serviceCall = false;
+            domainIdArray = [];
+            mlsDomainIdArray = [];
+            filterArray = [];
+            disabledDomains = [];
+            confirmMLS = false;
+            bankdata = false;
+            fieldList = ["domain_name", "price", "price_type", "price_min", "currency_id", "promotion_level_id", "views", "revenue"];
+            mlsDomainFilter = "";
+            suggestionNew = false;
+            remainingSuggestions = 50;
+            errorLimitSuggestions = "Your request cannot be processed because the number domains you have selected exceeds your daily limit. You have 50 price suggestions remaining today. Please deselect some domains and resubmit your request.";
+            portfolioFiltered = "Apply settings to filtered group (0 domains)";
+            MLSActOriginOptions = {
+                action: 1,
+                dialog: 2
+            };
 
-					errorMsgGauss	= "";
+            errorMsgGauss = "";
 
-	//-->
+            //-->
         </script>
 
 
@@ -304,9 +304,9 @@
                                                             <div class="actionLayerMiddle">
                                                                 <li><a class="action_premium_auction" id="premium_auction_533" href="#">GreatDomains Auction</a></li>
                                                                 <li><a class="action_promote_mls" id="action_order_active_premium" href="#">Activate SedoMLS Premium</a></li>
-                                                                <li><a class="action_order_nep" id="action_order_showcase" href="#" data-campaign-query-string="">Order a Homepage Showcase</a></li>
-                                                                <li><a class="action_order_nep" id="action_order_direct_auction" href="#" data-campaign-query-string="">Order a Direct Auction</a></li>
-                                                                <li><a class="action_order_nep" id="action_order_category_showcase" href="#" data-campaign-query-string="">Order a Category Showcase</a></li>
+                                                                <li><a class="action_order_nep" id="action_order_showcase" href="#" >Order a Homepage Showcase</a></li>
+                                                                <li><a class="action_order_nep" id="action_order_direct_auction" href="#" >Order a Direct Auction</a></li>
+                                                                <li><a class="action_order_nep" id="action_order_category_showcase" href="#">Order a Category Showcase</a></li>
                                                                 <li><a class="action_apply_topdomain" id="action_order_top_domain" href="#">Apply for Top Domains listing</a></li>
                                                             </div>
                                                         </div>
@@ -332,16 +332,6 @@
                                                     <option value="revenue" id="orderby_revenue">Revenue</option>
                                                 </select>
                                                 &nbsp;&nbsp;		<span class="right">
-
-
-
-
-
-
-
-
-
-
                                                 </span>
                                             </div>
                                         </td>
@@ -767,9 +757,9 @@
                                                             <div class="actionLayerMiddle">
                                                                 <li><a class="action_premium_auction" id="premium_auction_533" href="#">GreatDomains Auction</a></li>
                                                                 <li><a class="action_promote_mls" id="action_order_active_premium" href="#">Activate SedoMLS Premium</a></li>
-                                                                <li><a class="action_order_nep" id="action_order_showcase" href="#" data-campaign-query-string="">Order a Homepage Showcase</a></li>
-                                                                <li><a class="action_order_nep" id="action_order_direct_auction" href="#" data-campaign-query-string="">Order a Direct Auction</a></li>
-                                                                <li><a class="action_order_nep" id="action_order_category_showcase" href="#" data-campaign-query-string="">Order a Category Showcase</a></li>
+                                                                <li><a class="action_order_nep" id="action_order_showcase" href="#">Order a Homepage Showcase</a></li>
+                                                                <li><a class="action_order_nep" id="action_order_direct_auction" href="#">Order a Direct Auction</a></li>
+                                                                <li><a class="action_order_nep" id="action_order_category_showcase" href="#">Order a Category Showcase</a></li>
                                                                 <li><a class="action_apply_topdomain" id="action_order_top_domain" href="#">Apply for Top Domains listing</a></li>
                                                             </div>
                                                         </div>
@@ -795,25 +785,13 @@
                                                     <option value="revenue" id="orderby_revenue">Revenue</option>
                                                 </select>
                                                 &nbsp;&nbsp;		<span class="right">
-
-
-
-
-
-
-
-
-
-
                                                 </span>
                                             </div>
                                         </td>
                                     </tr>
                                 </tbody>
                             </table>
-
                         </div>
-
                         <div class="whitebox">
                             <div id="informational_message" style="display:block;">
                                 <div class="messageBox100">
@@ -823,9 +801,7 @@
                                 </div>
                             </div>
                         </div>
-
                     </form>
-
                     <ul class="dropdown dropdownSelect layer_edit_option_container" style="visibility:hidden;">
                         <li>
                             <input type="readonly" class="layer_edit_option_text navitext_100" value="">

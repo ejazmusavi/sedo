@@ -8,62 +8,62 @@ namespace sedo.Controllers
 {
     public class MemberController : Controller
     {
-        [Route("{culture}/brokerage/acquisition/")]
+        [Route("/brokerage/acquisition/")]
         public IActionResult Index()
         {
             return View();
         }
-        [Route("{culture}/member/index/")]
+        [Route("/member/index/")]
         public IActionResult MySedo()
         {
             return View();
         }
-        [Route("{culture}/member/domainsignup/index")]
+        [Route("/member/domainsignup/index")]
         public IActionResult AddDomain()
         {
             return View();
         }
-        [Route("{culture}/member/dnmanagement/")]
+        [Route("/member/dnmanagement/")]
         public IActionResult MyDomain()
         {
             return View();
         }
-        [Route("{culture}/member/parking-tools/overview/")]
+        [Route("/member/parking-tools/overview/")]
         public IActionResult ParkingReports()
         {
             return View();
         }
-        [Route("{culture}/member/controlpanel/")]
+        [Route("/member/controlpanel/")]
         public IActionResult BuyerPanel()
         {
             return View();
         }
-        [Route("{culture}/member/domainforsalewatch/")]
+        [Route("/member/domainforsalewatch/")]
         public IActionResult KeywordsList()
         {
             return View();
         }
-        [Route("{culture}/member/transfer/index/")]
+        [Route("/member/transfer/index/")]
         public IActionResult TransferCenter()
         {
             return View();
         }
-        [Route("{culture}/member/billing/invoicelist/")]
+        [Route("/member/billing/invoicelist/")]
         public IActionResult Billing()
         {
             return View();
         }
-        [Route("{culture}/member/partner/index/")]
+        [Route("/member/partner/index/")]
         public IActionResult PartnerProgram()
         {
             return View();
         }
-        [Route("{culture}/member/editaccount/")]
+        [Route("/member/editaccount/")]
         public IActionResult MyAccount()
         {
             return View();
         }
-        [Route("{culture}/member/logout/")]
+        [Route("/member/logout/")]
         public IActionResult Logout()
         {
             return View();

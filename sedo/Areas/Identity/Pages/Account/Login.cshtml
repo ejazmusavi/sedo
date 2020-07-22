@@ -6,75 +6,75 @@
 }
 
 @*<div class="row">
-    <div class="col-md-4">
-        <section>
-            <form id="account" method="post">
-                <h4>Use a local account to log in.</h4>
-                <hr />
-                <div asp-validation-summary="All" class="text-danger"></div>
-                <div class="form-group">
-                    <label asp-for="Input.Email"></label>
-                    <input asp-for="Input.Email" class="form-control" />
-                    <span asp-validation-for="Input.Email" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="Input.Password"></label>
-                    <input asp-for="Input.Password" class="form-control" />
-                    <span asp-validation-for="Input.Password" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <div class="checkbox">
-                        <label asp-for="Input.RememberMe">
-                            <input asp-for="Input.RememberMe" />
-                            @Html.DisplayNameFor(m => m.Input.RememberMe)
-                        </label>
+        <div class="col-md-4">
+            <section>
+                <form id="account" method="post">
+                    <h4>Use a local account to log in.</h4>
+                    <hr />
+                    <div asp-validation-summary="All" class="text-danger"></div>
+                    <div class="form-group">
+                        <label asp-for="Input.Email"></label>
+                        <input asp-for="Input.Email" class="form-control" />
+                        <span asp-validation-for="Input.Email" class="text-danger"></span>
                     </div>
-                </div>
-                <div class="form-group">
-                    <button type="submit" class="btn btn-primary">Log in</button>
-                </div>
-                <div class="form-group">
-                    <p>
-                        <a id="forgot-password" asp-page="./ForgotPassword">Forgot your password?</a>
-                    </p>
-                    <p>
-                        <a asp-page="./Register" asp-route-returnUrl="@Model.ReturnUrl">Register as a new user</a>
-                    </p>
-                </div>
-            </form>
-        </section>
-    </div>
-    <div class="col-md-6 col-md-offset-2">
-        <section>
-            <h4>Use another service to log in.</h4>
-            <hr />
-            @{
-                if ((Model.ExternalLogins?.Count ?? 0) == 0)
-                {
-                    <div>
+                    <div class="form-group">
+                        <label asp-for="Input.Password"></label>
+                        <input asp-for="Input.Password" class="form-control" />
+                        <span asp-validation-for="Input.Password" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <div class="checkbox">
+                            <label asp-for="Input.RememberMe">
+                                <input asp-for="Input.RememberMe" />
+                                @Html.DisplayNameFor(m => m.Input.RememberMe)
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary">Log in</button>
+                    </div>
+                    <div class="form-group">
                         <p>
-                            There are no external authentication services configured. See <a href="https://go.microsoft.com/fwlink/?LinkID=532715">this article</a>
-                            for details on setting up this ASP.NET application to support logging in via external services.
+                            <a id="forgot-password" asp-page="./ForgotPassword">Forgot your password?</a>
+                        </p>
+                        <p>
+                            <a asp-page="./Register" asp-route-returnUrl="@Model.ReturnUrl">Register as a new user</a>
                         </p>
                     </div>
-                }
-                else
-                {
-                    <form id="external-account" asp-page="./ExternalLogin" asp-route-returnUrl="@Model.ReturnUrl" method="post" class="form-horizontal">
+                </form>
+            </section>
+        </div>
+        <div class="col-md-6 col-md-offset-2">
+            <section>
+                <h4>Use another service to log in.</h4>
+                <hr />
+                @{
+                    if ((Model.ExternalLogins?.Count ?? 0) == 0)
+                    {
                         <div>
                             <p>
-                                @foreach (var provider in Model.ExternalLogins)
-                                {
-                                    <button type="submit" class="btn btn-primary" name="provider" value="@provider.Name" title="Log in using your @provider.DisplayName account">@provider.DisplayName</button>
-                                }
+                                There are no external authentication services configured. See <a href="https://go.microsoft.com/fwlink/?LinkID=532715">this article</a>
+                                for details on setting up this ASP.NET application to support logging in via external services.
                             </p>
                         </div>
-                    </form>
+                    }
+                    else
+                    {
+                        <form id="external-account" asp-page="./ExternalLogin" asp-route-returnUrl="@Model.ReturnUrl" method="post" class="form-horizontal">
+                            <div>
+                                <p>
+                                    @foreach (var provider in Model.ExternalLogins)
+                                    {
+                                        <button type="submit" class="btn btn-primary" name="provider" value="@provider.Name" title="Log in using your @provider.DisplayName account">@provider.DisplayName</button>
+                                    }
+                                </p>
+                            </div>
+                        </form>
+                    }
                 }
-            }
-        </section>
-    </div>
-</div>*@
+            </section>
+        </div>
+    </div>*@
 <main id="login-container" class="content">
     <div id="content" class="row">
         <div id="loginForm">
@@ -88,18 +88,14 @@
 
                         <section class="form-group form__input">
                         </section>
-
                         <section class="form-group form__input">
-
                             <label for="username" class="form__input-label"><span class="accesskey">U</span>sername:</label>
                             <div>
                                 <input class="form-control required form__input-field" id="username" name="username" size="25" tabindex="1" type="text" value="" accesskey="u" autocomplete="off">
                             </div>
                         </section>
-
                         <section class="form-group form__input">
                             <label for="password" class="form__input-label"><span class="accesskey">P</span>assword:</label>
-
                             <div>
                                 <input class="form-control required form__input-field" type="password" id="password" name="password" size="25" tabindex="2" accesskey="p" value="" autocomplete="off"><span id="capslock-on" style="display:none;">
                                     <i class="fa fa-exclamation-circle"></i>
@@ -126,68 +122,42 @@
                     <div id="pmlinks">
                         <div>
                             <br><span class="fa fa-question-circle"></span>
-                                <a asp-area="Identity" asp-page="/Account/Register" style="line-height:40px;">I forgot my password</a>
+                            <a asp-area="Identity" asp-page="/Account/Register" style="line-height:40px;">I forgot my password</a>
                         </div>
                     </div>
-
-                    <aside>
-                        <nav class="language-nav">
-                            <ul class="language-list">
-                                <li class="language-item">
-                                    <a href="#">English (US)</a>
-                                </li>
-                                <li class="language-item">
-                                    <a href="#">English (UK)</a>
-                                </li>
-                                <li class="language-item">
-                                    <a href="#">Deutsch</a>
-                                </li>
-                                <li class="language-item">
-                                    <a href="#">Español</a>
-                                </li>
-                                <li class="language-item">
-                                    <a href="#">Français</a>
-                                </li>
-                                <li class="language-item">
-                                    <a href="#">中文（简体)</a>
-                                </li>
-                                <li class="language-item">
-                                    <a href="#">Português</a>
-                                </li>
-                            </ul>
-                        </nav>
-                    </aside>
-
-                    <script>/*<![CDATA[*/
+                    <script>
+    /*<![CDATA[*/
                         var i = "One moment please..."
                         var j = "Log into my account"
-                            /*]]>*/
-                            $(window).on('pageshow', function(){
-                                $(':submit').prop('disabled', false);
-                                $(':submit').attr('value', j);
+                        /*]]>*/
+                        $(window).on('pageshow', function () {
+                            $(':submit').prop('disabled', false);
+                            $(':submit').attr('value', j);
+                        });
+                        $(document).ready(function () {
+                            $("#fm1").submit(function () {
+                                $(":submit").attr("disabled", true);
+                                $(":submit").attr("value", i);
+                                return true;
                             });
-                            $(document).ready(function () {
-                                $("#fm1").submit(function () {
-                                    $(":submit").attr("disabled", true);
-                                    $(":submit").attr("value", i);
-                                    return true;
-                                });
-                            });</script>
+                        });</script>
                 </div>
             </div>
         </div>
         <div id="providers" style="display: none;">
-            <script>var redirectTo = $( "a[autoRedirect=true]" ).attr("href");
-            if (redirectTo != null && redirectTo != undefined) {
-                window.location.href = redirectTo;
-            }</script>
+            <script>
+    var redirectTo = $("a[autoRedirect=true]").attr("href");
+                if (redirectTo != null && redirectTo != undefined) {
+                    window.location.href = redirectTo;
+                }</script>
         </div>
 
-        <script>if ($('#list-providers').length) {
-                    $('#providers').addClass("col");
-                    $('#loginForm').addClass("col");
-                    $('#providers').show();
-                }</script>
+        <script>
+    if ($('#list-providers').length) {
+                $('#providers').addClass("col");
+                $('#loginForm').addClass("col");
+                $('#providers').show();
+            }</script>
 
     </div>
 </main>

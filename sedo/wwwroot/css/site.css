@@ -4334,7 +4334,8 @@ td {
     padding: 5px 20px;
     cursor: pointer;
     text-align: center;
-    font-weight: 800
+    font-weight: 800;
+    font-size: 14px;
 }
 
     .btn-beige:hover {
@@ -14770,6 +14771,7 @@ img {
     .btn--unobtrusive:focus {
         color: #fff;
         text-decoration: none;
+        height:50px;
     }
 
     .btn--unobtrusive:hover,
@@ -26385,5 +26387,35 @@ a {
     .wizard-step-wrapper {
         padding: 6px 20px;
         margin-left: -20px
+    }
+}
+.parag {
+    float: left;
+    list-style: outside none none;
+    position: relative;
+    width: 709px;
+}
+.boxslider {
+    width: 415%;
+    position: relative; 
+    transition-duration: 0s;
+    transform: translate3d(-1418px, 0px, 0px);
+}
+.boxview {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    height: 274px;
+}
+
+@media(max-width:575px)
+{
+    .ce-accordion-wrapper p .btn, .ce-content-slider p .btn, .ce-image-hero p .btn, .ce-infobox p .btn, .ce-textimage-hor p .btn, .ce-textimage-ver p .btn, .ce-wrapper p .btn {
+        font-size: 14px;
+    }
+}
+@media(max-width:575px) {
+    .ce-accordion-wrapper p .btn, .ce-content-slider p .btn, .ce-image-hero p .btn, .ce-infobox p .btn, .ce-textimage-hor p .btn, .ce-textimage-ver p .btn, .ce-wrapper p .btn {
+        font-size: 14px;
     }
 }

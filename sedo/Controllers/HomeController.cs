@@ -10,225 +10,223 @@ namespace sedo.Controllers
 {
     public class HomeController : Controller
     {
-        [Route("")]
-        [Route("{culture}")]
+        
         public IActionResult Index()
         {
             return View();
         }
 
-        [Route("{culture}/what-we-offer/what-sedo-offers/")]
+        [Route("/what-we-offer/what-sedo-offers/")]
         public IActionResult Offer()
         {
             return View();
         }
 
-        [Route("{culture}/what-we-offer/registry-overview/")]
+        [Route("/what-we-offer/registry-overview/")]
         public IActionResult Registry()
         {
             return View();
         }
-        [Route("{culture}/what-we-offer/registrar-services/")]
+        [Route("/what-we-offer/registrar-services/")]
         public IActionResult Registrar()
         {
             return View();
         }
-        [Route("{culture}/what-we-offer/price-list/")]
+        [Route("/what-we-offer/price-list/")]
         public IActionResult PriceList()
         {
             return View();
         }
 
-        [Route("{culture}/buy-domains/how-it-works/")]
+        [Route("/buy-domains/how-it-works/")]
         public IActionResult Working()
         {
             return View();
         }
-        [Route("{culture}/buy-domains/domain-search/")]
+        [Route("/buy-domains/domain-search/")]
         public IActionResult Search()
         {
             return View();
         }
-        [Route("{culture}/buy-domains/domain-acquisition/")]
+        [Route("/buy-domains/domain-acquisition/")]
         public IActionResult Acquisition()
         {
             return View();
         }
-        [Route("{culture}/buy-domains/auction-calendar/")]
+        [Route("/buy-domains/auction-calendar/")]
         public IActionResult AuctionCalendar()
         {
             return View();
         }
-      [Route("{culture}/buy-domains/market-trends/")]
+      [Route("/buy-domains/market-trends/")]
         public IActionResult MarketTrends()
         {
             return View();
         }
-        [Route("{culture}/sell-domains/how-it-works/")]
+        [Route("/sell-domains/how-it-works/")]
         public IActionResult WorkingDomain ()
         {
             return View();
         }
-        [Route("{culture}/sell-domains/domain-trade/")]
+        [Route("/sell-domains/domain-trade/")]
         public IActionResult Trade()
         {
             return View();
         }
-        [Route("{culture}/sell-domains/domain-Auction/")]
+        [Route("/sell-domains/domain-Auction/")]
         public IActionResult DomainAuction()
         {
             return View();
         }
-        [Route("{culture}/sell-domains/promotion-options/")]
+        [Route("/sell-domains/promotion-options/")]
         public IActionResult Promotion()
         {
             return View();
         }
-        [Route("{culture}/park-domains/parking-domains/")]
+        [Route("/park-domains/parking-domains/")]
         public IActionResult DomainParking()
         {
             return View();
         }
-        [Route("{culture}/services/service-overview/")]
+        [Route("/services/service-overview/")]
         public IActionResult Services()
         {
             return View();
         }
-        [Route("{culture}/services/domain-appraisal/")]
+        [Route("/services/domain-appraisal/")]
         public IActionResult Appraisals()
         {
             return View();
         }
-        [Route("{culture}/services/broker-service/")]
+        [Route("/services/broker-service/")]
         public IActionResult BrokerService()
         {
             return View();
         }
-        [Route("{culture}/services/domain-transfer-service/")]
+        [Route("/services/domain-transfer-service/")]
         public IActionResult Transferring()
         {
             return View();
         }
-        [Route("{culture}/services/sedos-partner-program/")]
+        [Route("/services/sedos-partner-program/")]
         public IActionResult PartnerProgram()
         {
             return View();
         }
        
         
-        [Route("{culture}/know-how-support/customer-support/")]
+        [Route("/know-how-support/customer-support/")]
         public IActionResult Support()
         {
             return View();
         }
-        [Route("{culture}/know-how-support/domain-law/")]
+        [Route("/know-how-support/domain-law/")]
         public IActionResult Law()
         {
             return View();
         }
 
-        [Route("{culture}/search/")]
+        [Route("/search/")]
         public IActionResult Com()
         {
             return View();
         }
-        [Route("{culture}/about/sedo-the-company/")]
+        [Route("/about/sedo-the-company/")]
         public IActionResult SedoCompany()
         {
             return View();
         }
-        [Route("{culture}/about/news-press/")]
+        [Route("/about/news-press/")]
         public IActionResult News()
         {
             return View();
         }
-        [Route("{culture}/about/events/")]
+        [Route("/about/events/")]
         public IActionResult Events()
         {
             return View();
         }
-        [Route("{culture}/about/case-studies/")]
+        [Route("/about/case-studies/")]
         public IActionResult CaseStudies()
         {
             return View();
         }
 
-        [Route("{culture}/about/careers/")]
+        [Route("/about/careers/")]
         public IActionResult Careers()
         {
             return View();
         }
-        [Route("{culture}/auth/")]
+        [Route("/auth/")]
         public IActionResult Login()
         {
             return View();
         }
-        [Route("{culture}/member/register.php/")]
+        [Route("/member/register.php/")]
         public IActionResult Register()
         {
             return View();
         }
-        [Route("{culture}/about/imprint/")]
+        [Route("/about/imprint/")]
         public IActionResult CompanyInfo()
         {
             return View();
         }
-        [Route("{culture}/about/policies/protecting-your-privacy/")]
+        [Route("/about/policies/protecting-your-privacy/")]
         public IActionResult ProtectingPrivacy()
         {
             return View();
         }
-        //[Route("{culture}/")]
+        //[Route("/")]
         //public IActionResult CookieSettings()
         //{
         //    return View();
         //}
-        [Route("{culture}/about/policies/")]
+        [Route("/about/policies/")]
         public IActionResult Policies()
         {
             return View();
         }
-        [Route("{culture}/brokerage/acquisition/")]
+        [Route("/brokerage/acquisition/")]
         public IActionResult OurServices()
         {
             return View();
         }
-        //[Route("{culture}/sedo/")]
+        //[Route("/sedo/")]
         //public IActionResult Twitter()
         //{
         //    return View();
         //}
-        //[Route("{culture}/about-us/")]
+        //[Route("/about-us/")]
         //public IActionResult Facebook()
         //{
         //    return View();
         //}
-        //[Route("{culture}/sedodomains/")]
+        //[Route("/sedodomains/")]
         //public IActionResult Insta()
         //{
         //    return View();
         //}
-        //[Route("{culture}/user/SedoLLC/")]
+        //[Route("/user/SedoLLC/")]
         //public IActionResult Youtube()
         //{
         //    return View();
         //}
-        //[Route("{culture}/know-how-support/")]
+        //[Route("/know-how-support/")]
         //public IActionResult KnowHowSupport()
         //{
         //    return View();
         //}
-        [Route("{culture}/about/")]
+        [Route("/about/")]
         public IActionResult About()
         {
             return View();
         }
-        [Route("{culture}/us/about-us/news-press/newsroom/sedo-end-user-case-study-desktopcom/")]
+        [Route("/us/about-us/news-press/newsroom/sedo-end-user-case-study-desktopcom/")]
         public IActionResult ReadStory()
         {
             return View();
         }
-
 
         public IActionResult Privacy()
         {

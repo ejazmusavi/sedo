@@ -1,4 +1,4 @@
-﻿<main role="main" id="content-main-wrapper" class="content-wrapper-full transit-wrapper" data-dynamic="true">
+﻿<main role="main" id="content-main-wrapper" class="content-wrapper-full transit-wrapper" >
     <!-- typo3PageId: 255 -->
     <div id="col3">
         <div class="precontent">
@@ -11,87 +11,87 @@
 
         <script type="text/javascript">
 
-	var memberId 	= 3670507;
-	var isLLC 		= 0;
-	var language 	= 'us';
+            var memberId = 3670507;
+            var isLLC = 0;
+            var language = 'us';
 
-	$(document).ready(function() {
-		$("#currency").change(function() {
-			//add waiging gif
-			$("#parking_ctr_month").addClass( 'wait' );
-			$.ajax({
-	            type: "POST",
-	            url: "index_service.php",
-	            data: "memberId=" + memberId + "&currencyId=" + $('#currency').val() + "&isLLC=" + isLLC+ "&language=" + language,
-	            dataType: "xml",
-	            success: function(xml) {
-					if(xml) {
-						var earnings_year;
-						var earnings_month;
-						var epc_year;
-						var epc_month;
-						var rpm_year;
-						var rpm_month;
-						var sales_year;
-						var sales_month;
-						var total_year;
-						var total_month;
+            $(document).ready(function () {
+                $("#currency").change(function () {
+                    //add waiging gif
+                    $("#parking_ctr_month").addClass('wait');
+                    $.ajax({
+                        type: "POST",
+                        url: "index_service.php",
+                        data: "memberId=" + memberId + "&currencyId=" + $('#currency').val() + "&isLLC=" + isLLC + "&language=" + language,
+                        dataType: "xml",
+                        success: function (xml) {
+                            if (xml) {
+                                var earnings_year;
+                                var earnings_month;
+                                var epc_year;
+                                var epc_month;
+                                var rpm_year;
+                                var rpm_month;
+                                var sales_year;
+                                var sales_month;
+                                var total_year;
+                                var total_month;
 
-						$("#ajaxError").hide();
+                                $("#ajaxError").hide();
 
-						$(xml).find('result').each(function () {
-							$(xml).find('parking').each(function () {
-								earnings_year = $(this).find('earnings_year').text();
-								earnings_month = $(this).find('earnings_month').text();
-								epc_year = $(this).find('epc_year').text();
-								epc_month = $(this).find('epc_month').text();
-								rpm_year = $(this).find('rpm_year').text();
-								rpm_month = $(this).find('rpm_month').text();
-							});
-							$(xml).find('sales').each(function () {
-								sales_year = $(this).find('year').text();
-								sales_month = $(this).find('month').text();
-							});
-							total_year = $(this).find('total_year').text();
-							total_month = $(this).find('total_month').text();
-						});
-						var currencyIso = $('#currency :selected').text();
+                                $(xml).find('result').each(function () {
+                                    $(xml).find('parking').each(function () {
+                                        earnings_year = $(this).find('earnings_year').text();
+                                        earnings_month = $(this).find('earnings_month').text();
+                                        epc_year = $(this).find('epc_year').text();
+                                        epc_month = $(this).find('epc_month').text();
+                                        rpm_year = $(this).find('rpm_year').text();
+                                        rpm_month = $(this).find('rpm_month').text();
+                                    });
+                                    $(xml).find('sales').each(function () {
+                                        sales_year = $(this).find('year').text();
+                                        sales_month = $(this).find('month').text();
+                                    });
+                                    total_year = $(this).find('total_year').text();
+                                    total_month = $(this).find('total_month').text();
+                                });
+                                var currencyIso = $('#currency :selected').text();
 
-						$("#parking_earnings_month").html(earnings_month + '&nbsp;' + currencyIso);
-						$("#parking_earnings_year").html(earnings_year + '&nbsp;' + currencyIso);
-						$("#parking_epc_month").html(epc_month + '&nbsp;' + currencyIso);
-						$("#parking_epc_year").html(epc_year + '&nbsp;' + currencyIso);
-						$("#parking_rpm_month").html(rpm_month + '&nbsp;' + currencyIso);
-						$("#parking_rpm_year").html(rpm_year + '&nbsp;' + currencyIso);
-						$("#sales_sales_value_month").html(sales_month + '&nbsp;' + currencyIso);
-						$("#sales_sales_value_year").html(sales_year + '&nbsp;' + currencyIso);
-						$("#total_earnings_month").html(total_month + '&nbsp;' + currencyIso);
-						$("#total_earnings_year").html(total_year + '&nbsp;' + currencyIso);
-					} else {
-						$("#ajaxError").show();
-					}
-	                //remove waiting gif
-	                $("#parking_ctr_month").removeClass( 'wait' );
-	            },
-           		error: function(){
-	            	$("#parking_ctr_month").removeClass( 'wait' );
-					$("#ajaxError").show();
-	            }
-	        });
-		});
+                                $("#parking_earnings_month").html(earnings_month + '&nbsp;' + currencyIso);
+                                $("#parking_earnings_year").html(earnings_year + '&nbsp;' + currencyIso);
+                                $("#parking_epc_month").html(epc_month + '&nbsp;' + currencyIso);
+                                $("#parking_epc_year").html(epc_year + '&nbsp;' + currencyIso);
+                                $("#parking_rpm_month").html(rpm_month + '&nbsp;' + currencyIso);
+                                $("#parking_rpm_year").html(rpm_year + '&nbsp;' + currencyIso);
+                                $("#sales_sales_value_month").html(sales_month + '&nbsp;' + currencyIso);
+                                $("#sales_sales_value_year").html(sales_year + '&nbsp;' + currencyIso);
+                                $("#total_earnings_month").html(total_month + '&nbsp;' + currencyIso);
+                                $("#total_earnings_year").html(total_year + '&nbsp;' + currencyIso);
+                            } else {
+                                $("#ajaxError").show();
+                            }
+                            //remove waiting gif
+                            $("#parking_ctr_month").removeClass('wait');
+                        },
+                        error: function () {
+                            $("#parking_ctr_month").removeClass('wait');
+                            $("#ajaxError").show();
+                        }
+                    });
+                });
 
-		$("#link_credit_limit_report").click(function(e) {
-			e.preventDefault();
-			$('<div/>', {'class':'myDlgClass', 'id':'link-'+($(this).index()+1)})
-					.load('/member/mls/credit_limit_report.php?language=us').appendTo('body').dialog({
-				maxHeight: 640,
-				minHeight: 640,
-				minWidth: 800,
-				title: 'SedoMLS Premium Credit Limit Report'
-			});
-		});
+                $("#link_credit_limit_report").click(function (e) {
+                    e.preventDefault();
+                    $('<div/>', { 'class': 'myDlgClass', 'id': 'link-' + ($(this).index() + 1) })
+                        .load('/member/mls/credit_limit_report.php?language=us').appendTo('body').dialog({
+                            maxHeight: 640,
+                            minHeight: 640,
+                            minWidth: 800,
+                            title: 'SedoMLS Premium Credit Limit Report'
+                        });
+                });
 
-	});
+            });
 
         </script>
 
@@ -324,7 +324,7 @@
 
             <div class="contentbox50">
 
-                <a href="https://expiringdomains.sedo.com/?itm_medium=Display&amp;itm_campaign=BuyDomains&amp;itm_source=My_Sedo&amp;itm_content=Expiring_Domains_Auctions&amp;itm_term=US&amp;sort=externalBacklinksCount,desc" class="my-sedo__promotion-banner">
+                <a href="#" class="my-sedo__promotion-banner">
                     <img src="https://cdn.sedo.com/fileadmin/images/banner/en/sedo_expiring-auctions_mysedo_en.png" width="392">
                 </a>
 
@@ -355,7 +355,7 @@
                         <div>
                             <p>Until now, with every domain sale you had to pay a minimum fee of $60. That meant selling a domain for a few hundred dollars might not have been worth your while. So we are eliminating the minimum fee until the end of 2020! On top of that, the previous minimum bid of $90 is now reduced to $20.</p>
                             <p>&nbsp;</p>
-                            <p><a href="https://sedo.com/us/sedo/farewell-minimum-fee/">Find out more about this promotion!</a> &nbsp;</p>
+                            <p><a href="#">Find out more about this promotion!</a> &nbsp;</p>
                             <p>&nbsp;</p>
                         </div>
                     </div>
