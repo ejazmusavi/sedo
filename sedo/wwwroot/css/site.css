@@ -14670,7 +14670,7 @@ img {
     padding: 32px 19px 11px;
     vertical-align: middle;
     font-size: 1rem;
-    width: 100%;
+    width: 80%;
     display: block;
     outline: none;
     font-family: "Source Sans Pro", sans-serif;
@@ -14762,6 +14762,7 @@ img {
     background-color: rgba(255, 255, 255, 0);
     border: 1px solid #fff;
     height: 50px;
+    width:100px;
 }
 
     .btn--unobtrusive:link,
@@ -26416,6 +26417,6 @@ a {
 }
 @media(max-width:575px) {
     .ce-accordion-wrapper p .btn, .ce-content-slider p .btn, .ce-image-hero p .btn, .ce-infobox p .btn, .ce-textimage-hor p .btn, .ce-textimage-ver p .btn, .ce-wrapper p .btn {
-        font-size: 14px;
+        font-size: 12px;
     }
 }
