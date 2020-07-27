@@ -1,4 +1,7 @@
-﻿
+﻿@{ 
+    var controllerName = this.ViewContext.RouteData.Values["controller"].ToString();
+    bool loggedIn = controllerName == "Member";
+}
 <!DOCTYPE html>
 <html>
 <head>
@@ -53,7 +56,7 @@
                         </form>
                     </div>
                     <div id="loginbox-wrapper">
-                        <div id="login-status-logged-off" class="">
+                        <div id="login-status-logged-off" class="@(loggedIn ? "hidden" : "")">
                             <a class="button" asp-area="Identity" asp-page="/Account/Login">
                                 <div class="icon">
                                     <svg class="s-font-person">
@@ -70,7 +73,7 @@
                             </a>
                         </div>
 
-                        <div id="login-status-logged" class="status-logged hidden">
+                        <div id="login-status-logged" class="status-logged @(loggedIn ? "" : "hidden")">
                             <div class="icon">
                                 <svg class="s-font-person"><use xlink:href="#s-font-person"></use></svg>
                             </div>
