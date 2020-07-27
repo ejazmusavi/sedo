@@ -63,11 +63,6 @@ namespace sedo.Controllers
         {
             return View();
         }
-        [Route("/member/logout/")]
-        public IActionResult Logout()
-        {
-            return View();
-        }
        
     }
 }
