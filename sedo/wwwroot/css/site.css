@@ -4223,30 +4223,6 @@ td {
     }
 }
 
-.btn {
-    font-size: 16px;
-    font-weight: 800;
-    color: #444;
-    height: 18px;
-    display: inline-block;
-    border: 1px solid #888;
-    border-radius: 5px;
-    padding: 11px 15px;
-    text-align: center
-}
-
-    .btn[type=button],
-    .btn[type=submit] {
-        height: auto;
-        width: auto;
-        border: 0
-    }
-
-    .btn:hover {
-        color: #0061aa;
-        background-color: #f5f5f5
-    }
-
         .btn:hover.refresh .s-font-refresh {
             fill: #0061aa
         }
@@ -14728,36 +14704,6 @@ img {
         text-align: right;
     }
 }
-
-.btn {
-    background-color: #0061AA;
-    color: #fff;
-    border-radius: 5px;
-    font-family: "Source Sans Pro", sans-serif;
-    border: none;
-    font-weight: 600;
-    padding: .8125em 2.5em;
-    cursor: pointer;
-    text-align: center;
-    font-size: 1rem;
-    transition: background-color .16s ease-in-out;
-    outline: none;
-    width: 100%;
-}
-
-@media (min-width: 768px) {
-    .btn {
-        width: auto;
-        height:20px;
-        padding: 13px 40px;
-    }
-}
-
-.btn:hover,
-.btn:focus {
-    background-color: #047;
-}
-
 .btn--unobtrusive {
     background-color: rgba(255, 255, 255, 0);
     border: 1px solid #fff;
@@ -18522,17 +18468,6 @@ td {
     }
 }
 
-.btn {
-    font-size: 16px;
-    font-weight: 800;
-    color: #444;
-    height: 18px;
-    display: inline-block;
-    border: 1px solid #888;
-    border-radius: 5px;
-    padding: 11px 15px;
-    text-align: center
-}
 
     .btn[type=button],
     .btn[type=submit] {
@@ -25218,45 +25153,6 @@ td {
     }
 }
 
-.btn {
-    font-size: 16px;
-    font-weight: 800;
-    color: #444;
-    height: 18px;
-    display: inline-block;
-    border: 1px solid #888;
-    border-radius: 5px;
-    padding: 11px 15px;
-    text-align: center
-}
-
-    .btn[type=button],
-    .btn[type=submit] {
-        height: auto;
-        width: auto;
-        border: 0
-    }
-
-    .btn:hover {
-        color: #0061aa;
-        background-color: #f5f5f5
-    }
-
-        .btn:hover.refresh .s-font-refresh {
-            fill: #0061aa
-        }
-
-    .btn.refresh[disabled] .s-font-refresh {
-        -webkit-animation-name: spin;
-        animation-name: spin;
-        -webkit-animation-duration: 3s;
-        animation-duration: 3s;
-        -webkit-animation-iteration-count: infinite;
-        animation-iteration-count: infinite;
-        -webkit-animation-timing-function: linear;
-        animation-timing-function: linear
-    }
-
     .btn.refresh .s-font-refresh {
         width: 24px;
         height: 24px;
@@ -26419,4 +26315,1208 @@ a {
     .ce-accordion-wrapper p .btn, .ce-content-slider p .btn, .ce-image-hero p .btn, .ce-infobox p .btn, .ce-textimage-hor p .btn, .ce-textimage-ver p .btn, .ce-wrapper p .btn {
         font-size: 12px;
     }
+}
+/*memeber controller css*/
+@font-face {
+    font-family: Droid Sans;
+    font-style: normal;
+    font-weight: 400;
+    src: local("Droid Sans"), local("DroidSans"), url(/resources/fonts/googlefonts/droidsans/v6/s-BiyweUPV0v-yRb-cjciAzyDMXhdD8sAj6OAJTFsBI.woff2) format("woff2");
+    unicode-range: U+00??, U+0131, U+0152-0153, U+02c6, U+02da, U+02dc, U+2000-206f, U+2074, U+20ac, U+2212, U+2215, U+e0ff, U+effd, U+f000
+}
+
+@font-face {
+    font-family: Droid Sans;
+    font-style: normal;
+    font-weight: 700;
+    src: local("Droid Sans Bold"), local("DroidSans-Bold"), url(/resources/fonts/googlefonts/droidsans/v6/EFpQQyG9GqCrobXxL-KRMWaVI6zN22yiurzcBKxPjFE.woff2) format("woff2");
+    unicode-range: U+00??, U+0131, U+0152-0153, U+02c6, U+02da, U+02dc, U+2000-206f, U+2074, U+20ac, U+2212, U+2215, U+e0ff, U+effd, U+f000
+}
+
+@font-face {
+    font-family: Marck Script;
+    font-style: normal;
+    font-weight: 400;
+    src: local("Marck Script"), local("MarckScript-Regular"), url(/resources/fonts/googlefonts/marckscript/v7/O_D1NAZVOFOobLbVtW3bchdwxCXfZpKo5kWAx_74bHs.woff2) format("woff2");
+    unicode-range: U+0400-045f, U+0490-0491, U+04b0-04b1, U+2116
+}
+
+@font-face {
+    font-family: Marck Script;
+    font-style: normal;
+    font-weight: 400;
+    src: local("Marck Script"), local("MarckScript-Regular"), url(/resources/fonts/googlefonts/marckscript/v7/O_D1NAZVOFOobLbVtW3bcojoYw3YTyktCCer_ilOlhE.woff2) format("woff2");
+    unicode-range: U+0100-024f, U+1e??, U+20a0-20ab, U+20ad-20cf, U+2c60-2c7f, U+a720-a7ff
+}
+
+@font-face {
+    font-family: Marck Script;
+    font-style: normal;
+    font-weight: 400;
+    src: local("Marck Script"), local("MarckScript-Regular"), url(/resources/fonts/googlefonts/marckscript/v7/O_D1NAZVOFOobLbVtW3bchampu5_7CjHW5spxoeN3Vs.woff2) format("woff2");
+    unicode-range: U+00??, U+0131, U+0152-0153, U+02c6, U+02da, U+02dc, U+2000-206f, U+2074, U+20ac, U+2212, U+2215, U+e0ff, U+effd, U+f000
+}
+
+@font-face {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 300;
+    src: local("Roboto Light"), local("Roboto-Light"), url(/resources/fonts/googlefonts/roboto/v15/0eC6fl06luXEYWpBSJvXCIX0hVgzZQUfRDuZrPvH3D8.woff2) format("woff2");
+    unicode-range: U+0460-052f, U+20b4, U+2de0-2dff, U+a640-a69f
+}
+
+@font-face {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 300;
+    src: local("Roboto Light"), local("Roboto-Light"), url(/resources/fonts/googlefonts/roboto/v15/Fl4y0QdOxyyTHEGMXX8kcYX0hVgzZQUfRDuZrPvH3D8.woff2) format("woff2");
+    unicode-range: U+0400-045f, U+0490-0491, U+04b0-04b1, U+2116
+}
+
+@font-face {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 300;
+    src: local("Roboto Light"), local("Roboto-Light"), url(/resources/fonts/googlefonts/roboto/v15/-L14Jk06m6pUHB-5mXQQnYX0hVgzZQUfRDuZrPvH3D8.woff2) format("woff2");
+    unicode-range: U+1f??
+}
+
+@font-face {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 300;
+    src: local("Roboto Light"), local("Roboto-Light"), url(/resources/fonts/googlefonts/roboto/v15/I3S1wsgSg9YCurV6PUkTOYX0hVgzZQUfRDuZrPvH3D8.woff2) format("woff2");
+    unicode-range: U+0370-03ff
+}
+
+@font-face {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 300;
+    src: local("Roboto Light"), local("Roboto-Light"), url(/resources/fonts/googlefonts/roboto/v15/NYDWBdD4gIq26G5XYbHsFIX0hVgzZQUfRDuZrPvH3D8.woff2) format("woff2");
+    unicode-range: U+0102-0103, U+1ea0-1ef1, U+20ab
+}
+
+@font-face {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 300;
+    src: local("Roboto Light"), local("Roboto-Light"), url(/resources/fonts/googlefonts/roboto/v15/Pru33qjShpZSmG3z6VYwnYX0hVgzZQUfRDuZrPvH3D8.woff2) format("woff2");
+    unicode-range: U+0100-024f, U+1e??, U+20a0-20ab, U+20ad-20cf, U+2c60-2c7f, U+a720-a7ff
+}
+
+@font-face {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 300;
+    src: local("Roboto Light"), local("Roboto-Light"), url(/resources/fonts/googlefonts/roboto/v15/Hgo13k-tfSpn0qi1SFdUfZBw1xU1rKptJj_0jans920.woff2) format("woff2");
+    unicode-range: U+00??, U+0131, U+0152-0153, U+02c6, U+02da, U+02dc, U+2000-206f, U+2074, U+20ac, U+2212, U+2215, U+e0ff, U+effd, U+f000
+}
+
+@font-face {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 400;
+    src: local("Roboto"), local("Roboto-Regular"), url(/resources/fonts/googlefonts/roboto/v15/sTdaA6j0Psb920Vjv-mrzH-_kf6ByYO6CLYdB4HQE-Y.woff2) format("woff2");
+    unicode-range: U+0460-052f, U+20b4, U+2de0-2dff, U+a640-a69f
+}
+
+@font-face {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 400;
+    src: local("Roboto"), local("Roboto-Regular"), url(/resources/fonts/googlefonts/roboto/v15/uYECMKoHcO9x1wdmbyHIm3-_kf6ByYO6CLYdB4HQE-Y.woff2) format("woff2");
+    unicode-range: U+0400-045f, U+0490-0491, U+04b0-04b1, U+2116
+}
+
+@font-face {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 400;
+    src: local("Roboto"), local("Roboto-Regular"), url(/resources/fonts/googlefonts/roboto/v15/tnj4SB6DNbdaQnsM8CFqBX-_kf6ByYO6CLYdB4HQE-Y.woff2) format("woff2");
+    unicode-range: U+1f??
+}
+
+@font-face {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 400;
+    src: local("Roboto"), local("Roboto-Regular"), url(/resources/fonts/googlefonts/roboto/v15/_VYFx-s824kXq_Ul2BHqYH-_kf6ByYO6CLYdB4HQE-Y.woff2) format("woff2");
+    unicode-range: U+0370-03ff
+}
+
+@font-face {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 400;
+    src: local("Roboto"), local("Roboto-Regular"), url(/resources/fonts/googlefonts/roboto/v15/NJ4vxlgWwWbEsv18dAhqnn-_kf6ByYO6CLYdB4HQE-Y.woff2) format("woff2");
+    unicode-range: U+0102-0103, U+1ea0-1ef1, U+20ab
+}
+
+@font-face {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 400;
+    src: local("Roboto"), local("Roboto-Regular"), url(/resources/fonts/googlefonts/roboto/v15/Ks_cVxiCiwUWVsFWFA3Bjn-_kf6ByYO6CLYdB4HQE-Y.woff2) format("woff2");
+    unicode-range: U+0100-024f, U+1e??, U+20a0-20ab, U+20ad-20cf, U+2c60-2c7f, U+a720-a7ff
+}
+
+@font-face {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 400;
+    src: local("Roboto"), local("Roboto-Regular"), url(/resources/fonts/googlefonts/roboto/v15/oMMgfZMQthOryQo9n22dcuvvDin1pK8aKteLpeZ5c0A.woff2) format("woff2");
+    unicode-range: U+00??, U+0131, U+0152-0153, U+02c6, U+02da, U+02dc, U+2000-206f, U+2074, U+20ac, U+2212, U+2215, U+e0ff, U+effd, U+f000
+}
+
+@font-face {
+    font-family: Roboto;
+    font-style: italic;
+    font-weight: 300;
+    src: local("Roboto Light Italic"), local("Roboto-LightItalic"), url(/resources/fonts/googlefonts/roboto/v15/7m8l7TlFO-S3VkhHuR0at_ZraR2Tg8w2lzm7kLNL0-w.woff2) format("woff2");
+    unicode-range: U+0460-052f, U+20b4, U+2de0-2dff, U+a640-a69f
+}
+
+@font-face {
+    font-family: Roboto;
+    font-style: italic;
+    font-weight: 300;
+    src: local("Roboto Light Italic"), local("Roboto-LightItalic"), url(/resources/fonts/googlefonts/roboto/v15/7m8l7TlFO-S3VkhHuR0at14sYYdJg5dU2qzJEVSuta0.woff2) format("woff2");
+    unicode-range: U+0400-045f, U+0490-0491, U+04b0-04b1, U+2116
+}
+
+@font-face {
+    font-family: Roboto;
+    font-style: italic;
+    font-weight: 300;
+    src: local("Roboto Light Italic"), local("Roboto-LightItalic"), url(/resources/fonts/googlefonts/roboto/v15/7m8l7TlFO-S3VkhHuR0at1BW26QxpSj-_ZKm_xT4hWw.woff2) format("woff2");
+    unicode-range: U+1f??
+}
+
+@font-face {
+    font-family: Roboto;
+    font-style: italic;
+    font-weight: 300;
+    src: local("Roboto Light Italic"), local("Roboto-LightItalic"), url(/resources/fonts/googlefonts/roboto/v15/7m8l7TlFO-S3VkhHuR0atwt_Rm691LTebKfY2ZkKSmI.woff2) format("woff2");
+    unicode-range: U+0370-03ff
+}
+
+@font-face {
+    font-family: Roboto;
+    font-style: italic;
+    font-weight: 300;
+    src: local("Roboto Light Italic"), local("Roboto-LightItalic"), url(/resources/fonts/googlefonts/roboto/v15/7m8l7TlFO-S3VkhHuR0at9DiNsR5a-9Oe_Ivpu8XWlY.woff2) format("woff2");
+    unicode-range: U+0102-0103, U+1ea0-1ef1, U+20ab
+}
+
+@font-face {
+    font-family: Roboto;
+    font-style: italic;
+    font-weight: 300;
+    src: local("Roboto Light Italic"), local("Roboto-LightItalic"), url(/resources/fonts/googlefonts/roboto/v15/7m8l7TlFO-S3VkhHuR0at6E8kM4xWR1_1bYURRojRGc.woff2) format("woff2");
+    unicode-range: U+0100-024f, U+1e??, U+20a0-20ab, U+20ad-20cf, U+2c60-2c7f, U+a720-a7ff
+}
+
+@font-face {
+    font-family: Roboto;
+    font-style: italic;
+    font-weight: 300;
+    src: local("Roboto Light Italic"), local("Roboto-LightItalic"), url(/resources/fonts/googlefonts/roboto/v15/7m8l7TlFO-S3VkhHuR0at4gp9Q8gbYrhqGlRav_IXfk.woff2) format("woff2");
+    unicode-range: U+00??, U+0131, U+0152-0153, U+02c6, U+02da, U+02dc, U+2000-206f, U+2074, U+20ac, U+2212, U+2215, U+e0ff, U+effd, U+f000
+}
+
+@font-face {
+    font-family: Roboto;
+    font-style: italic;
+    font-weight: 400;
+    src: local("Roboto Italic"), local("Roboto-Italic"), url(/resources/fonts/googlefonts/roboto/v15/WxrXJa0C3KdtC7lMafG4dRkAz4rYn47Zy2rvigWQf6w.woff2) format("woff2");
+    unicode-range: U+0460-052f, U+20b4, U+2de0-2dff, U+a640-a69f
+}
+
+@font-face {
+    font-family: Roboto;
+    font-style: italic;
+    font-weight: 400;
+    src: local("Roboto Italic"), local("Roboto-Italic"), url(/resources/fonts/googlefonts/roboto/v15/OpXUqTo0UgQQhGj_SFdLWBkAz4rYn47Zy2rvigWQf6w.woff2) format("woff2");
+    unicode-range: U+0400-045f, U+0490-0491, U+04b0-04b1, U+2116
+}
+
+@font-face {
+    font-family: Roboto;
+    font-style: italic;
+    font-weight: 400;
+    src: local("Roboto Italic"), local("Roboto-Italic"), url(/resources/fonts/googlefonts/roboto/v15/1hZf02POANh32k2VkgEoUBkAz4rYn47Zy2rvigWQf6w.woff2) format("woff2");
+    unicode-range: U+1f??
+}
+
+@font-face {
+    font-family: Roboto;
+    font-style: italic;
+    font-weight: 400;
+    src: local("Roboto Italic"), local("Roboto-Italic"), url(/resources/fonts/googlefonts/roboto/v15/cDKhRaXnQTOVbaoxwdOr9xkAz4rYn47Zy2rvigWQf6w.woff2) format("woff2");
+    unicode-range: U+0370-03ff
+}
+
+@font-face {
+    font-family: Roboto;
+    font-style: italic;
+    font-weight: 400;
+    src: local("Roboto Italic"), local("Roboto-Italic"), url(/resources/fonts/googlefonts/roboto/v15/K23cxWVTrIFD6DJsEVi07RkAz4rYn47Zy2rvigWQf6w.woff2) format("woff2");
+    unicode-range: U+0102-0103, U+1ea0-1ef1, U+20ab
+}
+
+@font-face {
+    font-family: Roboto;
+    font-style: italic;
+    font-weight: 400;
+    src: local("Roboto Italic"), local("Roboto-Italic"), url(/resources/fonts/googlefonts/roboto/v15/vSzulfKSK0LLjjfeaxcREhkAz4rYn47Zy2rvigWQf6w.woff2) format("woff2");
+    unicode-range: U+0100-024f, U+1e??, U+20a0-20ab, U+20ad-20cf, U+2c60-2c7f, U+a720-a7ff
+}
+
+@font-face {
+    font-family: Roboto;
+    font-style: italic;
+    font-weight: 400;
+    src: local("Roboto Italic"), local("Roboto-Italic"), url(/resources/fonts/googlefonts/roboto/v15/vPcynSL0qHq_6dX7lKVByXYhjbSpvc47ee6xR_80Hnw.woff2) format("woff2");
+    unicode-range: U+00??, U+0131, U+0152-0153, U+02c6, U+02da, U+02dc, U+2000-206f, U+2074, U+20ac, U+2212, U+2215, U+e0ff, U+effd, U+f000
+}
+
+@font-face {
+    font-family: Source Sans Pro;
+    font-style: normal;
+    font-weight: 200;
+    src: local("Source Sans Pro ExtraLight"), local("SourceSansPro-ExtraLight"), url(/resources/fonts/googlefonts/sourcesanspro/v9/toadOcfmlt9b38dHJxOBGBtvTbjs3T7OK9b50AXe70D3rGVtsTkPsbDajuO5ueQw.woff2) format("woff2");
+    unicode-range: U+0102-0103, U+1ea0-1ef1, U+20ab
+}
+
+@font-face {
+    font-family: Source Sans Pro;
+    font-style: normal;
+    font-weight: 200;
+    src: local("Source Sans Pro ExtraLight"), local("SourceSansPro-ExtraLight"), url(/resources/fonts/googlefonts/sourcesanspro/v9/toadOcfmlt9b38dHJxOBGDvlGRZ3uCFbvUJSJFyaVCX3rGVtsTkPsbDajuO5ueQw.woff2) format("woff2");
+    unicode-range: U+0100-024f, U+1e??, U+20a0-20ab, U+20ad-20cf, U+2c60-2c7f, U+a720-a7ff
+}
+
+@font-face {
+    font-family: Source Sans Pro;
+    font-style: normal;
+    font-weight: 200;
+    src: local("Source Sans Pro ExtraLight"), local("SourceSansPro-ExtraLight"), url(/resources/fonts/googlefonts/sourcesanspro/v9/toadOcfmlt9b38dHJxOBGIAPdqzPmKFFIYQ-46z3JxY.woff2) format("woff2");
+    unicode-range: U+00??, U+0131, U+0152-0153, U+02c6, U+02da, U+02dc, U+2000-206f, U+2074, U+20ac, U+2212, U+2215, U+e0ff, U+effd, U+f000
+}
+
+@font-face {
+    font-family: Source Sans Pro;
+    font-style: normal;
+    font-weight: 300;
+    src: local("Source Sans Pro Light"), local("SourceSansPro-Light"), url(/resources/fonts/googlefonts/sourcesanspro/v9/toadOcfmlt9b38dHJxOBGCD5K6T8I4oZ1X3Xvlj_UeP3rGVtsTkPsbDajuO5ueQw.woff2) format("woff2");
+    unicode-range: U+0102-0103, U+1ea0-1ef1, U+20ab
+}
+
+@font-face {
+    font-family: Source Sans Pro;
+    font-style: normal;
+    font-weight: 300;
+    src: local("Source Sans Pro Light"), local("SourceSansPro-Light"), url(/resources/fonts/googlefonts/sourcesanspro/v9/toadOcfmlt9b38dHJxOBGDOFnJNygIkrHciC8BWzbCz3rGVtsTkPsbDajuO5ueQw.woff2) format("woff2");
+    unicode-range: U+0100-024f, U+1e??, U+20a0-20ab, U+20ad-20cf, U+2c60-2c7f, U+a720-a7ff
+}
+
+@font-face {
+    font-family: Source Sans Pro;
+    font-style: normal;
+    font-weight: 300;
+    src: local("Source Sans Pro Light"), local("SourceSansPro-Light"), url(/resources/fonts/googlefonts/sourcesanspro/v9/toadOcfmlt9b38dHJxOBGCP2LEk6lMzYsRqr3dHFImA.woff2) format("woff2");
+    unicode-range: U+00??, U+0131, U+0152-0153, U+02c6, U+02da, U+02dc, U+2000-206f, U+2074, U+20ac, U+2212, U+2215, U+e0ff, U+effd, U+f000
+}
+
+@font-face {
+    font-family: Source Sans Pro;
+    font-style: normal;
+    font-weight: 400;
+    src: local("Source Sans Pro"), local("SourceSansPro-Regular"), url(/resources/fonts/googlefonts/sourcesanspro/v9/ODelI1aHBYDBqgeIAH2zlCxe5Tewm2_XWfbGchcXw4g.woff2) format("woff2");
+    unicode-range: U+0102-0103, U+1ea0-1ef1, U+20ab
+}
+
+@font-face {
+    font-family: Source Sans Pro;
+    font-style: normal;
+    font-weight: 400;
+    src: local("Source Sans Pro"), local("SourceSansPro-Regular"), url(/resources/fonts/googlefonts/sourcesanspro/v9/ODelI1aHBYDBqgeIAH2zlIa1YDtoarzwSXxTHggEXMw.woff2) format("woff2");
+    unicode-range: U+0100-024f, U+1e??, U+20a0-20ab, U+20ad-20cf, U+2c60-2c7f, U+a720-a7ff
+}
+
+@font-face {
+    font-family: Source Sans Pro;
+    font-style: normal;
+    font-weight: 400;
+    src: local("Source Sans Pro"), local("SourceSansPro-Regular"), url(/resources/fonts/googlefonts/sourcesanspro/v9/ODelI1aHBYDBqgeIAH2zlJbPFduIYtoLzwST68uhz_Y.woff2) format("woff2");
+    unicode-range: U+00??, U+0131, U+0152-0153, U+02c6, U+02da, U+02dc, U+2000-206f, U+2074, U+20ac, U+2212, U+2215, U+e0ff, U+effd, U+f000
+}
+
+@font-face {
+    font-family: Source Sans Pro;
+    font-style: normal;
+    font-weight: 600;
+    src: local("Source Sans Pro Semibold"), local("SourceSansPro-Semibold"), url(/resources/fonts/googlefonts/sourcesanspro/v9/toadOcfmlt9b38dHJxOBGMZXFz2iDKd7GJNSaxRYiSj3rGVtsTkPsbDajuO5ueQw.woff2) format("woff2");
+    unicode-range: U+0102-0103, U+1ea0-1ef1, U+20ab
+}
+
+@font-face {
+    font-family: Source Sans Pro;
+    font-style: normal;
+    font-weight: 600;
+    src: local("Source Sans Pro Semibold"), local("SourceSansPro-Semibold"), url(/resources/fonts/googlefonts/sourcesanspro/v9/toadOcfmlt9b38dHJxOBGKyGJhAh-RE0BxGcd_izyev3rGVtsTkPsbDajuO5ueQw.woff2) format("woff2");
+    unicode-range: U+0100-024f, U+1e??, U+20a0-20ab, U+20ad-20cf, U+2c60-2c7f, U+a720-a7ff
+}
+
+@font-face {
+    font-family: Source Sans Pro;
+    font-style: normal;
+    font-weight: 600;
+    src: local("Source Sans Pro Semibold"), local("SourceSansPro-Semibold"), url(/resources/fonts/googlefonts/sourcesanspro/v9/toadOcfmlt9b38dHJxOBGMzFoXZ-Kj537nB_-9jJhlA.woff2) format("woff2");
+    unicode-range: U+00??, U+0131, U+0152-0153, U+02c6, U+02da, U+02dc, U+2000-206f, U+2074, U+20ac, U+2212, U+2215, U+e0ff, U+effd, U+f000
+}
+
+@font-face {
+    font-family: Source Sans Pro;
+    font-style: normal;
+    font-weight: 700;
+    src: local("Source Sans Pro Bold"), local("SourceSansPro-Bold"), url(/resources/fonts/googlefonts/sourcesanspro/v9/toadOcfmlt9b38dHJxOBGMms7UHsIbjUxEJqIwog-i_3rGVtsTkPsbDajuO5ueQw.woff2) format("woff2");
+    unicode-range: U+0102-0103, U+1ea0-1ef1, U+20ab
+}
+
+@font-face {
+    font-family: Source Sans Pro;
+    font-style: normal;
+    font-weight: 700;
+    src: local("Source Sans Pro Bold"), local("SourceSansPro-Bold"), url(/resources/fonts/googlefonts/sourcesanspro/v9/toadOcfmlt9b38dHJxOBGO4s1Ux4PuImWPk5fSr6HPL3rGVtsTkPsbDajuO5ueQw.woff2) format("woff2");
+    unicode-range: U+0100-024f, U+1e??, U+20a0-20ab, U+20ad-20cf, U+2c60-2c7f, U+a720-a7ff
+}
+
+@font-face {
+    font-family: Source Sans Pro;
+    font-style: normal;
+    font-weight: 700;
+    src: local("Source Sans Pro Bold"), local("SourceSansPro-Bold"), url(/resources/fonts/googlefonts/sourcesanspro/v9/toadOcfmlt9b38dHJxOBGJkF8H8ye47wsfpWywda8og.woff2) format("woff2");
+    unicode-range: U+00??, U+0131, U+0152-0153, U+02c6, U+02da, U+02dc, U+2000-206f, U+2074, U+20ac, U+2212, U+2215, U+e0ff, U+effd, U+f000
+}
+
+@font-face {
+    font-family: Source Sans Pro;
+    font-style: normal;
+    font-weight: 900;
+    src: local("Source Sans Pro Black"), local("SourceSansPro-Black"), url(/resources/fonts/googlefonts/sourcesanspro/v9/toadOcfmlt9b38dHJxOBGDCgBLtsnrdK1Wb_YMpk1Ez3rGVtsTkPsbDajuO5ueQw.woff2) format("woff2");
+    unicode-range: U+0102-0103, U+1ea0-1ef1, U+20ab
+}
+
+@font-face {
+    font-family: Source Sans Pro;
+    font-style: normal;
+    font-weight: 900;
+    src: local("Source Sans Pro Black"), local("SourceSansPro-Black"), url(/resources/fonts/googlefonts/sourcesanspro/v9/toadOcfmlt9b38dHJxOBGKfQKEmnUd3GHgKOgaFw3O33rGVtsTkPsbDajuO5ueQw.woff2) format("woff2");
+    unicode-range: U+0100-024f, U+1e??, U+20a0-20ab, U+20ad-20cf, U+2c60-2c7f, U+a720-a7ff
+}
+
+@font-face {
+    font-family: Source Sans Pro;
+    font-style: normal;
+    font-weight: 900;
+    src: local("Source Sans Pro Black"), local("SourceSansPro-Black"), url(/resources/fonts/googlefonts/sourcesanspro/v9/toadOcfmlt9b38dHJxOBGIq-Fb0zf838trI74uojZQY.woff2) format("woff2");
+    unicode-range: U+00??, U+0131, U+0152-0153, U+02c6, U+02da, U+02dc, U+2000-206f, U+2074, U+20ac, U+2212, U+2215, U+e0ff, U+effd, U+f000
+}
+
+@font-face {
+    font-family: Source Sans Pro;
+    font-style: italic;
+    font-weight: 200;
+    src: local("Source Sans Pro ExtraLight Italic"), local("SourceSansPro-ExtraLightIt"), url(/resources/fonts/googlefonts/sourcesanspro/v9/fpTVHK8qsXbIeTHTrnQH6HrrPK-X2CVck6oRtpE0Ze0U24FapfJwyacJ6xNu5rm9.woff2) format("woff2");
+    unicode-range: U+0102-0103, U+1ea0-1ef1, U+20ab
+}
+
+@font-face {
+    font-family: Source Sans Pro;
+    font-style: italic;
+    font-weight: 200;
+    src: local("Source Sans Pro ExtraLight Italic"), local("SourceSansPro-ExtraLightIt"), url(/resources/fonts/googlefonts/sourcesanspro/v9/fpTVHK8qsXbIeTHTrnQH6AVQ7_spPtgmpD0WsmkG12kU24FapfJwyacJ6xNu5rm9.woff2) format("woff2");
+    unicode-range: U+0100-024f, U+1e??, U+20a0-20ab, U+20ad-20cf, U+2c60-2c7f, U+a720-a7ff
+}
+
+@font-face {
+    font-family: Source Sans Pro;
+    font-style: italic;
+    font-weight: 200;
+    src: local("Source Sans Pro ExtraLight Italic"), local("SourceSansPro-ExtraLightIt"), url(/resources/fonts/googlefonts/sourcesanspro/v9/fpTVHK8qsXbIeTHTrnQH6KwWwkY55OPAcpsgnrG5el_3rGVtsTkPsbDajuO5ueQw.woff2) format("woff2");
+    unicode-range: U+00??, U+0131, U+0152-0153, U+02c6, U+02da, U+02dc, U+2000-206f, U+2074, U+20ac, U+2212, U+2215, U+e0ff, U+effd, U+f000
+}
+
+@font-face {
+    font-family: Source Sans Pro;
+    font-style: italic;
+    font-weight: 300;
+    src: local("Source Sans Pro Light Italic"), local("SourceSansPro-LightIt"), url(/resources/fonts/googlefonts/sourcesanspro/v9/fpTVHK8qsXbIeTHTrnQH6B_gmbEOuTnFVLOcZ03JXzUU24FapfJwyacJ6xNu5rm9.woff2) format("woff2");
+    unicode-range: U+0102-0103, U+1ea0-1ef1, U+20ab
+}
+
+@font-face {
+    font-family: Source Sans Pro;
+    font-style: italic;
+    font-weight: 300;
+    src: local("Source Sans Pro Light Italic"), local("SourceSansPro-LightIt"), url(/resources/fonts/googlefonts/sourcesanspro/v9/fpTVHK8qsXbIeTHTrnQH6I592LlB3Spcld5cOzjZxycU24FapfJwyacJ6xNu5rm9.woff2) format("woff2");
+    unicode-range: U+0100-024f, U+1e??, U+20a0-20ab, U+20ad-20cf, U+2c60-2c7f, U+a720-a7ff
+}
+
+@font-face {
+    font-family: Source Sans Pro;
+    font-style: italic;
+    font-weight: 300;
+    src: local("Source Sans Pro Light Italic"), local("SourceSansPro-LightIt"), url(/resources/fonts/googlefonts/sourcesanspro/v9/fpTVHK8qsXbIeTHTrnQH6KWfmYpLTwMIZXVESxMi2BP3rGVtsTkPsbDajuO5ueQw.woff2) format("woff2");
+    unicode-range: U+00??, U+0131, U+0152-0153, U+02c6, U+02da, U+02dc, U+2000-206f, U+2074, U+20ac, U+2212, U+2215, U+e0ff, U+effd, U+f000
+}
+
+@font-face {
+    font-family: Source Sans Pro;
+    font-style: italic;
+    font-weight: 400;
+    src: local("Source Sans Pro Italic"), local("SourceSansPro-It"), url(/resources/fonts/googlefonts/sourcesanspro/v9/M2Jd71oPJhLKp0zdtTvoM-hx0s8EczIZ6Z1k6LZjTLo.woff2) format("woff2");
+    unicode-range: U+0102-0103, U+1ea0-1ef1, U+20ab
+}
+
+@font-face {
+    font-family: Source Sans Pro;
+    font-style: italic;
+    font-weight: 400;
+    src: local("Source Sans Pro Italic"), local("SourceSansPro-It"), url(/resources/fonts/googlefonts/sourcesanspro/v9/M2Jd71oPJhLKp0zdtTvoMyVjDpjOAxwEYJFCET2nD1s.woff2) format("woff2");
+    unicode-range: U+0100-024f, U+1e??, U+20a0-20ab, U+20ad-20cf, U+2c60-2c7f, U+a720-a7ff
+}
+
+@font-face {
+    font-family: Source Sans Pro;
+    font-style: italic;
+    font-weight: 400;
+    src: local("Source Sans Pro Italic"), local("SourceSansPro-It"), url(/resources/fonts/googlefonts/sourcesanspro/v9/M2Jd71oPJhLKp0zdtTvoM2Sl3jWJ3D9poyJPMfASioc.woff2) format("woff2");
+    unicode-range: U+00??, U+0131, U+0152-0153, U+02c6, U+02da, U+02dc, U+2000-206f, U+2074, U+20ac, U+2212, U+2215, U+e0ff, U+effd, U+f000
+}
+
+@font-face {
+    font-family: Source Sans Pro;
+    font-style: italic;
+    font-weight: 600;
+    src: local("Source Sans Pro Semibold Italic"), local("SourceSansPro-SemiboldIt"), url(/resources/fonts/googlefonts/sourcesanspro/v9/fpTVHK8qsXbIeTHTrnQH6O0_5fr73lDnMnLTNvHFLLgU24FapfJwyacJ6xNu5rm9.woff2) format("woff2");
+    unicode-range: U+0102-0103, U+1ea0-1ef1, U+20ab
+}
+
+@font-face {
+    font-family: Source Sans Pro;
+    font-style: italic;
+    font-weight: 600;
+    src: local("Source Sans Pro Semibold Italic"), local("SourceSansPro-SemiboldIt"), url(/resources/fonts/googlefonts/sourcesanspro/v9/fpTVHK8qsXbIeTHTrnQH6FJb469ExK4t7Ej8F0pF-7kU24FapfJwyacJ6xNu5rm9.woff2) format("woff2");
+    unicode-range: U+0100-024f, U+1e??, U+20a0-20ab, U+20ad-20cf, U+2c60-2c7f, U+a720-a7ff
+}
+
+@font-face {
+    font-family: Source Sans Pro;
+    font-style: italic;
+    font-weight: 600;
+    src: local("Source Sans Pro Semibold Italic"), local("SourceSansPro-SemiboldIt"), url(/resources/fonts/googlefonts/sourcesanspro/v9/fpTVHK8qsXbIeTHTrnQH6FuRfpT8-4D6FEAtfkspckX3rGVtsTkPsbDajuO5ueQw.woff2) format("woff2");
+    unicode-range: U+00??, U+0131, U+0152-0153, U+02c6, U+02da, U+02dc, U+2000-206f, U+2074, U+20ac, U+2212, U+2215, U+e0ff, U+effd, U+f000
+}
+
+@font-face {
+    font-family: Source Sans Pro;
+    font-style: italic;
+    font-weight: 700;
+    src: local("Source Sans Pro Bold Italic"), local("SourceSansPro-BoldIt"), url(/resources/fonts/googlefonts/sourcesanspro/v9/fpTVHK8qsXbIeTHTrnQH6BIH5AMGdfkCfzO-3kW1eBkU24FapfJwyacJ6xNu5rm9.woff2) format("woff2");
+    unicode-range: U+0102-0103, U+1ea0-1ef1, U+20ab
+}
+
+@font-face {
+    font-family: Source Sans Pro;
+    font-style: italic;
+    font-weight: 700;
+    src: local("Source Sans Pro Bold Italic"), local("SourceSansPro-BoldIt"), url(/resources/fonts/googlefonts/sourcesanspro/v9/fpTVHK8qsXbIeTHTrnQH6DxmxCZT8kOrXNPkfBESV6YU24FapfJwyacJ6xNu5rm9.woff2) format("woff2");
+    unicode-range: U+0100-024f, U+1e??, U+20a0-20ab, U+20ad-20cf, U+2c60-2c7f, U+a720-a7ff
+}
+
+@font-face {
+    font-family: Source Sans Pro;
+    font-style: italic;
+    font-weight: 700;
+    src: local("Source Sans Pro Bold Italic"), local("SourceSansPro-BoldIt"), url(/resources/fonts/googlefonts/sourcesanspro/v9/fpTVHK8qsXbIeTHTrnQH6H0cQ2LOPDPk8GfVMt0MqYH3rGVtsTkPsbDajuO5ueQw.woff2) format("woff2");
+    unicode-range: U+00??, U+0131, U+0152-0153, U+02c6, U+02da, U+02dc, U+2000-206f, U+2074, U+20ac, U+2212, U+2215, U+e0ff, U+effd, U+f000
+}
+
+@font-face {
+    font-family: Source Sans Pro;
+    font-style: italic;
+    font-weight: 900;
+    src: local("Source Sans Pro Black Italic"), local("SourceSansPro-BlackIt"), url(/resources/fonts/googlefonts/sourcesanspro/v9/fpTVHK8qsXbIeTHTrnQH6Cdo2FcJU5lnxhFuvRqmE7EU24FapfJwyacJ6xNu5rm9.woff2) format("woff2");
+    unicode-range: U+0102-0103, U+1ea0-1ef1, U+20ab
+}
+
+@font-face {
+    font-family: Source Sans Pro;
+    font-style: italic;
+    font-weight: 900;
+    src: local("Source Sans Pro Black Italic"), local("SourceSansPro-BlackIt"), url(/resources/fonts/googlefonts/sourcesanspro/v9/fpTVHK8qsXbIeTHTrnQH6I4KtbziG5G4MV5yM-AMBaIU24FapfJwyacJ6xNu5rm9.woff2) format("woff2");
+    unicode-range: U+0100-024f, U+1e??, U+20a0-20ab, U+20ad-20cf, U+2c60-2c7f, U+a720-a7ff
+}
+
+@font-face {
+    font-family: Source Sans Pro;
+    font-style: italic;
+    font-weight: 900;
+    src: local("Source Sans Pro Black Italic"), local("SourceSansPro-BlackIt"), url(/resources/fonts/googlefonts/sourcesanspro/v9/fpTVHK8qsXbIeTHTrnQH6Ekie17uDcARvvg0QA3ZZLH3rGVtsTkPsbDajuO5ueQw.woff2) format("woff2");
+    unicode-range: U+00??, U+0131, U+0152-0153, U+02c6, U+02da, U+02dc, U+2000-206f, U+2074, U+20ac, U+2212, U+2215, U+e0ff, U+effd, U+f000
+}
+
+@font-face {
+    font-family: source_sans_problack;
+    src: url(/resources/fonts/fontsquirrel/sourcesanspro/sourcesanspro-black-webfont.woff2) format("woff2"), url(/resources/fonts/fontsquirrel/sourcesanspro/sourcesanspro-black-webfont.woff) format("woff");
+    font-weight: 400;
+    font-style: normal
+}
+
+@font-face {
+    font-family: source_sans_problack_italic;
+    src: url(/resources/fonts/fontsquirrel/sourcesanspro/sourcesanspro-blackit-webfont.woff2) format("woff2"), url(/resources/fonts/fontsquirrel/sourcesanspro/sourcesanspro-blackit-webfont.woff) format("woff");
+    font-weight: 400;
+    font-style: normal
+}
+
+@font-face {
+    font-family: source_sans_probold;
+    src: url(/resources/fonts/fontsquirrel/sourcesanspro/sourcesanspro-bold-webfont.woff2) format("woff2"), url(/resources/fonts/fontsquirrel/sourcesanspro/sourcesanspro-bold-webfont.woff) format("woff");
+    font-weight: 400;
+    font-style: normal
+}
+
+@font-face {
+    font-family: source_sans_probold_italic;
+    src: url(/resources/fonts/fontsquirrel/sourcesanspro/sourcesanspro-boldit-webfont.woff2) format("woff2"), url(/resources/fonts/fontsquirrel/sourcesanspro/sourcesanspro-boldit-webfont.woff) format("woff");
+    font-weight: 400;
+    font-style: normal
+}
+
+@font-face {
+    font-family: source_sans_proextralight;
+    src: url(/resources/fonts/fontsquirrel/sourcesanspro/sourcesanspro-extralight-webfont.woff2) format("woff2"), url(/resources/fonts/fontsquirrel/sourcesanspro/sourcesanspro-extralight-webfont.woff) format("woff");
+    font-weight: 400;
+    font-style: normal
+}
+
+@font-face {
+    font-family: source_sans_proXLtIt;
+    src: url(/resources/fonts/fontsquirrel/sourcesanspro/sourcesanspro-extralightit-webfont.woff2) format("woff2"), url(/resources/fonts/fontsquirrel/sourcesanspro/sourcesanspro-extralightit-webfont.woff) format("woff");
+    font-weight: 400;
+    font-style: normal
+}
+
+@font-face {
+    font-family: source_sans_proitalic;
+    src: url(/resources/fonts/fontsquirrel/sourcesanspro/sourcesanspro-it-webfont.woff2) format("woff2"), url(/resources/fonts/fontsquirrel/sourcesanspro/sourcesanspro-it-webfont.woff) format("woff");
+    font-weight: 400;
+    font-style: normal
+}
+
+@font-face {
+    font-family: source_sans_prolight;
+    src: url(/resources/fonts/fontsquirrel/sourcesanspro/sourcesanspro-light-webfont.woff2) format("woff2"), url(/resources/fonts/fontsquirrel/sourcesanspro/sourcesanspro-light-webfont.woff) format("woff");
+    font-weight: 400;
+    font-style: normal
+}
+
+@font-face {
+    font-family: source_sans_prolight_italic;
+    src: url(/resources/fonts/fontsquirrel/sourcesanspro/sourcesanspro-lightit-webfont.woff2) format("woff2"), url(/resources/fonts/fontsquirrel/sourcesanspro/sourcesanspro-lightit-webfont.woff) format("woff");
+    font-weight: 400;
+    font-style: normal
+}
+
+@font-face {
+    font-family: source_sans_proregular;
+    src: url(/resources/fonts/fontsquirrel/sourcesanspro/sourcesanspro-regular-webfont.woff2) format("woff2"), url(/resources/fonts/fontsquirrel/sourcesanspro/sourcesanspro-regular-webfont.woff) format("woff");
+    font-weight: 400;
+    font-style: normal
+}
+
+@font-face {
+    font-family: source_sans_prosemibold;
+    src: url(/resources/fonts/fontsquirrel/sourcesanspro/sourcesanspro-semibold-webfont.woff2) format("woff2"), url(/resources/fonts/fontsquirrel/sourcesanspro/sourcesanspro-semibold-webfont.woff) format("woff");
+    font-weight: 400;
+    font-style: normal
+}
+
+@font-face {
+    font-family: source_sans_proSBdIt;
+    src: url(/resources/fonts/fontsquirrel/sourcesanspro/sourcesanspro-semiboldit-webfont.woff2) format("woff2"), url(/resources/fonts/fontsquirrel/sourcesanspro/sourcesanspro-semiboldit-webfont.woff) format("woff");
+    font-weight: 400;
+    font-style: normal
+}
+
+body {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased
+}
+
+b,
+strong {
+    font-family: source_sans_prosemibold,sans-serif
+}
+
+ol[type="1"].std-list {
+    list-style: decimal
+}
+
+ol[type=a].std-list {
+    list-style: lower-latin
+}
+
+ol[type=A].std-list {
+    list-style: upper-alpha
+}
+
+.std-list {
+    font-size: 16px;
+    margin: 10px 0 15px
+}
+
+    .std-list li {
+        margin-left: 20px;
+        margin-bottom: 20px
+    }
+
+ul.std-list {
+    list-style: disc
+}
+
+.recently-domain-box {
+    background: #61aae1;
+    padding: 15px;
+    margin: 42px 0 10px;
+    box-sizing: border-box;
+    width: 392px
+}
+
+.recently-domain-box__headline {
+    color: #fff;
+    font-size: 24px;
+    text-shadow: rgba(0,0,0,.15) 2px 2px 1px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    padding-left: 0;
+    font-weight: 700;
+    letter-spacing: -.8px
+}
+
+.recently-domain-box a:link,
+.recently-domain-box a:visited {
+    font-size: 16px;
+    text-decoration: none
+}
+
+.recently-domain-box__item {
+    border-radius: 4px;
+    background: #fff;
+    height: 28px;
+    line-height: 28px;
+    color: #262a2e;
+    font-size: 16px;
+    padding: 0 10px;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 6px;
+    display: block
+}
+
+    .recently-domain-box__item:last-of-type {
+        margin-bottom: 0
+    }
+
+.recently-domain-box__item--available:after,
+.recently-domain-box__item--available:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 6px 0 6px 9px;
+    margin-top: -6px
+}
+
+.recently-domain-box__item--available:before {
+    border-color: transparent transparent transparent #262a2e;
+    right: 10px
+}
+
+.recently-domain-box__item--available:after {
+    border-color: transparent transparent transparent #fff;
+    right: 14px
+}
+
+.recently-domain-box__item--sold:after {
+    position: absolute;
+    right: 0;
+    top: 6px;
+    width: 90px;
+    text-align: center;
+    line-height: 16px;
+    content: "SOLD";
+    color: #fff;
+    background: #c74c4c;
+    font-size: 13px;
+    font-weight: 700;
+    transform: rotate(-30deg)
+}
+
+body .ui-widget button,
+body .ui-widget input,
+body .ui-widget select {
+    font-family: source_sans_proregular,sans-serif
+}
+
+body .ui-tabs.ui-widget,
+body .ui-widget button {
+    border: 0
+}
+
+    body .ui-tabs.ui-widget .ui-state-default {
+        border: 0;
+        background: inherit
+    }
+
+    body .ui-tabs.ui-widget .ui-state-active,
+    body .ui-tabs.ui-widget .ui-state-default {
+        border: 0
+    }
+
+body .ui-widget-overlay {
+    background: #000;
+    opacity: .7
+}
+
+body.layout01 .ui-widget-header .ui-button {
+    top: 16px
+}
+
+body.layout01 .ui-dialog-title {
+    font-size: 16px
+}
+
+body #uploaddocuments form {
+    padding: 5px 10px 0
+}
+
+    body #uploaddocuments form input[type=file] {
+        width: auto
+    }
+
+.cookie-notice {
+    position: fixed;
+    bottom: 0;
+    display: block;
+    transition: all .4s ease-in-out;
+    width: 100%;
+    z-index: 9999;
+    background-color: #0061aa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff
+}
+
+.cookie-notice--disabled {
+    bottom: -100%;
+    transition: all .4s ease-in-out
+}
+
+.cookie-notice__content {
+    max-width: 1400px;
+    font-size: 17px !important;
+    line-height: normal;
+    padding: 25px
+}
+
+.cookie-notice__scrollable-content {
+    max-height: 35vh;
+    overflow-y: scroll;
+    margin-bottom: 20px
+}
+
+@media screen and (min-width:1024px) {
+    .cookie-notice__scrollable-content {
+        overflow-y: auto
+    }
+}
+
+.cookie-notice__text {
+    padding: 15px 0;
+    line-height: 1.5 !important
+}
+
+.cookie-notice__link {
+    color: #f5f5f5;
+    text-decoration: underline
+}
+
+.cookie-notice__button-container {
+    text-align: right
+}
+
+.cookie-notice__button {
+    font-size: 16px !important;
+    border: none !important;
+    padding: 10px 15px !important
+}
+
+@media screen and (max-width:649px) {
+    .cookie-notice__button:first-of-type {
+        margin-bottom: 10px
+    }
+}
+
+.cookie-notice__button--save-settings {
+    background-color: #5f748f;
+    color: #f5f5f5
+}
+
+.cookie-notice__button--accept-all {
+    background-color: #7fbb45
+}
+
+.cookie-notice__form {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column
+}
+
+@media screen and (min-width:1024px) {
+    .cookie-notice__form {
+        flex-direction: row;
+        width: 70%
+    }
+}
+
+.cookie-notice__more-info-close,
+.cookie-notice__more-info-open {
+    width: 15px;
+    height: 15px;
+    vertical-align: middle;
+    margin-bottom: 2px
+}
+
+.cookie-notice__more-info {
+    cursor: pointer
+}
+
+.cookie-notice__checkbox--open .cookie-notice__more-info-close,
+.cookie-notice__checkbox-input,
+.cookie-notice__checkbox .cookie-notice__more-info-open,
+.cookie-notice__more-info-text:not(.cookie-notice__more-info-text--open) {
+    display: none
+}
+
+.cookie-notice__checkbox--open .cookie-notice__more-info-open {
+    display: inline-block
+}
+
+.cookie-notice__more-info,
+.cookie-notice__more-info-text {
+    margin-left: 27px;
+    font-size: 13px;
+    padding: 0 0 5px
+}
+
+    .cookie-notice__more-info-text p {
+        padding: 5px 0
+    }
+
+.cookie-notice__checkbox {
+    flex: 1;
+    padding-bottom: 15px
+}
+
+.cookie-notice__checkbox-label:before {
+    width: 17px;
+    height: 17px;
+    border: 1px solid #fff;
+    position: relative;
+    margin-right: 7px;
+    display: inline-block;
+    vertical-align: top;
+    content: ""
+}
+
+.cookie-notice__checkbox-label {
+    vertical-align: top
+}
+
+.cookie-notice__checkbox-input:checked:disabled + .cookie-notice__checkbox-label {
+    opacity: .5
+}
+
+    .cookie-notice__checkbox-input:checked:disabled + .cookie-notice__checkbox-label:before {
+        color: #ddd
+    }
+
+.cookie-notice__checkbox-input:checked + .cookie-notice__checkbox-label:before {
+    content: "\2713";
+    line-height: 17px;
+    font-size: 30px;
+    bottom: 0;
+    color: #7fbb45
+}
+
+[data-link-action=openCookieLayer] {
+    cursor: pointer;
+    font-family: Source Sans Pro,sans-serif
+}
+
+body {
+    margin: 0;
+    font-family: source_sans_proregular,sans-serif
+}
+
+.transit-wrapper {
+    position: relative;
+    width: 1100px;
+    margin: 0 auto;
+    padding: 20px 0 30px;
+    overflow: hidden;
+    *zoom: 1;
+    display: block
+}
+
+    .transit-wrapper .precontent {
+        color: #32383d
+    }
+
+html body #col3 {
+    margin: 0 0 0 60px !important;
+    width: 819px !important
+}
+
+.sedoFormDynamic label {
+    white-space: inherit
+}
+
+.my-sedo__promotion-banner {
+    margin-top: 8px
+}
+/*memeber controller components css*/
+.container {
+    
+    height:auto;
+}
+.para {
+   background-color: lightgray;
+}
+.content {
+
+}
+.outer {
+    background-color:whitesmoke;
+    height:auto;
+    width:100%;
+}
+.img2 {
+    width:60%;
+    height:120px;
+}
+.img1 {
+    width: 60%;
+    height: auto;
+}
+p{
+    margin-bottom:20px;
+    line-height:30px;
+    
+}
+.text1 {
+    background-color:lightgray;
+    width:30px;
+    height:auto;
+    margin-bottom:20px;
+}
+.text2 {
+    background-color: lightgray;
+    width: 30px;
+    height: 60px;
+    margin-bottom: 20px;
+}
+
+
+/**********************doamin css****************************/
+
+#domain-container h2.title {
+    color: #012266;
+    font-size: 24px;
+    margin: 30px 0 20px 0;
+}
+#domain-container h2.sub-title {
+    color: #012266;
+    font-size: 16px;
+    margin: 10px 0 10px 0;
+}
+#domain-container ul.domain-tabs {
+    width: 100%;
+    float: left;
+    display: block;
+    background: #fff;
+    padding-left:20px;
+}
+    #domain-container ul.domain-tabs li {
+        display: block;
+        float: left;
+        padding: 0 35px 0 43px;
+        height: 36px;
+        background: url(../img/bg.steps.png) no-repeat right top;
+        font-weight: bold;
+        font-size: 11px;
+        line-height: 36px;
+        color: #000;
+        margin-left: -20px;
+        left: -20px;
+        position: relative;
+    }
+        #domain-container ul.domain-tabs li.active {
+            background-position: right -40px;
+            border-left: 1px solid #2059AA;
+            color: #292929;
+        }
+        #domain-container ul.domain-tabs li:nth-child(1) {
+            z-index: 9;
+        }
+        #domain-container ul.domain-tabs li:nth-child(2) {
+            z-index: 8;
+        }
+        #domain-container ul.domain-tabs li:nth-child(3) {
+            z-index: 7;
+        }
+
+.box {
+    padding: 10px 20px;
+    position: relative;
+    margin-bottom: 15px;
+}
+    .box.lightBlue {
+        background: #EBF0F7;
+        border: 1px solid #BBBFC8;
+        -moz-border-radius: 15px;
+        -webkit-border-radius: 15px;
+        -ms-border-radius: 15px;
+        -o-border-radius: 15px;
+        border-radius: 15px;
+        padding: 20px;
+        margin: 0 0 15px 0;
+    }
+#domainSignupTextarea {
+    background: #FFFFFF;
+    border: 1px solid #A8A8A8;
+    height: 150px;
+    line-height: 16px;
+    margin: 10px 0 0 0;
+    overflow: auto;
+    padding: 5px;
+    width: 475px;
+}
+.step p, .step span {
+    font-size: 13px;
+    letter-spacing: -0.5px;
+    line-height: 18px;
+}
+p.subline {
+    margin: 5px 0 15px 0;
+    line-height: 18px;
+}
+a.link:link, a.link:visited {
+    background: none;
+    color: #228E05;
+    font-weight: normal;
+    padding: 0;
+    text-decoration: underline;
+}
+form * {
+    margin: 0;
+    padding: 0;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+.last {
+    border: bisque;
+}
+tr {
+    display: table-row;
+    vertical-align: inherit;
+    border-color: inherit;
+}
+
+element.style {
+}
+
+.last {
+    border: bisque;
+}
+
+.last {
+    border-bottom: 1px solid #EAEAEA;
+    border-top: 1px solid #EAEAEA;
+}
+
+form * {
+    margin: 0;
+    padding: 0;
+}
+
+a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, body, canvas, caption, center, cite, code, dd, del, details, dfn, div, dl, dt, em, embed, fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, html, i, iframe, img, ins, kbd, label, legend, li, mark, menu, nav, object, ol, output, p, pre, q, ruby, s, samp, section, small, span, strike, strong, sub, summary, sup, table, tbody, td, tfoot, th, thead, time, tr, tt, u, ul, var, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+user agent stylesheet
+tr {
+    display: table-row;
+    vertical-align: inherit;
+    border-color: inherit;
+}
+
+table.table.domains {
+    border: none;
+    border-bottom: 3px solid #2059AA;
+    color: #012266;
+    line-height: normal;
+    margin: 10px 0;
+    width: 100%;
+}
+.buttonContainer {
+    display: block;
+    margin: 20px 0;
+    padding-top: 0;
+    position: relative;
+    text-align: center;
+}
+.float-right {
+    float: right !important;
+}
+
+.buttonContainer {
+    display: block;
+    margin: 20px 0;
+    margin-top: 20px;
+    margin-right: 0px;
+    margin-bottom: 20px;
+    margin-left: 0px;
+    padding-top: 0;
+    position: relative;
+    text-align: center;
+}
+#domainSignupContent, .step p, .step span {
+    font-size: 13px;
+    letter-spacing: -0.5px;
+    line-height: 18px;
 }

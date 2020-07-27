@@ -8,7 +8,7 @@ namespace sedo.Controllers
 {
     public class MemberController : Controller
     {
-        [Route("/brokerage/acquisition/")]
+      
         public IActionResult Index()
         {
             return View();
