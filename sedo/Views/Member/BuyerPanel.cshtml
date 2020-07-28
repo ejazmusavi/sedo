@@ -1,384 +1,616 @@
-﻿<main role="main" id="content-main-wrapper" class="content-wrapper-full transit-wrapper" >
+﻿
+    <div id="domain-container" class="container">
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
+                <h2 class=" display-4 bg-light">Your Control Panel</h2>
+                <ul class="nav nav-pills nav-justified bg-info">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">OVERVIEW</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">AUCTION</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">OFFERS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="#">TRANSFER</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="#">BROKERAGE</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="#">MY WATCHLIST</a>
+                    </li>
+                </ul>
+                <h2 class="col-12 my-2 title bg-light">Auctions</h2>
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr class="bg-primary">
+                                <th>Domains</th>
+                                <th>Status</th>
+                                <th>Leading Bid</th>
+                                <th>Your max. bid</th>
+                                <th>Auction Ending</th>
+                                <th>Options</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td  colspan="6">
+                                    <a href="# ">
+                                        <img src="~/img/auctio2.PNG" />
+                                    </a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <h2 class="col-12 my-2 title">Offers</h2>
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr class="bg-primary">
+                                <th>Domains</th>
+                                <th>Status</th>
+                                <th>Leading Bid</th>
+                                <th>My bid</th>
+                                <th>Options</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td colspan="5" >
+                                    <a href="# ">
+                                        <img src="~/img/offers.PNG" />
+                                    </a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <h2 class="col-12 my-2 title">Transfer</h2>
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr class="bg-primary">
+                                <th>Domains</th>
+                                <th>Status</th>
+                                <th>Seller Price</th>
+                                <th>Options</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td colspan="4" >
+                                    <a href="# ">
+                                        <img src="~/img/transfer.PNG" />
+                                    </a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <h2 class="col-12 my-2 title">Brokerage</h2>
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr class="bg-primary">
+                                <th>Domains</th>
+                                <th>Status</th>
+                                <th>Seller's Bid</th>
+                                <th>Your max. bid</th>
+                                <th>Options</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td  colspan="5" >
+                                    <a href="# ">
+                                        <img src="~/img/brokerage.PNG" />
+                                    </a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <h2 class="col-12 my-2 title">My Watchlist</h2>
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr class="bg-primary">
+                                <th>Domains</th>
+                                <th>Status</th>
+                                <th>Leading Bid</th>
+                                <th>Your max. bid</th>
+                                <th>Options</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td  colspan="5" >
+                                    <a href="# ">
+                                        <img src="~/img/undefind.PNG" />
+                                    </a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
 
 
-    <script type="text/javascript">
-        var linkToAuctionSchedulePage = '/us/sell-domains/domain-auction/';
-    </script>
-
-
-    <style>
-        #uiContentBase ul.sedo-ui-tab-navigation li a:link, #uiContentBase ul.sedo-ui-tab-navigation li a:visited {
-            padding: 20px 15px;
-        }
-
-        #col2 {
-            display: none;
-        }
-    </style>
-
-    <div id="uiContentBase" style="background-color:#FFFFFF;">
-        <div class="sedo-ui-content sedo-ui-grid-100">
-            <div class="sedo-ui-header"></div>
-            <div class="sedo-ui-grid">
-                <!-- MAIN COLUMN -->
-                <div class="sedo-ui-grid-cell sedo-ui-grid-cell-100">
-                    <div id="js_controlPanel">
-
-                        <h1>Your Control Panel</h1>
-
-                        <div id="js_controlPanelTabs" style="opacity: 1;" class="ui-tabs ui-widget ui-widget-content ui-corner-all">
-
-                            <ul class="sedo-ui-tab-navigation ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all" role="tablist">
-                                <li rel="overview" class="ui-state-default ui-corner-top ui-tabs-active ui-state-active" role="tab" tabindex="0" aria-controls="overviewTab" aria-labelledby="ui-id-2" aria-selected="true" aria-expanded="true"><a href="#" rel="" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-2">Overview</a></li>
-                                <li rel="auctions" class="ui-state-default ui-corner-top" role="tab" tabindex="-1" aria-controls="auctionTab" aria-labelledby="ui-id-3" aria-selected="false" aria-expanded="false"><a href="#" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-3">Auctions</a></li>
-                                <li rel="offers" class="ui-state-default ui-corner-top" role="tab" tabindex="-1" aria-controls="offersTab" aria-labelledby="ui-id-4" aria-selected="false" aria-expanded="false"><a href="#" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-4">Offers</a></li>
-                                <li rel="transfers" class="ui-state-default ui-corner-top" role="tab" tabindex="-1" aria-controls="transfersTab" aria-labelledby="ui-id-5" aria-selected="false" aria-expanded="false"><a href="#" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-5">Transfers</a></li>
-                                <li rel="brokerage" class="ui-state-default ui-corner-top" role="tab" tabindex="-1" aria-controls="brokerageTab" aria-labelledby="ui-id-6" aria-selected="false" aria-expanded="false"><a href="#" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-6">Brokerage</a></li>
-                                <li rel="watchlist" class="ui-state-default ui-corner-top" role="tab" tabindex="-1" aria-controls="watchlistTab" aria-labelledby="ui-id-7" aria-selected="false" aria-expanded="false"><a href="#" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-7">My Watchlist</a></li>
-                            </ul>
-
-                            <div id="overviewTab" rel="overview" aria-labelledby="ui-id-2" class="ui-tabs-panel ui-widget-content ui-corner-bottom" role="tabpanel" aria-hidden="false">
-                                <form class="js_bidSubmitForm">
-                                    <h2>Auctions <span class="js_totalCount"></span></h2>
-
-                                    <div id="js_tableAuctionsOverview_wrapper" class="dataTables_wrapper" role="grid">
-                                        <div id="js_tableAuctionsOverview_processing" class="dataTables_processing" style="display: none;">Processing...</div><table id="js_tableAuctionsOverview" class="sedo-ui-table-flat table-auctions dataTable" style="display: table;">
-                                            <thead>
-                                                <tr role="row"><th class="cell-domain sorting_disabled" role="columnheader" rowspan="1" colspan="1" aria-label="Domains" style="width: 0px;">Domains</th><th class="cell-status sorting_disabled" role="columnheader" rowspan="1" colspan="1" aria-label="Status" style="width: 0px;">Status</th><th class="cell-last-bid sorting_disabled align-right" role="columnheader" rowspan="1" colspan="1" aria-label="Leading Bid " style="width: 0px;">Leading Bid </th><th class="cell-my-bid sorting_disabled align-right js_cellMyBid" role="columnheader" rowspan="1" colspan="1" aria-label="Your max. bid" style="width: 0px;">Your max. bid</th><th class="cell-end-time sorting_disabled align-right" role="columnheader" rowspan="1" colspan="1" aria-label="Auction Ending " style="width: 0px;">Auction Ending </th><th class="cell-options" rowspan="1" colspan="1">Options</th></tr>
-                                            </thead>
 
 
 
-                                            <tfoot style="display: none;">
-                                                <tr><td colspan="3" rowspan="1"></td><td class="cell-my-bid align-right js_cellMyBid" rowspan="1" colspan="1"><button type="submit" class="sedo-ui-button-m sedo-ui-button-gray js_submitBids" style="display: none;">Submit bids</button></td><td colspan="2" class="align-right" rowspan="1"><a rel="1" class="sedo-ui-button-m sedo-ui-button-gray js_selectTab">show all</a></td></tr>
-                                            </tfoot>
-                                            <tbody role="alert" aria-live="polite" aria-relevant="all"><tr class="odd"><td valign="top" colspan="6" class="dataTables_empty full-border"><a href="#" class="sedo-ui-empty-table-link ">Explore auctions</a></td></tr></tbody>
-                                        </table>
-                                    </div>
-                                </form>
+                <!--next page code-->
+                <div class="row">
 
-                                <h2>Offers <span class="js_totalCount"></span></h2>
+                    <div class="col-md-6 bg-light">
+                        <p class="float-right">Filter by Status</p>
+                    </div>
+                    <div class="col-md-5">
 
-                                <div id="js_tableOffersOverview_wrapper" class="dataTables_wrapper" role="grid">
-                                    <div id="js_tableOffersOverview_processing" class="dataTables_processing" style="display: none;">Processing...</div><table id="js_tableOffersOverview" class="sedo-ui-table-flat table-offers dataTable" style="width: 100%; display: table;">
-                                        <thead>
-                                            <tr role="row"><th class="cell-domain sorting_disabled" role="columnheader" rowspan="1" colspan="1" aria-label="Domains ">Domains </th><th class="cell-status sorting_disabled" role="columnheader" rowspan="1" colspan="1" aria-label="Status ">Status </th><th class="cell-last-bid sorting_disabled align-right" role="columnheader" rowspan="1" colspan="1" aria-label="Last bid ">Last bid </th><th class="cell-my-bid sorting_disabled align-right js_cellMyBid" role="columnheader" rowspan="1" colspan="1" aria-label="My bid ">My bid </th><th class="cell-options" rowspan="1" colspan="1">Options</th></tr>
-                                        </thead>
-
-
-
-                                        <tfoot style="display: none;">
-                                            <tr><td colspan="4" rowspan="1"></td><td colspan="1" class="align-right" rowspan="1"><a rel="2" class="sedo-ui-button-m sedo-ui-button-gray js_selectTab">show all</a></td></tr>
-                                        </tfoot>
-                                        <tbody role="alert" aria-live="polite" aria-relevant="all"><tr class="odd"><td valign="top" colspan="5" class="dataTables_empty full-border"><a href="#" class="sedo-ui-empty-table-link ">You currently have no pending offers. Start promoting your domain!</a></td></tr></tbody>
-                                    </table>
-                                </div>
-
-                                <h2>Transfers <span class="js_totalCount"></span></h2>
-
-                                <div id="js_tableTransfersOverview_wrapper" class="dataTables_wrapper" role="grid">
-                                    <div id="js_tableTransfersOverview_processing" class="dataTables_processing" style="display: none;">Processing...</div><table id="js_tableTransfersOverview" class="sedo-ui-table-flat table-transfers dataTable" style="width: 100%; display: table;">
-                                        <thead>
-                                            <tr role="row"><th class="cell-domain sorting_disabled" role="columnheader" rowspan="1" colspan="1" aria-label="Domains ">Domains </th><th class="cell-status sorting_disabled" role="columnheader" rowspan="1" colspan="1" aria-label="Status ">Status </th><th class="cell-my-bid sorting_disabled align-right js_cellMyBid" role="columnheader" rowspan="1" colspan="1" aria-label="Sales price ">Sales price </th><th class="cell-options" rowspan="1" colspan="1">Options</th></tr>
-                                        </thead>
-
-
-
-                                        <tfoot style="display: none;">
-                                            <tr><td colspan="3" rowspan="1"></td><td colspan="1" class="align-right" rowspan="1"><a rel="3" class="sedo-ui-button-m sedo-ui-button-gray js_selectTab">show all</a></td></tr>
-                                        </tfoot>
-                                        <tbody role="alert" aria-live="polite" aria-relevant="all"><tr class="odd"><td valign="top" colspan="4" class="dataTables_empty full-border"><a class="sedo-ui-empty-table-link no-link">You currently have no open transfers.</a></td></tr></tbody>
-                                    </table>
-                                </div>
-
-                                <h2>Brokerage <span class="js_totalCount"></span></h2>
-
-                                <div id="js_tableBrokerageOverview_wrapper" class="dataTables_wrapper" role="grid">
-                                    <div id="js_tableBrokerageOverview_processing" class="dataTables_processing" style="display: none;">Processing...</div><table id="js_tableBrokerageOverview" class="sedo-ui-table-flat table-brokerage dataTable" style="width: 100%; display: table;">
-                                        <thead>
-                                            <tr role="row"><th class="cell-domain sorting_disabled" role="columnheader" rowspan="1" colspan="1" aria-label="Domains ">Domains </th><th class="cell-status sorting_disabled" role="columnheader" rowspan="1" colspan="1" aria-label="Status ">Status </th><th class="cell-last-bid sorting_disabled align-right" role="columnheader" rowspan="1" colspan="1" aria-label="Seller's bid ">Seller's bid </th><th class="cell-my-bid sorting_disabled align-right js_cellMyBid" role="columnheader" rowspan="1" colspan="1" aria-label="Your max. bid ">Your max. bid </th><th class="cell-options" rowspan="1" colspan="1">Options</th></tr>
-                                        </thead>
-
-
-
-                                        <tfoot style="display: none;">
-                                            <tr><td colspan="4" rowspan="1"></td><td colspan="1" class="align-right" rowspan="1"><a rel="4" class="sedo-ui-button-m sedo-ui-button-gray js_selectTab">show all</a></td></tr>
-                                        </tfoot>
-                                        <tbody role="alert" aria-live="polite" aria-relevant="all"><tr class="odd"><td valign="top" colspan="5" class="dataTables_empty full-border"><a href="#" class="sedo-ui-empty-table-link ">You currently have no open brokerage orders. Hire a broker now!</a></td></tr></tbody>
-                                    </table>
-                                </div>
-
-                                <form class="js_bidSubmitForm">
-                                    <h2>My Watchlist <span class="js_totalCount"></span></h2>
-
-                                    <div id="js_tableWatchlistOverview_wrapper" class="dataTables_wrapper" role="grid">
-                                        <div id="js_tableWatchlistOverview_processing" class="dataTables_processing" style="display: none;">Processing...</div><table id="js_tableWatchlistOverview" class="sedo-ui-table-flat table-watchlist dataTable" style="display: table;">
-                                            <thead>
-                                                <tr role="row"><th class="cell-domain sorting_disabled" role="columnheader" rowspan="1" colspan="1" aria-label="Domains" style="width: 0px;">Domains</th><th class="cell-status sorting_disabled" role="columnheader" rowspan="1" colspan="1" aria-label="Status" style="width: 0px;">Status</th><th class="cell-last-bid sorting_disabled align-right" role="columnheader" rowspan="1" colspan="1" aria-label="Leading Bid " style="width: 0px;">Leading Bid </th><th class="cell-my-bid sorting_disabled align-right js_cellMyBid" role="columnheader" rowspan="1" colspan="1" aria-label="Your max. bid" style="width: 0px;">Your max. bid</th><th class="cell-end-time sorting_disabled align-right" role="columnheader" rowspan="1" colspan="1" aria-label="Auction Ending " style="width: 0px;">Auction Ending </th><th class="cell-options" rowspan="1" colspan="1">Options</th></tr>
-                                            </thead>
-
-
-
-                                            <tfoot style="display: none;">
-                                                <tr><td colspan="3" rowspan="1"></td><td class="cell-my-bid align-right js_cellMyBid" rowspan="1" colspan="1"><button type="submit" class="sedo-ui-button-m sedo-ui-button-gray js_submitBids" style="display: none;">Submit bids</button></td><td colspan="2" class="align-right" rowspan="1"><a rel="5" class="sedo-ui-button-m sedo-ui-button-gray js_selectTab">show all</a></td></tr>
-                                            </tfoot>
-                                            <tbody role="alert" aria-live="polite" aria-relevant="all"><tr class="odd"><td valign="top" colspan="6" class="dataTables_empty full-border"><a class="sedo-ui-empty-table-link no-link">undefined</a></td></tr></tbody>
-                                        </table>
-                                    </div>
-                                </form>
-
+                        <div class="dropdown dropleft float-right">
+                            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                                10
+                            </button>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="#">10</a>
+                                <a class="dropdown-item" href="#">25</a>
+                                <a class="dropdown-item" href="#">50</a>
                             </div>
-                            <div id="auctionTab" rel="auctions" aria-labelledby="ui-id-3" class="ui-tabs-panel ui-widget-content ui-corner-bottom" role="tabpanel" aria-hidden="true" style="display: none;">
-                                <form class="js_bidSubmitForm">
-                                    <div class="right select-menu-bar auctions js_selectMenuBar" style="display: none;">
-                                        Filter by status
-                                        <select id="js_auctionsFilter" class="js_filterSelect">
-                                            <option value="17">Any</option>
-                                            <option value="2">Running</option>
-                                            <option value="18">Scheduled</option>
-                                            <option value="6">Closed</option>
-                                        </select>
-                                        <select id="js_auctionsRowsPerPage" class="js_rowsPerPageSelect">
-                                            <option value="10">10</option>
-                                            <option value="25">25</option>
-                                            <option value="50">50</option>
-                                        </select>
-                                    </div>
-                                    <h2>Auctions <span class="js_totalCount"></span></h2>
-                                    <table id="js_tableAuctions" class="sedo-ui-table-flat table-auctions">
-                                        <thead>
-                                            <tr>
-                                                <th class="cell-domain">Domains <i class="fa fa-sort"></i></th>
-                                                <th class="cell-status">Status <i class="fa fa-sort"></i></th>
-                                                <th class="cell-last-bid">Leading Bid <i class="fa fa-sort"></i></th>
-                                                <th class="cell-my-bid">Your max. bid </th>
-                                                <th class="cell-end-time">Auction Ending <i class="fa fa-sort"></i></th>
-                                                <th class="cell-options">Options</th>
-                                            </tr>
-                                        </thead>
-
-                                        <tbody>
-                                            <tr><td colspan="6" class="loading">&nbsp;</td></tr>
-                                        </tbody>
-
-                                        <tfoot>
-                                            <tr>
-                                                <td colspan="3"></td>
-                                                <td colspan="2"><button type="submit" class="sedo-ui-button-m sedo-ui-button-gray js_submitBids" style="display: none;">Submit bids</button></td>
-                                            </tr>
-                                        </tfoot>
-                                    </table>
-                                </form>
-                            </div>
-                            <div id="offersTab" rel="offers" aria-labelledby="ui-id-4" class="ui-tabs-panel ui-widget-content ui-corner-bottom" role="tabpanel" aria-hidden="true" style="display: none;">
-
-                                <div class="right select-menu-bar js_selectMenuBar" style="display: none;">
-                                    Filter by status
-                                    <select id="js_offersFilter" class="js_filterSelect">
-                                        <option value="3">Open</option>
-                                        <option value="4">Cancelled</option>
-                                    </select>
-                                    <select id="js_offersRowsPerPage" class="js_rowsPerPageSelect">
-                                        <option value="10">10</option>
-                                        <option value="25">25</option>
-                                        <option value="50">50</option>
-                                    </select>
-                                </div>
-                                <h2>Offers <span class="js_totalCount"></span></h2>
-                                <table id="js_tableOffers" class="sedo-ui-table-flat table-auctions">
-                                    <thead>
-                                        <tr>
-                                            <th class="cell-domain">Domains <i class="fa fa-sort"></i></th>
-                                            <th class="cell-status">Status <i class="fa fa-sort"></i></th>
-                                            <th class="cell-last-bid">Last bid <i class="fa fa-sort"></i></th>
-                                            <th class="cell-my-bid">My bid</th>
-                                            <th class="cell-end-time">Auction Ending <i class="fa fa-sort"></i></th>
-                                            <th class="cell-options">Options</th>
-                                        </tr>
-                                    </thead>
-
-                                    <tbody>
-                                        <tr><td colspan="6" class="loading">&nbsp;</td></tr>
-                                    </tbody>
-
-                                    <tfoot>
-                                        <tr>
-                                            <td colspan="5"></td>
-                                            <td><button type="submit" class="sedo-ui-button-m sedo-ui-button-gray" id="js_submitBids" style="display: none;">Submit bids</button></td>
-                                        </tr>
-                                    </tfoot>
-                                </table>
-
-                            </div>
-                            <div id="transfersTab" rel="transfers" aria-labelledby="ui-id-5" class="ui-tabs-panel ui-widget-content ui-corner-bottom" role="tabpanel" aria-hidden="true" style="display: none;">
-
-                                <div class="right select-menu-bar js_selectMenuBar" style="display: none;">
-                                    Filter by status
-                                    <select id="js_transfersFilter" class="js_filterSelect">
-                                        <option value="7">Any</option>
-                                        <option value="8">Running</option>
-                                        <option value="9">Closed</option>
-                                        <option value="10">Cancelled</option>
-                                    </select>
-                                    <select id="js_transfersRowsPerPage" class="js_rowsPerPageSelect">
-                                        <option value="10">10</option>
-                                        <option value="25">25</option>
-                                        <option value="50">50</option>
-                                    </select>
-                                </div>
-                                <h2>Transfers <span class="js_totalCount"></span></h2>
-                                <table id="js_tableTransfers" class="sedo-ui-table-flat table-auctions">
-                                    <thead>
-                                        <tr>
-                                            <th class="cell-domain">Domains <i class="fa fa-sort"></i></th>
-                                            <th class="cell-status">Status <i class="fa fa-sort"></i></th>
-                                            <th class="cell-last-bid">Leading Bid <i class="fa fa-sort"></i></th>
-                                            <th class="cell-my-bid">Sales price <i class="fa fa-sort"></i></th>
-                                            <th class="cell-end-time">Auction Ending <i class="fa fa-sort"></i></th>
-                                            <th class="cell-options">Options</th>
-                                        </tr>
-                                    </thead>
-
-                                    <tbody>
-                                        <tr><td colspan="6" class="loading">&nbsp;</td></tr>
-                                    </tbody>
-
-                                    <tfoot>
-                                        <tr>
-                                            <td colspan="5"></td>
-                                            <td><button type="submit" class="sedo-ui-button-m sedo-ui-button-gray" id="js_submitBids" style="display: none;">Submit bids</button></td>
-                                        </tr>
-                                    </tfoot>
-                                </table>
-                            </div>
-                            <div id="brokerageTab" rel="brokerage" aria-labelledby="ui-id-6" class="ui-tabs-panel ui-widget-content ui-corner-bottom" role="tabpanel" aria-hidden="true" style="display: none;">
-                                <div class="right select-menu-bar js_selectMenuBar" style="display: none;">
-                                    Filter by status
-                                    <select id="js_brokerageFilter" class="js_filterSelect">
-                                        <option value="11">Any</option>
-                                        <option value="12">Accepted</option>
-                                        <option value="14">Pending</option>
-                                        <option value="15">Incomplete</option>
-                                        <option value="13">Declined</option>
-                                    </select>
-                                    <select id="js_brokerageRowsPerPage" class="js_rowsPerPageSelect">
-                                        <option value="10">10</option>
-                                        <option value="25">25</option>
-                                        <option value="50">50</option>
-                                    </select>
-                                </div>
-                                <h2>Brokerage <span class="js_totalCount"></span></h2>
-                                <table id="js_tableBrokerage" class="sedo-ui-table-flat table-auctions">
-                                    <thead>
-                                        <tr>
-                                            <th class="cell-domain">Domains <i class="fa fa-sort"></i></th>
-                                            <th class="cell-status">Status <i class="fa fa-sort"></i></th>
-                                            <th class="cell-last-bid">Seller's bid <i class="fa fa-sort"></i></th>
-                                            <th class="cell-my-bid">My bid</th>
-                                            <th class="cell-end-time">Auction Ending <i class="fa fa-sort"></i></th>
-                                            <th class="cell-options">Options</th>
-                                        </tr>
-                                    </thead>
-
-                                    <tbody>
-                                        <tr><td colspan="6" class="loading">&nbsp;</td></tr>
-                                    </tbody>
-
-                                    <tfoot>
-                                        <tr>
-                                            <td colspan="5"></td>
-                                            <td><button type="submit" class="sedo-ui-button-m sedo-ui-button-gray" id="js_submitBids" style="display: none;">Submit bids</button></td>
-                                        </tr>
-                                    </tfoot>
-                                </table>
-
-                            </div>
-
-                            <div id="watchlistTab" rel="watchlist" aria-labelledby="ui-id-7" class="ui-tabs-panel ui-widget-content ui-corner-bottom" role="tabpanel" aria-hidden="true" style="display: none;">
-                                <form class="js_bidSubmitForm">
-                                    <div class="right select-menu-bar watchlist js_selectMenuBar" style="display: none;">
-                                        <select id="js_watchlistFilter" class="js_filterSelect">
-                                            <option value="5">Any</option>
-                                        </select>
-                                        <select id="js_watchlistRowsPerPage" class="js_rowsPerPageSelect">
-                                            <option value="10">10</option>
-                                            <option value="25">25</option>
-                                            <option value="50">50</option>
-                                        </select>
-                                    </div>
-                                    <h2>My Watchlist <span class="js_totalCount"></span></h2>
-                                    <table id="js_tableWatchlist" class="sedo-ui-table-flat table-watchlist">
-                                        <thead>
-                                            <tr>
-                                                <th class="cell-domain">Domains <i class="fa fa-sort"></i></th>
-                                                <th class="cell-status">Status <i class="fa fa-sort"></i></th>
-                                                <th class="cell-last-bid">Leading Bid <i class="fa fa-sort"></i></th>
-                                                <th class="cell-my-bid">Your max. bid </th>
-                                                <th class="cell-end-time">Auction Ending <i class="fa fa-sort"></i></th>
-                                                <th class="cell-options">Options</th>
-                                            </tr>
-                                        </thead>
-
-                                        <tbody>
-                                            <tr><td colspan="6" class="loading">&nbsp;</td></tr>
-                                        </tbody>
-
-                                        <tfoot>
-                                            <tr>
-                                                <td colspan="3"></td>
-                                                <td colspan="2"><button type="submit" class="sedo-ui-button-m sedo-ui-button-gray js_submitBids" style="display: none;">Submit bids</button></td>
-                                            </tr>
-                                        </tfoot>
-                                    </table>
-                                </form>
-                            </div>
-
                         </div>
-                        <script type="text/javascript">
-					<!--
+                    </div>
+                    <div class="dropdown dropleft float-right">
+                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                            Any
+                        </button>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#">Any</a>
+                            <a class="dropdown-item" href="#">Running</a>
+                            <a class="dropdown-item" href="#">Schedule</a>
+                            <a class="dropdown-item" href="#">Closed</a>
+                        </div>
+                    </div>
+                </div>
+                <h2 class="col-12 my-2 title">Auctions</h2>
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr class="bg-primary">
+                                <th>Domains</th>
+                                <th>Status</th>
+                                <th>Leading Bid</th>
+                                <th>Your max. bid</th>
+                                <th>Auction Ending</th>
+                                <th>Options</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td valign="top" colspan="6" class="dataT">
+                                    <a href="# ">
+                                        <img src="~/img/auctio2.PNG" />
+                                    </a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
 
-                            var token = {
-                                msg: {
-                                    confirmDelete: "Do you really want to remove this domain from your watchlist?"
-                                },
-                                tooltip: {
-                                    AuctionCantBeDeleted: "This domain can't be deleted because you are currently the highest bidder.",
-                                    TransferCantBeDeleted: "This domain can't be deleted because the transfer is in progress.",
-                                    NegotiationCantBeDeleted: "-]TOOLTIP_NEGOTATION_CANT_BE_DELETED[-",
-                                    BrokerageCantBeDeleted: "-]TOOLTIP_BROKERAGE_CANT_BE_DELETED[-",
-                                    acceptOffer: "Accept counterproposal of",
-                                    declineOffer: "Decline counterproposal and cancel brokerage order",
-                                    notifications: "Customize notifications",
-                                    deleteDomain: "Delete domain",
-                                    ownComment: "Your comment to this offer:",
-                                    otherPartyComment: "The other party has made the following comment with this offer:"
-                                },
-                                notification: {
-                                    headline: "Notification Settings",
-                                    ifAuctionCloses: "if auction closes in",
-                                    ifABidIsHigher: "if a bid is higher than",
-                                    wheneverABidIsPlaced: "whenever a buyer places a bid",
-                                    ifABidIsRecieved: "Notify me whenever this domain receives a bid through Sedo’s offer-counteroffer system",
-                                    ifAnAuctionStarts: "Notify me if an auction is started for this domain name.",
-                                    submitButton: "Save changes",
-                                    hours: "Hour(s)",
-                                    on: "On",
-                                    off: "Off",
-                                    lastComment: "Last comment:"
-                                },
-                                fallbackTextAuctions: "Explore auctions",
-                                fallbackTextOffers: "You currently have no pending offers. Start promoting your domain!",
-                                fallbackTextTransfers: "You currently have no open transfers.",
-                                fallbackTextBrokerage: "You currently have no open brokerage orders. Hire a broker now!"
-                            };
+            </div>
+            </div>
+        </div>
 
-                            var fallbackLinkOffers = '/us/sell-domains/promotion-options/';
 
-                                            //-->
-                        </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!--<main role="main" id="content-main-wrapper" class="content-wrapper-full transit-wrapper" >
+
+
+        <script type="text/javascript">
+            var linkToAuctionSchedulePage = '/us/sell-domains/domain-auction/';
+        </script>
+
+
+        <style>
+            #uiContentBase ul.sedo-ui-tab-navigation li a:link, #uiContentBase ul.sedo-ui-tab-navigation li a:visited {
+                padding: 20px 15px;
+            }
+
+            #col2 {
+                display: none;
+            }
+        </style>
+
+        <div id="uiContentBase" style="background-color:#FFFFFF;">
+            <div class="sedo-ui-content sedo-ui-grid-100">
+                <div class="sedo-ui-header"></div>
+                <div class="sedo-ui-grid">
+                    <!-- MAIN COLUMN -
+                    <div class="sedo-ui-grid-cell sedo-ui-grid-cell-100">
+                        <div id="js_controlPanel">
+
+                            <h1>Your Control Panel</h1>
+
+                            <div id="js_controlPanelTabs" style="opacity: 1;" class="ui-tabs ui-widget ui-widget-content ui-corner-all">
+
+                                <ul class="sedo-ui-tab-navigation ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all" role="tablist">
+                                    <li rel="overview" class="ui-state-default ui-corner-top ui-tabs-active ui-state-active" role="tab" tabindex="0" aria-controls="overviewTab" aria-labelledby="ui-id-2" aria-selected="true" aria-expanded="true"><a href="#" rel="" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-2">Overview</a></li>
+                                    <li rel="auctions" class="ui-state-default ui-corner-top" role="tab" tabindex="-1" aria-controls="auctionTab" aria-labelledby="ui-id-3" aria-selected="false" aria-expanded="false"><a href="#" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-3">Auctions</a></li>
+                                    <li rel="offers" class="ui-state-default ui-corner-top" role="tab" tabindex="-1" aria-controls="offersTab" aria-labelledby="ui-id-4" aria-selected="false" aria-expanded="false"><a href="#" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-4">Offers</a></li>
+                                    <li rel="transfers" class="ui-state-default ui-corner-top" role="tab" tabindex="-1" aria-controls="transfersTab" aria-labelledby="ui-id-5" aria-selected="false" aria-expanded="false"><a href="#" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-5">Transfers</a></li>
+                                    <li rel="brokerage" class="ui-state-default ui-corner-top" role="tab" tabindex="-1" aria-controls="brokerageTab" aria-labelledby="ui-id-6" aria-selected="false" aria-expanded="false"><a href="#" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-6">Brokerage</a></li>
+                                    <li rel="watchlist" class="ui-state-default ui-corner-top" role="tab" tabindex="-1" aria-controls="watchlistTab" aria-labelledby="ui-id-7" aria-selected="false" aria-expanded="false"><a href="#" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-7">My Watchlist</a></li>
+                                </ul>
+
+                                <div id="overviewTab" rel="overview" aria-labelledby="ui-id-2" class="ui-tabs-panel ui-widget-content ui-corner-bottom" role="tabpanel" aria-hidden="false">
+                                    <form class="js_bidSubmitForm">
+                                        <h2>Auctions <span class="js_totalCount"></span></h2>
+
+                                        <div id="js_tableAuctionsOverview_wrapper" class="dataTables_wrapper" role="grid">
+                                            <div id="js_tableAuctionsOverview_processing" class="dataTables_processing" style="display: none;">Processing...</div><table id="js_tableAuctionsOverview" class="sedo-ui-table-flat table-auctions dataTable" style="display: table;">
+                                                <thead>
+                                                    <tr role="row"><th class="cell-domain sorting_disabled" role="columnheader" rowspan="1" colspan="1" aria-label="Domains" style="width: 0px;">Domains</th><th class="cell-status sorting_disabled" role="columnheader" rowspan="1" colspan="1" aria-label="Status" style="width: 0px;">Status</th><th class="cell-last-bid sorting_disabled align-right" role="columnheader" rowspan="1" colspan="1" aria-label="Leading Bid " style="width: 0px;">Leading Bid </th><th class="cell-my-bid sorting_disabled align-right js_cellMyBid" role="columnheader" rowspan="1" colspan="1" aria-label="Your max. bid" style="width: 0px;">Your max. bid</th><th class="cell-end-time sorting_disabled align-right" role="columnheader" rowspan="1" colspan="1" aria-label="Auction Ending " style="width: 0px;">Auction Ending </th><th class="cell-options" rowspan="1" colspan="1">Options</th></tr>
+                                                </thead>
+
+
+
+                                                <tfoot style="display: none;">
+                                                    <tr><td colspan="3" rowspan="1"></td><td class="cell-my-bid align-right js_cellMyBid" rowspan="1" colspan="1"><button type="submit" class="sedo-ui-button-m sedo-ui-button-gray js_submitBids" style="display: none;">Submit bids</button></td><td colspan="2" class="align-right" rowspan="1"><a rel="1" class="sedo-ui-button-m sedo-ui-button-gray js_selectTab">show all</a></td></tr>
+                                                </tfoot>
+                                                <tbody role="alert" aria-live="polite" aria-relevant="all"><tr class="odd"><td valign="top" colspan="6" class="dataTables_empty full-border"><a href="#" class="sedo-ui-empty-table-link ">Explore auctions</a></td></tr></tbody>
+                                            </table>
+                                        </div>
+                                    </form>
+
+                                    <h2>Offers <span class="js_totalCount"></span></h2>
+
+                                    <div id="js_tableOffersOverview_wrapper" class="dataTables_wrapper" role="grid">
+                                        <div id="js_tableOffersOverview_processing" class="dataTables_processing" style="display: none;">Processing...</div><table id="js_tableOffersOverview" class="sedo-ui-table-flat table-offers dataTable" style="width: 100%; display: table;">
+                                            <thead>
+                                                <tr role="row"><th class="cell-domain sorting_disabled" role="columnheader" rowspan="1" colspan="1" aria-label="Domains ">Domains </th><th class="cell-status sorting_disabled" role="columnheader" rowspan="1" colspan="1" aria-label="Status ">Status </th><th class="cell-last-bid sorting_disabled align-right" role="columnheader" rowspan="1" colspan="1" aria-label="Last bid ">Last bid </th><th class="cell-my-bid sorting_disabled align-right js_cellMyBid" role="columnheader" rowspan="1" colspan="1" aria-label="My bid ">My bid </th><th class="cell-options" rowspan="1" colspan="1">Options</th></tr>
+                                            </thead>
+
+
+
+                                            <tfoot style="display: none;">
+                                                <tr><td colspan="4" rowspan="1"></td><td colspan="1" class="align-right" rowspan="1"><a rel="2" class="sedo-ui-button-m sedo-ui-button-gray js_selectTab">show all</a></td></tr>
+                                            </tfoot>
+                                            <tbody role="alert" aria-live="polite" aria-relevant="all"><tr class="odd"><td valign="top" colspan="5" class="dataTables_empty full-border"><a href="#" class="sedo-ui-empty-table-link ">You currently have no pending offers. Start promoting your domain!</a></td></tr></tbody>
+                                        </table>
+                                    </div>
+
+                                    <h2>Transfers <span class="js_totalCount"></span></h2>
+
+                                    <div id="js_tableTransfersOverview_wrapper" class="dataTables_wrapper" role="grid">
+                                        <div id="js_tableTransfersOverview_processing" class="dataTables_processing" style="display: none;">Processing...</div><table id="js_tableTransfersOverview" class="sedo-ui-table-flat table-transfers dataTable" style="width: 100%; display: table;">
+                                            <thead>
+                                                <tr role="row"><th class="cell-domain sorting_disabled" role="columnheader" rowspan="1" colspan="1" aria-label="Domains ">Domains </th><th class="cell-status sorting_disabled" role="columnheader" rowspan="1" colspan="1" aria-label="Status ">Status </th><th class="cell-my-bid sorting_disabled align-right js_cellMyBid" role="columnheader" rowspan="1" colspan="1" aria-label="Sales price ">Sales price </th><th class="cell-options" rowspan="1" colspan="1">Options</th></tr>
+                                            </thead>
+
+
+
+                                            <tfoot style="display: none;">
+                                                <tr><td colspan="3" rowspan="1"></td><td colspan="1" class="align-right" rowspan="1"><a rel="3" class="sedo-ui-button-m sedo-ui-button-gray js_selectTab">show all</a></td></tr>
+                                            </tfoot>
+                                            <tbody role="alert" aria-live="polite" aria-relevant="all"><tr class="odd"><td valign="top" colspan="4" class="dataTables_empty full-border"><a class="sedo-ui-empty-table-link no-link">You currently have no open transfers.</a></td></tr></tbody>
+                                        </table>
+                                    </div>
+
+                                    <h2>Brokerage <span class="js_totalCount"></span></h2>
+
+                                    <div id="js_tableBrokerageOverview_wrapper" class="dataTables_wrapper" role="grid">
+                                        <div id="js_tableBrokerageOverview_processing" class="dataTables_processing" style="display: none;">Processing...</div><table id="js_tableBrokerageOverview" class="sedo-ui-table-flat table-brokerage dataTable" style="width: 100%; display: table;">
+                                            <thead>
+                                                <tr role="row"><th class="cell-domain sorting_disabled" role="columnheader" rowspan="1" colspan="1" aria-label="Domains ">Domains </th><th class="cell-status sorting_disabled" role="columnheader" rowspan="1" colspan="1" aria-label="Status ">Status </th><th class="cell-last-bid sorting_disabled align-right" role="columnheader" rowspan="1" colspan="1" aria-label="Seller's bid ">Seller's bid </th><th class="cell-my-bid sorting_disabled align-right js_cellMyBid" role="columnheader" rowspan="1" colspan="1" aria-label="Your max. bid ">Your max. bid </th><th class="cell-options" rowspan="1" colspan="1">Options</th></tr>
+                                            </thead>
+
+
+
+                                            <tfoot style="display: none;">
+                                                <tr><td colspan="4" rowspan="1"></td><td colspan="1" class="align-right" rowspan="1"><a rel="4" class="sedo-ui-button-m sedo-ui-button-gray js_selectTab">show all</a></td></tr>
+                                            </tfoot>
+                                            <tbody role="alert" aria-live="polite" aria-relevant="all"><tr class="odd"><td valign="top" colspan="5" class="dataTables_empty full-border"><a href="#" class="sedo-ui-empty-table-link ">You currently have no open brokerage orders. Hire a broker now!</a></td></tr></tbody>
+                                        </table>
+                                    </div>
+
+                                    <form class="js_bidSubmitForm">
+                                        <h2>My Watchlist <span class="js_totalCount"></span></h2>
+
+                                        <div id="js_tableWatchlistOverview_wrapper" class="dataTables_wrapper" role="grid">
+                                            <div id="js_tableWatchlistOverview_processing" class="dataTables_processing" style="display: none;">Processing...</div><table id="js_tableWatchlistOverview" class="sedo-ui-table-flat table-watchlist dataTable" style="display: table;">
+                                                <thead>
+                                                    <tr role="row"><th class="cell-domain sorting_disabled" role="columnheader" rowspan="1" colspan="1" aria-label="Domains" style="width: 0px;">Domains</th><th class="cell-status sorting_disabled" role="columnheader" rowspan="1" colspan="1" aria-label="Status" style="width: 0px;">Status</th><th class="cell-last-bid sorting_disabled align-right" role="columnheader" rowspan="1" colspan="1" aria-label="Leading Bid " style="width: 0px;">Leading Bid </th><th class="cell-my-bid sorting_disabled align-right js_cellMyBid" role="columnheader" rowspan="1" colspan="1" aria-label="Your max. bid" style="width: 0px;">Your max. bid</th><th class="cell-end-time sorting_disabled align-right" role="columnheader" rowspan="1" colspan="1" aria-label="Auction Ending " style="width: 0px;">Auction Ending </th><th class="cell-options" rowspan="1" colspan="1">Options</th></tr>
+                                                </thead>
+
+
+
+                                                <tfoot style="display: none;">
+                                                    <tr><td colspan="3" rowspan="1"></td><td class="cell-my-bid align-right js_cellMyBid" rowspan="1" colspan="1"><button type="submit" class="sedo-ui-button-m sedo-ui-button-gray js_submitBids" style="display: none;">Submit bids</button></td><td colspan="2" class="align-right" rowspan="1"><a rel="5" class="sedo-ui-button-m sedo-ui-button-gray js_selectTab">show all</a></td></tr>
+                                                </tfoot>
+                                                <tbody role="alert" aria-live="polite" aria-relevant="all"><tr class="odd"><td valign="top" colspan="6" class="dataTables_empty full-border"><a class="sedo-ui-empty-table-link no-link">undefined</a></td></tr></tbody>
+                                            </table>
+                                        </div>
+                                    </form>
+
+                                </div>
+                                <div id="auctionTab" rel="auctions" aria-labelledby="ui-id-3" class="ui-tabs-panel ui-widget-content ui-corner-bottom" role="tabpanel" aria-hidden="true" style="display: none;">
+                                    <form class="js_bidSubmitForm">
+                                        <div class="right select-menu-bar auctions js_selectMenuBar" style="display: none;">
+                                            Filter by status
+                                            <select id="js_auctionsFilter" class="js_filterSelect">
+                                                <option value="17">Any</option>
+                                                <option value="2">Running</option>
+                                                <option value="18">Scheduled</option>
+                                                <option value="6">Closed</option>
+                                            </select>
+                                            <select id="js_auctionsRowsPerPage" class="js_rowsPerPageSelect">
+                                                <option value="10">10</option>
+                                                <option value="25">25</option>
+                                                <option value="50">50</option>
+                                            </select>
+                                        </div>
+                                        <h2>Auctions <span class="js_totalCount"></span></h2>
+                                        <table id="js_tableAuctions" class="sedo-ui-table-flat table-auctions">
+                                            <thead>
+                                                <tr>
+                                                    <th class="cell-domain">Domains <i class="fa fa-sort"></i></th>
+                                                    <th class="cell-status">Status <i class="fa fa-sort"></i></th>
+                                                    <th class="cell-last-bid">Leading Bid <i class="fa fa-sort"></i></th>
+                                                    <th class="cell-my-bid">Your max. bid </th>
+                                                    <th class="cell-end-time">Auction Ending <i class="fa fa-sort"></i></th>
+                                                    <th class="cell-options">Options</th>
+                                                </tr>
+                                            </thead>
+
+                                            <tbody>
+                                                <tr><td colspan="6" class="loading">&nbsp;</td></tr>
+                                            </tbody>
+
+                                            <tfoot>
+                                                <tr>
+                                                    <td colspan="3"></td>
+                                                    <td colspan="2"><button type="submit" class="sedo-ui-button-m sedo-ui-button-gray js_submitBids" style="display: none;">Submit bids</button></td>
+                                                </tr>
+                                            </tfoot>
+                                        </table>
+                                    </form>
+                                </div>
+                                <div id="offersTab" rel="offers" aria-labelledby="ui-id-4" class="ui-tabs-panel ui-widget-content ui-corner-bottom" role="tabpanel" aria-hidden="true" style="display: none;">
+
+                                    <div class="right select-menu-bar js_selectMenuBar" style="display: none;">
+                                        Filter by status
+                                        <select id="js_offersFilter" class="js_filterSelect">
+                                            <option value="3">Open</option>
+                                            <option value="4">Cancelled</option>
+                                        </select>
+                                        <select id="js_offersRowsPerPage" class="js_rowsPerPageSelect">
+                                            <option value="10">10</option>
+                                            <option value="25">25</option>
+                                            <option value="50">50</option>
+                                        </select>
+                                    </div>
+                                    <h2>Offers <span class="js_totalCount"></span></h2>
+                                    <table id="js_tableOffers" class="sedo-ui-table-flat table-auctions">
+                                        <thead>
+                                            <tr>
+                                                <th class="cell-domain">Domains <i class="fa fa-sort"></i></th>
+                                                <th class="cell-status">Status <i class="fa fa-sort"></i></th>
+                                                <th class="cell-last-bid">Last bid <i class="fa fa-sort"></i></th>
+                                                <th class="cell-my-bid">My bid</th>
+                                                <th class="cell-end-time">Auction Ending <i class="fa fa-sort"></i></th>
+                                                <th class="cell-options">Options</th>
+                                            </tr>
+                                        </thead>
+
+                                        <tbody>
+                                            <tr><td colspan="6" class="loading">&nbsp;</td></tr>
+                                        </tbody>
+
+                                        <tfoot>
+                                            <tr>
+                                                <td colspan="5"></td>
+                                                <td><button type="submit" class="sedo-ui-button-m sedo-ui-button-gray" id="js_submitBids" style="display: none;">Submit bids</button></td>
+                                            </tr>
+                                        </tfoot>
+                                    </table>
+
+                                </div>
+                                <div id="transfersTab" rel="transfers" aria-labelledby="ui-id-5" class="ui-tabs-panel ui-widget-content ui-corner-bottom" role="tabpanel" aria-hidden="true" style="display: none;">
+
+                                    <div class="right select-menu-bar js_selectMenuBar" style="display: none;">
+                                        Filter by status
+                                        <select id="js_transfersFilter" class="js_filterSelect">
+                                            <option value="7">Any</option>
+                                            <option value="8">Running</option>
+                                            <option value="9">Closed</option>
+                                            <option value="10">Cancelled</option>
+                                        </select>
+                                        <select id="js_transfersRowsPerPage" class="js_rowsPerPageSelect">
+                                            <option value="10">10</option>
+                                            <option value="25">25</option>
+                                            <option value="50">50</option>
+                                        </select>
+                                    </div>
+                                    <h2>Transfers <span class="js_totalCount"></span></h2>
+                                    <table id="js_tableTransfers" class="sedo-ui-table-flat table-auctions">
+                                        <thead>
+                                            <tr>
+                                                <th class="cell-domain">Domains <i class="fa fa-sort"></i></th>
+                                                <th class="cell-status">Status <i class="fa fa-sort"></i></th>
+                                                <th class="cell-last-bid">Leading Bid <i class="fa fa-sort"></i></th>
+                                                <th class="cell-my-bid">Sales price <i class="fa fa-sort"></i></th>
+                                                <th class="cell-end-time">Auction Ending <i class="fa fa-sort"></i></th>
+                                                <th class="cell-options">Options</th>
+                                            </tr>
+                                        </thead>
+
+                                        <tbody>
+                                            <tr><td colspan="6" class="loading">&nbsp;</td></tr>
+                                        </tbody>
+
+                                        <tfoot>
+                                            <tr>
+                                                <td colspan="5"></td>
+                                                <td><button type="submit" class="sedo-ui-button-m sedo-ui-button-gray" id="js_submitBids" style="display: none;">Submit bids</button></td>
+                                            </tr>
+                                        </tfoot>
+                                    </table>
+                                </div>
+                                <div id="brokerageTab" rel="brokerage" aria-labelledby="ui-id-6" class="ui-tabs-panel ui-widget-content ui-corner-bottom" role="tabpanel" aria-hidden="true" style="display: none;">
+                                    <div class="right select-menu-bar js_selectMenuBar" style="display: none;">
+                                        Filter by status
+                                        <select id="js_brokerageFilter" class="js_filterSelect">
+                                            <option value="11">Any</option>
+                                            <option value="12">Accepted</option>
+                                            <option value="14">Pending</option>
+                                            <option value="15">Incomplete</option>
+                                            <option value="13">Declined</option>
+                                        </select>
+                                        <select id="js_brokerageRowsPerPage" class="js_rowsPerPageSelect">
+                                            <option value="10">10</option>
+                                            <option value="25">25</option>
+                                            <option value="50">50</option>
+                                        </select>
+                                    </div>
+                                    <h2>Brokerage <span class="js_totalCount"></span></h2>
+                                    <table id="js_tableBrokerage" class="sedo-ui-table-flat table-auctions">
+                                        <thead>
+                                            <tr>
+                                                <th class="cell-domain">Domains <i class="fa fa-sort"></i></th>
+                                                <th class="cell-status">Status <i class="fa fa-sort"></i></th>
+                                                <th class="cell-last-bid">Seller's bid <i class="fa fa-sort"></i></th>
+                                                <th class="cell-my-bid">My bid</th>
+                                                <th class="cell-end-time">Auction Ending <i class="fa fa-sort"></i></th>
+                                                <th class="cell-options">Options</th>
+                                            </tr>
+                                        </thead>
+
+                                        <tbody>
+                                            <tr><td colspan="6" class="loading">&nbsp;</td></tr>
+                                        </tbody>
+
+                                        <tfoot>
+                                            <tr>
+                                                <td colspan="5"></td>
+                                                <td><button type="submit" class="sedo-ui-button-m sedo-ui-button-gray" id="js_submitBids" style="display: none;">Submit bids</button></td>
+                                            </tr>
+                                        </tfoot>
+                                    </table>
+
+                                </div>
+
+                                <div id="watchlistTab" rel="watchlist" aria-labelledby="ui-id-7" class="ui-tabs-panel ui-widget-content ui-corner-bottom" role="tabpanel" aria-hidden="true" style="display: none;">
+                                    <form class="js_bidSubmitForm">
+                                        <div class="right select-menu-bar watchlist js_selectMenuBar" style="display: none;">
+                                            <select id="js_watchlistFilter" class="js_filterSelect">
+                                                <option value="5">Any</option>
+                                            </select>
+                                            <select id="js_watchlistRowsPerPage" class="js_rowsPerPageSelect">
+                                                <option value="10">10</option>
+                                                <option value="25">25</option>
+                                                <option value="50">50</option>
+                                            </select>
+                                        </div>
+                                        <h2>My Watchlist <span class="js_totalCount"></span></h2>
+                                        <table id="js_tableWatchlist" class="sedo-ui-table-flat table-watchlist">
+                                            <thead>
+                                                <tr>
+                                                    <th class="cell-domain">Domains <i class="fa fa-sort"></i></th>
+                                                    <th class="cell-status">Status <i class="fa fa-sort"></i></th>
+                                                    <th class="cell-last-bid">Leading Bid <i class="fa fa-sort"></i></th>
+                                                    <th class="cell-my-bid">Your max. bid </th>
+                                                    <th class="cell-end-time">Auction Ending <i class="fa fa-sort"></i></th>
+                                                    <th class="cell-options">Options</th>
+                                                </tr>
+                                            </thead>
+
+                                            <tbody>
+                                                <tr><td colspan="6" class="loading">&nbsp;</td></tr>
+                                            </tbody>
+
+                                            <tfoot>
+                                                <tr>
+                                                    <td colspan="3"></td>
+                                                    <td colspan="2"><button type="submit" class="sedo-ui-button-m sedo-ui-button-gray js_submitBids" style="display: none;">Submit bids</button></td>
+                                                </tr>
+                                            </tfoot>
+                                        </table>
+                                    </form>
+                                </div>
+
+                            </div>
+                            <script type="text/javascript">
+                        <!--
+
+                                var token = {
+                                    msg: {
+                                        confirmDelete: "Do you really want to remove this domain from your watchlist?"
+                                    },
+                                    tooltip: {
+                                        AuctionCantBeDeleted: "This domain can't be deleted because you are currently the highest bidder.",
+                                        TransferCantBeDeleted: "This domain can't be deleted because the transfer is in progress.",
+                                        NegotiationCantBeDeleted: "-]TOOLTIP_NEGOTATION_CANT_BE_DELETED[-",
+                                        BrokerageCantBeDeleted: "-]TOOLTIP_BROKERAGE_CANT_BE_DELETED[-",
+                                        acceptOffer: "Accept counterproposal of",
+                                        declineOffer: "Decline counterproposal and cancel brokerage order",
+                                        notifications: "Customize notifications",
+                                        deleteDomain: "Delete domain",
+                                        ownComment: "Your comment to this offer:",
+                                        otherPartyComment: "The other party has made the following comment with this offer:"
+                                    },
+                                    notification: {
+                                        headline: "Notification Settings",
+                                        ifAuctionCloses: "if auction closes in",
+                                        ifABidIsHigher: "if a bid is higher than",
+                                        wheneverABidIsPlaced: "whenever a buyer places a bid",
+                                        ifABidIsRecieved: "Notify me whenever this domain receives a bid through Sedo’s offer-counteroffer system",
+                                        ifAnAuctionStarts: "Notify me if an auction is started for this domain name.",
+                                        submitButton: "Save changes",
+                                        hours: "Hour(s)",
+                                        on: "On",
+                                        off: "Off",
+                                        lastComment: "Last comment:"
+                                    },
+                                    fallbackTextAuctions: "Explore auctions",
+                                    fallbackTextOffers: "You currently have no pending offers. Start promoting your domain!",
+                                    fallbackTextTransfers: "You currently have no open transfers.",
+                                    fallbackTextBrokerage: "You currently have no open brokerage orders. Hire a broker now!"
+                                };
+
+                                var fallbackLinkOffers = '/us/sell-domains/promotion-options/';
+
+
+                            </script>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</main>
+    </main>-->

@@ -1,81 +1,50 @@
-﻿<main role="main" id="content-main-wrapper" class="content-wrapper-full transit-wrapper" >
-    <!-- typo3PageId: 125 -->
-    <div id="col3">
-        <div class="precontent">
-            <h1>Keyword Watchlist</h1>
-            <p>Keep track of your watchlist</p>
-        </div>
-        <div class="keyvisual">
-        </div>
-        <div class="clear"></div>
-
-
-
-        <div class="thirdnavi">
-            <ul>
-                <li><a href="#">Buyer Control Panel</a></li>
-                <li class="selected"><a href="#">Keyword Watchlist</a></li>
+﻿<div id="domain-container" class="container">
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8 bg-light">
+            <h2 class=" display-4 bg-light">Keyword Watchlist</h2>
+            <h2 class=" col-12 my-2 title bg-light">Keep track of your watchlist</h2>
+            <ul class="nav nav-pills nav-justified bg-primary">
+                <li class="nav-item">
+                    <a class="nav-link active bg-info" href="#">Buyers Control Panel</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Watchlist</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="#"></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="#"></a>
+                </li>
             </ul>
-        </div>
-
-
-
-        <style>
-            .btn {
-                font-size: 0 !important;
-            }
-        </style>
-
-
-        <div class="content">
-
-            <div class="m01">
-
-                <p>Enter the keywords you’re interested in. We will email you once a week with a list of recently added similar domains.</p>
-                <p><span class="red"><strong></strong></span></p>
-
-
-                <div>
-                    <table class="contenttable" cellspacing="0" cellpadding="0">
-                        <form action="/member/domainforsalewatch.php4?language=us" method="post"></form>
-                        <input type="hidden" name="csrf_token" value="N/CFNwbLSCS0QGBJ90rH+usD9ldfNhsyNcTOcYX6iXvgdVwQSkSb0Znqio1kiZYy">
-                        <input type="hidden" name="task" value="addkeyword">
-                        <thead>
-                            <tr>
-                                <th>Keyword Watchlist</th>
-                                <th>Last Update</th>
-                                <th>Action</th>
-                            </tr>
-                        </thead>
-
-                        <tfoot>
-                            <tr>
-                                <td colspan="3">
-                                    &nbsp;
-                                </td>
-                            </tr>
-                            <tr>
-                                <td style="height:50px;" colspan="3" class="arrow alignr">
-                                    Add Keyword/Domain:
-                                    <input type="text" size="20" name="domain" maxlength="200" class="Form_Input Input_Text">&nbsp;
-                                    <button type="submit" value="Submit" class="btn M darkBlue" name="button_execute">
-                                        <span>Submit</span>
-                                    </button>
-                                </td>
-                            </tr>
-                        </tfoot>
-
-
-                    </table>
-                </div>
-
-                <p>To watch a specific domain please enter the domain at the bottom of the Buyer Control Panel</p>
-
-                <div class="clear"></div>
+            <p>Enter the keywords you’re interested in. We will email you once a week with a list of recently added similar domains.</p>
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr class="bg-primary">
+                            <th>Keyword Watchlist</th>
+                            <th>Last Update</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="height:50px;" colspan="3" class="arrow alignr float-right">
+                                Add Keyword/Domain:
+                                <input type="text" size="20" name="domain" maxlength="200" class="Form_Input Input_Text">&nbsp;
+                                <button type="submit" value="Submit" class="btn btn-info " name="button_execute">
+                                    <span>Submit</span>
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
-
+            <p><b>To watch a specific domain please enter the domain at the bottom of the Buyer Control Panel</b></p>
         </div>
-
-
-    </div> <!--  closing DIV for DIV in SedoMarketplace/Smarty/data/templates/generic/head.meta.tpl -->
-</main>
+    </div>
+</div>

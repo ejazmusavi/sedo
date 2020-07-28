@@ -1,13 +1,104 @@
-﻿<main role="main" id="content-main-wrapper" class="content-wrapper-full" >
-    <!-- BEGIN: content -->
+﻿
 
-    <div class="billing-overview order-process sedo-fond-grey">
+    <div id="domain-container" class="container">
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-8 bg-transparent">
+                <h2 class=" col-12 my-2 title">
+                    <a class="help right" href="/faq/faq.php?faq_thema=40&amp;language=us" onclick="javascript:return showpopup(this.href,880,600)"><span>Need help?</span></a>
+                    Billing – Review order and payment notices
+                </h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-8 bg-light">
+                <section class="bg-content">
+
+                    <header>
+
+                        <div class="big-icon-text-block">
+
+                            <div class="big-icon">
+                                <img src="~/img/billing.PNG" alt="Billing" title="Billing" width="106" height="106">
+                            </div>
+
+                            <div class="text-block">
+
+                                <h2>Your billing documents</h2>
+
+                                <p>Below you find a summary of your previous orders.</p>
+
+
+
+                            </div>
+
+                        </div>
+
+                    </header>
+
+                    <div id="full-loader" style="display: none;">
+                        <div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                    </div>
+
+                    <p class="note promotional">You currently have no invoices or payment requests.</p><table id="billing-table" class="information-table">
+
+                        <thead>
+
+                            <tr>
+                                <th>Billing documents</th>
+                                <th>PDF</th>
+                                <th>Payment</th>
+                            </tr>
+
+                        </thead>
+
+                        <tbody>
+                        </tbody>
+
+                    </table>
+
+                    <footer>
+
+                        <p id="load-more-items">
+                            <a href="#" class="btn wire">Next <span id="nr-of-next-documents"></span></a>
+                        </p>
+
+                        <p id="loaded-info">
+                            Documents:
+                            <span id="nr-of-loaded-documents"></span>/<span id="nr-of-all-documents"></span>
+                        </p>
+
+                    </footer>
+
+                </section>
+            </div>
+        </div>
+    </div>
+       
+
+<!--<main role="main" id="content-main-wrapper" class="content-wrapper-full">
+   BEGIN: content -->
+<!--<div class="billing-overview order-process sedo-fond-grey">
 
         <div class="content-wrapper">
 
             <div class="product-page-header">
 
-                <h1>Billing – <span>Review order and payment notices</span></h1>
+
 
                 <a id="needhelp" href="#" class="btn btn-NeedHelp wire">
                     <svg class="s-font-check">
@@ -15,12 +106,9 @@
                     </svg>
                     Need help?
                 </a>
-
-            </div>
-
-            <section class="bg-content">
-
-                <header>
+             </div>
+               <section class="bg-content">
+                  <header>
 
                     <div class="big-icon-text-block">
 
@@ -97,3 +185,4 @@
 
     </div>
 </main>
+-->

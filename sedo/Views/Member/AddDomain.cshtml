@@ -5,27 +5,27 @@
         <div class="col-12 my-2">
             <ul class="domain-tabs">
                 <li class="tab-item active">Step1: Enter Domain</li>
-                <li class="tab-item">Step1: Enter Domain</li>
-                <li class="tab-item">Step1: Enter Domain</li>
+                <li class="tab-item ">Step1: Price Domains</li>
+                <li class="tab-item">Step1: Activate SedoMLS Premium</li>
             </ul>
         </div>
-
         <div class="col-12 col-sm-8 col-md-6">
             <div class="box lightBlue">
                 <h2 class="sub-title">Option 1: Enter up to 200 domain names</h2>
                 <textarea id="domainSignupTextarea">Separate domains with a comma, space, or line break.
                         (E.g. domain.com, domain.net, domain.org)</textarea>
-
-
             </div>
 
             <div class="box lightBlue">
                 <h2 class="sub-title">Option 2: Add more than 200 domain names <a href="#" class="link domainUploadPage float-right">Go to our upload page</a></h2>
             </div>
-
-            <div class="box">
-                <label class="checkbox">
-                    <input class="float-left" id="acceptTerms" name="acceptTerms" type="checkbox">
+            <div class="row">
+                <div class="col-md-1 float-right">
+                    <label class="checkbox">
+                        <input class="float-left" id="acceptTerms" name="acceptTerms" type="checkbox">
+                    </label>
+                </div>
+                <div class="col-md-10">
                     <label class="label terms float-left" for="acceptTerms">
                         I have read the <a href="#" class="external_link">Marketplace Agreement</a>,
                         <a href="#" class="external_link">Transfer Agreement</a>,
@@ -38,98 +38,38 @@
                             Domain Parking Terms &amp; Conditions
                         </a>.
                     </label>
-                </label>
-
+                </div>
             </div>
-
             <div class="text-center">
 
                 <button class="btn btn-info">Go to Step 2</button>
             </div>
         </div>
     </div>
-
     <div id="step2" class="row">
         <h2 class="col-12 my-2 title">Add domain to sell and park</h2>
         <div class="col-12 my-2">
             <ul class="domain-tabs">
-                <li class="tab-item active">Step1: Enter Domain</li>
-                <li class="tab-item">Step1: Enter Domain</li>
-                <li class="tab-item">Step1: Enter Domain</li>
+                <li class="tab-item ">Step1: Enter Domains</li>
+                <li class="tab-item active">Step1: Price Domains</li>
+                <li class="tab-item">Step1: Activate SedoMLS Premium</li>
             </ul>
         </div>
     </div>
     <div class="row">
-        <h1>
-            Set Buy Now Prices
-        </h1>
-        <p class="subline">We recommend setting Buy Now prices, which sell faster and allow buyers to purchase domains without the hassle of negotiations.</p>
-        <div class="col-md-6">
-            <span class="left">Press <span class="icon bulk-edit fixed"></span> to bulk edit</span>
-            <span class="right"><a href="#" class="link" id="js_wizard" title="Start Add Domains Wizard">Start Add Domains Wizard</a></span>
+        <div col-md-12>
+            <h2 class="col-12 my-2 title">
+                Set Buy Now Prices
+            </h2>
+        </div>
+        <div class="col-md-12">
+            <p class="subline">We recommend setting Buy Now prices, which sell faster and allow buyers to purchase domains without the hassle of negotiations.</p>
         </div>
     </div>
-    <tr id="js_row0" class="js_row row  last even">
-        <td class="domain js_domain">
-            <div>
-                <span class="left" title="ytuyguyy.com">ytuyguyy.com</span>
-                <input type="hidden" name="domainname[0]" value="ytuyguyy.com">
-            </div>
-        </td>
-    </tr>
-    <td class="price js_price">
-        <div>
-            <input type="text" name="price[0]" value="" class="input text price js_value" tabindex="1">
-            <span class="right"><input type="checkbox" name="" class="input checkbox bulk price js_check"></span>
+    <div class="col-md-12">
+        <div class="text-center col-md-6">
+            <a href="#">Go back to Step 1</a>
+            <button class="btn btn-info">Go to Step 3</button>
         </div>
-    </td>
-    <td class="currency js_currency">
-        <div>
-            <select name="currency_id[0]" class="input select currency js_value">
-                <option value="1">EUR</option>
-                <option value="3" selected="">$US</option>
-                <option value="4">GBP</option>
-            </select>
-            <span class="right"><input type="checkbox" name="" class="input checkbox bulk currency js_check"></span>
-        </div>
-    </td>
-    <td class="price-option js_price_option">
-        <div>
-            <select name="price_type[0]" class="input select price-option js_value">
-                <option value="1">Not for sale</option>
-                <option value="2" selected="">Buy Now</option>
-                <option value="3">Make Offer</option>
-            </select>
-            <span class="right"><input type="checkbox" name="" class="input checkbox bulk price-option js_check"></span>
-        </div>
-    </td>
-    <td class="minprice js_minprice">
-        <div>
-            <input type="text" name="minprice[0]" value="" class="input text minprice js_value" tabindex="1" disabled="">
-            <span class="right"><input type="checkbox" name="" class="input checkbox bulk minprice js_check" disabled=""></span>
-        </div>
-    </td>
-
-
-    <tr>
-        <td class="domain-type js_domain_type">
-            <div>
-                <select name="domain_type[0]" class="input select domain-type js_value">
-                    <option value="1" selected="">Domain</option>
-                    <option value="2">Project</option>
-                </select>
-                <span class="right"><input type="checkbox" name="" class="input checkbox bulk domain-type js_check"></span>
-            </div>
-        </td>
-    </tr>
-    <div class="row">
-      <dsiv class="col-md-4">
-            <div>
-                <a href="#">Go back to Step 1</a>
-                <button class="btn btn-info">Go to Step 3</button>
-            </div>
-        </dsiv>
     </div>
-  
 </div>
-    

@@ -1,41 +1,25 @@
-﻿<main role="main" id="content-main-wrapper" class="content-wrapper-full transit-wrapper">
-    <!-- typo3PageId: 127 -->
-    <div id="col3">
-        <div class="precontent">
-            <h1>Transfer Center</h1>
-            <p>Review the status of your purchased and sold domains and communicate with your Transfer Specialist</p>
-        </div>
-        <div class="keyvisual">
-        </div>
-        <div class="clear"></div>
-        <div class="contenthead">
-            <h2 class="contenthead">
-                <a class="help right" href="#" onclick="javascript:return showpopup(this.href,880,600)"><span>?</span></a>
+﻿<div id="domain-container" class="container">
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8 bg-light">
+            <h2 class=" display-4 bg-light">Transfer Center</h2>
+            <h2 >Review the status of your purchased and sold domains and communicate with your Transfer Specialist</h2>
+           <h2 class=" col-12 my-2 title">
+                <a class="help right" href="/faq/faq.php?faq_thema=40&amp;language=us" onclick="javascript:return showpopup(this.href,880,600)"><span>?</span></a>
                 Transfer Center
             </h2>
-        </div>
-        <div class="content">
-            <div class="m01">
-
-                <div class="floatbox">
-                    <form action="/member/transfer/index.php?language=us" method="post" name="filter_form" id="filter_form">
-                        <input type="hidden" name="csrf_token" value="N/CFNwbLSCS0QGBJ90rH+usD9ldfNhsyNcTOcYX6iXvgdVwQSkSb0Znqio1kiZYy">
-                        <fieldset>
-                            <input type="hidden" name="sortedby" value="Status">
-                            <input type="text" name="filter" value="" id="filter" class="input_text short">&nbsp;&nbsp;<button class="btnGnS" type="submit"><span>Search</span></button>&nbsp;&nbsp;<select name="select_transactions" size="1" class="auswahl" onchange="javascript:document.filter_form.submit();">
-                                <option value="2" selected="selected">All transfers</option>
-                                <option value="3">Running transfers</option>
-                                <option value="4">Closed transfers</option>
-                                <option value="5">Cancelled transfers</option>
-                                <option value="6">Transfers requiring action</option>
-                            </select>
-                        </fieldset>
-                    </form>
-                </div>
-                <p class="bodytext">
-                    You currently have no open transfers.
-                </p>
-            </div>
+            <p>Enter the keywords you’re interested in. We will email you once a week with a list of recently added similar domains.</p>
+            <fieldset class="fieldst">
+                <input type="hidden" name="sortedby" value="Status">
+                <input type="text" name="filter" value="" id="filter" class="input_text short">&nbsp;&nbsp;<button class="btnGnS" type="submit"><span>Search</span></button>&nbsp;&nbsp;<select name="select_transactions" size="1" class="auswahl" onchange="javascript:document.filter_form.submit();">
+                    <option value="2">All transfers</option>
+                    <option value="3">Running transfers</option>
+                    <option value="4">Closed transfers</option>
+                    <option value="5">Cancelled transfers</option>
+                    <option value="6" selected="selected">Transfers requiring action</option>
+                </select>
+            </fieldset>
+            <p><b>To watch a specific domain please enter the domain at the bottom of the Buyer Control Panel</b></p>
         </div>
     </div>
-</main>
+</div>
